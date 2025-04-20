@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import { getTest } from "../api";
 import { addMenu } from "../api";
 
 function Test() {
@@ -27,13 +26,6 @@ function Test() {
     setMenu(updatedMenu);
   };
 
-  //   function sendData(formData) {
-  //     const data = {
-  //       menuTitle: formData.get("menuTitle"),
-  //     };
-  //     getTest(data);
-  //   }
-
   function sendData(e) {
     e.preventDefault(); // For at stoppe siden reloades, ellers når den ikke at sende den opdaterede data/state med
     let data = {
@@ -43,7 +35,7 @@ function Test() {
 
     if (!data.menuTitle || !data.course1) {
       alert("⛔ Please fill out both the menu title and course 1 before submitting ⛔");
-      return; // ⛔ Stop the function if not filled
+      return;
     }
     addMenu(data);
   }
@@ -56,7 +48,7 @@ function Test() {
 
       {/* Jeg bruger onSubmit, da det er bedre for next.js. Desuden, hvis jeg ikke laver en arrowfunction,
        er det sværre at implementere manglende udfyldte indputfeldte osv.*/}
-      <form className="flex flex-col" onSubmit={(e) => sendData(e)}>
+      <form className="flex flex-col" onSubmit={sendData}>
         <label htmlFor="menuTitle">Menu Titel</label>
         <input className="border-gray-200 border-2 w-60" name="menuTitle" id="menuTitle" value={menu[0].menuTitle} onChange={handleChange}></input>
         <label htmlFor="course1">Course 1 text</label>

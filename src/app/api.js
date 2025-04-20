@@ -10,10 +10,9 @@ export async function getTest() {
   console.log("NEXT_PUBLIC_SUPABASE_ANON_KEY", url);
 }
 
+//Tilføj menu function
 export async function addMenu(menuData) {
   let headersList = {
-    Accept: "*/*",
-    "User-Agent": "Thunder Client (https://www.thunderclient.com)",
     apikey: key,
     "Content-Type": "application/json",
     Prefer: "return=representation",
@@ -27,5 +26,24 @@ export async function addMenu(menuData) {
 
   let data = await response.json();
   console.log("Det virkede", data);
+  return data;
+}
+
+//Se alle menuer i databasen function
+export async function getAllMenus() {
+  const headersList = {
+    apikey: key,
+    "Content-Type": "application/json",
+    Prefer: "return=representation",
+  };
+
+  //Hent ALT data fra tabellen
+  const response = await fetch(`${url}menu-database?select=*`, {
+    method: "GET",
+    headers: headersList,
+  });
+
+  const data = await response.json();
+  console.log("Fetched menus:", data);
   return data;
 }
