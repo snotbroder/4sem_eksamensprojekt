@@ -11,26 +11,26 @@ export async function getTest() {
 }
 
 //Tilføj menu function
-export async function addMenu(menuData) {
+export async function addItem(itemData, tableName) {
   let headersList = {
     apikey: key,
     "Content-Type": "application/json",
     Prefer: "return=representation",
   };
 
-  let response = await fetch(`${url}menu-database`, {
+  let response = await fetch(`${url}${tableName}`, {
     method: "POST",
     headers: headersList,
-    body: JSON.stringify(menuData),
+    body: JSON.stringify(itemData),
   });
 
   let data = await response.json();
-  console.log("Det virkede", data);
+  console.log("Added data:", data);
   return data;
 }
 
-//Se alle menuer i databasen function
-export async function getAllMenus() {
+//Se alle items i databasen function
+export async function getAllItems(tableName) {
   const headersList = {
     apikey: key,
     "Content-Type": "application/json",
@@ -38,12 +38,29 @@ export async function getAllMenus() {
   };
 
   //Hent ALT data fra tabellen
-  const response = await fetch(`${url}menu-database?select=*`, {
+  const response = await fetch(`${url}${tableName}?select=*`, {
     method: "GET",
     headers: headersList,
   });
 
   const data = await response.json();
-  console.log("Fetched menus:", data);
+  console.log("Fetched items:", data);
+  return data;
+}
+
+//Slet et selected menu fra databasen
+export async function deleteItem(uuid, tableName) {
+  let response = await fetch(`${url}${tableName}?uuid=eq.${uuid}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      apikey: key,
+      Authorization: `Bearer ${key}`,
+      Prefer: "return=representation",
+    },
+  });
+
+  let data = await response.json();
+  console.log("Deleted:", data);
   return data;
 }

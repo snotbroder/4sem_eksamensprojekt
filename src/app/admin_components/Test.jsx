@@ -1,8 +1,13 @@
 "use client";
 import { useState } from "react";
-import { addMenu } from "../api";
+import { addItem } from "../api";
+import Toast from "./Toast";
 
 function Test() {
+  const [showToast, setShowToast] = useState(false);
+  const [toastType, setToastType] = useState("");
+  const [toastMessage, setToastMessage] = useState("");
+
   const menuData = [
     {
       menuTitle: "",
@@ -27,17 +32,24 @@ function Test() {
   };
 
   function sendData(e) {
-    e.preventDefault(); // For at stoppe siden reloades, ellers når den ikke at sende den opdaterede data/state med
+    e.preventDefault(); // For at stoppe siden reloades, ellers når den ikke at sende den opdaterede data/state med. den tømmer feltene når der reloades
     let data = {
       uuid: crypto.randomUUID(),
       ...menu[0],
     };
 
     if (!data.menuTitle || !data.course1) {
-      alert("⛔ Please fill out both the menu title and course 1 before submitting ⛔");
+      // Show success toast after delete
+      setToastType("error"); // You can set this to "error" if needed
+      setShowToast(true);
+      setToastMessage("An error occured :(((");
       return;
     }
-    addMenu(data);
+
+    setToastType("success");
+    setShowToast(true);
+    setToastMessage("Added item succesfully");
+    addItem(data, "menu-database");
   }
   return (
     <div>
@@ -60,6 +72,9 @@ function Test() {
       {/* {menuData[0].map((menuTitle, index) => {
         return <div key={index}>Menu title: {menuTitle}</div>;
       })} */}
+
+      {/* Toast komponent */}
+      <Toast message={toastMessage} showToast={showToast} hideToast={() => setShowToast(false)} type={toastType} />
     </div>
   );
 }
