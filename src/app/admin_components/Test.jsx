@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useStoreTest } from "@/stores/useStoreTest";
 import { addItem } from "../api";
 import Toast from "./Toast";
 
@@ -14,7 +15,12 @@ function Test() {
       course1: "",
     },
   ];
+
   const [menu, setMenu] = useState(menuData);
+
+  //Importerer zustand menu-array og setState
+  // const setMenus = useStoreTest((state) => state.setNewItem);
+  // const menus = useStoreTest((state) => state.menuData);
 
   const handleChange = (e) => {
     //hent ændringen fra det ændrede inputfelt
@@ -29,23 +35,25 @@ function Test() {
     });
 
     setMenu(updatedMenu);
+    // setMenus(updatedMenu);
   };
 
-  function sendData(e) {
-    e.preventDefault(); // For at stoppe siden reloades, ellers når den ikke at sende den opdaterede data/state med. den tømmer feltene når der reloades
+  function sendData() {
+    // e.preventDefault(); // For at stoppe siden reloades, ellers når den ikke at sende den opdaterede data/state med. den tømmer feltene når der reloades
     let data = {
       uuid: crypto.randomUUID(),
       ...menu[0],
     };
 
     if (!data.menuTitle || !data.course1) {
-      // Show success toast after delete
-      setToastType("error"); // You can set this to "error" if needed
+      // Hvis IKKE alt er som det skal, opdater toast indhold og type
+      setToastType("error"); //Her sætter man typen af toast
       setShowToast(true);
       setToastMessage("An error occured :(((");
       return;
     }
 
+    // Hvis alt går som det skal, opdater toast indhold og type
     setToastType("success");
     setShowToast(true);
     setToastMessage("Added item succesfully");

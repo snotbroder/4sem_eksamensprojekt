@@ -64,3 +64,21 @@ export async function deleteItem(uuid, tableName) {
   console.log("Deleted:", data);
   return data;
 }
+
+//Redigér et selected menu fra databasen
+export async function editItem(uuid, tableName, updatedData) {
+  let response = await fetch(`${url}${tableName}?uuid=eq.${uuid}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      apikey: key,
+      Authorization: `Bearer ${key}`,
+      Prefer: "return=representation",
+    },
+    body: JSON.stringify(updatedData), // Her sender jeg den opdateret data til api'en
+  });
+
+  let data = await response.json();
+  console.log("Changed:", data);
+  return data;
+}
