@@ -24,3 +24,14 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@theme {
+  --color-clock-that-tea: #5a33ba;
+  --color-gloob-200: #444224;
+  --color-gloob-300: #441222;
+}
+
+.tea {
+  color: red;
+  padding: 3rem;
+}

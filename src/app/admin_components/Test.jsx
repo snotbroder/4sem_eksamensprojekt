@@ -61,7 +61,7 @@ function Test() {
   }
   return (
     <div>
-      <h3 className="text-2xl m-3">Tilføj menu</h3>
+      <h3 className="text-2xl m-3 text-clock-that-tea">Tilføj menu</h3>
       <ul className="list-none flex flex-col justify-between gap-5 m-5">
         <li className="flex flex-col"></li>
       </ul>

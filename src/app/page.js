@@ -6,7 +6,12 @@ export default function Home() {
       <div className="m-auto mt-52 text-4xl">
         <h1 className="">PERIODT! Babysteps, but we are about to EAAAATTTT</h1>
       </div>
-      <p className="m-auto text-purple-800">Es hora de comer</p>
+      <p className="m-auto text-clock-that-tea">Es hora de comer</p>
+      <p className="m-auto text-gloob-200">Es hora de comer</p>
+      <p className="m-auto text-gloob-300">Es hora de comer</p>
+      <p className="m-auto text-feedback-disabled-1">Es hora de comer</p>
+
+      <p className="tea">Hello world</p>
     </div>
   );
 }
