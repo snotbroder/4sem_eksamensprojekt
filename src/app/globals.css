@@ -2,8 +2,8 @@
 @import url("https://use.typekit.net/lkt7gbv.css");
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fffef1;
+  --foreground: #3c1f1f;
 }
 
 @theme inline {
@@ -11,6 +11,49 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* colors */
+
+  /* primary */
+  --color-primary-200: #faa5a4;
+  --color-primary-300: #f77877;
+  --color-primary-400: #f54b4a;
+  --color-primary-500: #f31e1d;
+  --color-primary-600: #c21817;
+  --color-primary-700: #911211;
+  --color-primary-800: #610c0b;
+
+  /* secondary */
+  --color-secondary-200: #faf2b5;
+  --color-secondary-300: #f8ec90;
+  --color-secondary-400: #f6e66b;
+  --color-secondary-500: #f4e046;
+  --color-secondary-600: #c3b338;
+  --color-secondary-700: #92862a;
+  --color-secondary-800: #61591c;
+
+  --font-bebas:
+
+  --text-headline1-desktop: 230px;
+  --text-headline1-mobile: 150px;
+
+  /* spacing */
+  --spacing-xxs: 8px;
+  --spacing-xs: 16px;
+  --spacing-s: 24px;
+  --spacing-sm: 32px;
+  --spacing-m: 40px;
+  --spacing-ml: 48px;
+  --spacing-lg: 56px;
+  --spacing-xl: 64px;
+  --spacing-2xl: 72px;
+  --spacing-3xl: 80px;
+  --spacing-4xl: 88px;
+  --spacing-5xl: 96px;
+  --spacing-6xl: 104px;
+  --spacing-7xl: 112px;
+  --spacing-8xl: 120px;
+  --spacing-9xl: 128px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,7 +62,11 @@
     --foreground: #ededed;
   }
 }
-
+h1 {
+  font-family: "bebas-neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 p {
   font-family: "bebas-neue", sans-serif;
   font-weight: 400;
