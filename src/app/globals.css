@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url("https://use.typekit.net/lkt7gbv.css");
 
 :root {
   --background: #ffffff;
@@ -19,6 +20,11 @@
   }
 }
 
+p {
+  font-family: "bebas-neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 body {
   background: var(--background);
   color: var(--foreground);
