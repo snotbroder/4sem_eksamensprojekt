@@ -2,6 +2,7 @@ import Heading1 from "../designsystem_components/Heading1";
 import Heading2 from "../designsystem_components/Heading2";
 import Heading3 from "../designsystem_components/Heading3";
 import Heading4 from "../designsystem_components/Heading4";
+import Body from "../designsystem_components/Body";
 
 export default function designsystem() {
   return (
@@ -13,6 +14,17 @@ export default function designsystem() {
       <Heading2>Heading2</Heading2>
       <Heading3>Heading3</Heading3>
       <Heading4>Heading4</Heading4>
+      <Body>
+        {" "}
+        Bodytext - Regular Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+        ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+        qui officia deserunt mollit anim id est laborum.
+      </Body>
+
       {/* colours */}
       <Heading2> Colours</Heading2>
       {/* primary */}

@@ -50,7 +50,10 @@
   --text-headline3-mobile: 21px;
   --text-headline4-desktop: 20px;
   --text-headline4-mobile: 18px;
-
+  --text-body-normal-desktop: 16px;
+  --text-body-normal-mobile: 14px;
+  --text-body-small-desktop: 13px;
+  --textbody-small-mobile: 13px;
   /* spacing */
   --spacing-xxs: 8px;
   --spacing-xs: 16px;
