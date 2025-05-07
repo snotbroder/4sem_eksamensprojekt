@@ -32,10 +32,24 @@
   --color-secondary-700: #92862a;
   --color-secondary-800: #61591c;
 
-  --font-bebas:
+  /* neutral */
+  --color-beige: #fffef1;
+  --color-darkbrown: #3c1f1f;
+
+  /* status */
+  --color-succes: #81ff89;
+  --color-cancel: #f4e046;
+  --color-configure: #f3811d;
+  --color-danger: #f54b4a;
 
   --text-headline1-desktop: 230px;
   --text-headline1-mobile: 150px;
+  --text-headline2-desktop: 34px;
+  --text-headline2-mobile: 25px;
+  --text-headline3-desktop: 30px;
+  --text-headline3-mobile: 21px;
+  --text-headline4-desktop: 20px;
+  --text-headline4-mobile: 18px;
 
   /* spacing */
   --spacing-xxs: 8px;
@@ -66,6 +80,8 @@ h1 {
   font-family: "bebas-neue", sans-serif;
   font-weight: 400;
   font-style: normal;
+  line-height: 77%;
+  letter-spacing: -1%;
 }
 p {
   font-family: "bebas-neue", sans-serif;
