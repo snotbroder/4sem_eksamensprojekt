@@ -1,25 +1,22 @@
-import Test from "../admin_components/Test";
-import TestVisualizer from "../admin_components/TestVisualizer";
+import Heading1 from "../designsystem_components/Heading1";
+import Heading2 from "../designsystem_components/Heading2";
+import Heading3 from "../designsystem_components/Heading3";
+import Heading4 from "../designsystem_components/Heading4";
 
-export default function admin_test() {
+export default function designsystem() {
   return (
     <div className="mx-s md:mx-6xl">
-      <h1 className="text-headline2-mobile md:text-headline2-desktop">
-        Designsystem
-      </h1>
-      <h2 className="text-headline2-mobile md:text-headline2-desktop">
-        Headline
-      </h2>
-      <h1 className="text-headline1-mobile md:text-headline1-desktop">H1</h1>
-      <h2 className="text-headline2-mobile md:text-headline2-desktop">H2</h2>
-      <h3 className="text-headline3-mobile md:text-headline3-desktop">H3</h3>
-      <h1 className="text-headline4-mobile md:text-headline4-desktop">H4</h1>
-      <h2 className="text-headline2-mobile md:text-headline2-desktop">
-        Colours
-      </h2>
-      <h3 className="text-headline3-mobile md:text-headline3-desktop">
-        Primary
-      </h3>
+      <Heading2>designsystem</Heading2>
+      {/* headings */}
+      <Heading2>Headings</Heading2>
+      <Heading1>h1</Heading1>
+      <Heading2>Heading2</Heading2>
+      <Heading3>Heading3</Heading3>
+      <Heading4>Heading4</Heading4>
+      {/* colours */}
+      <Heading2> Colours</Heading2>
+      {/* primary */}
+      <Heading3>primary</Heading3>
       <article className="flex flex-wrap gap-xs">
         <div className="text-center">
           <div className="h-xl w-xl bg-primary-200"></div>
@@ -48,6 +45,139 @@ export default function admin_test() {
         <div className="text-center">
           <div className="h-xl w-xl bg-primary-800"></div>
           <p>800</p>
+        </div>
+      </article>
+      {/* secondary */}
+      <Heading3>secondary</Heading3>
+      <article className="flex flex-wrap gap-xs">
+        <div className="text-center">
+          <div className="h-xl w-xl bg-secondary-200"></div>
+          <p>200</p>
+        </div>
+        <div className="text-center">
+          <div className="h-xl w-xl bg-secondary-300"></div>
+          <p>300</p>
+        </div>
+        <div className="text-center">
+          <div className="h-xl w-xl bg-secondary-400"></div>
+          <p>400</p>
+        </div>
+        <div className="text-center">
+          <div className="h-xl w-xl bg-secondary-500"></div>
+          <p>500</p>
+        </div>
+        <div className="text-center">
+          <div className="h-xl w-xl bg-secondary-600"></div>
+          <p>600</p>
+        </div>
+        <div className="text-center">
+          <div className="h-xl w-xl bg-secondary-700"></div>
+          <p>700</p>
+        </div>
+        <div className="text-center">
+          <div className="h-xl w-xl bg-secondary-800"></div>
+          <p>800</p>
+        </div>
+      </article>
+      {/* neutral */}
+      <Heading3>Neutral</Heading3>
+      <article className="flex flex-wrap gap-xs">
+        <div className="text-center">
+          <div className="h-xl w-xl bg-beige "></div>
+          <p>Beige</p>
+        </div>
+        <div className="text-center">
+          <div className="h-xl w-xl bg-darkbrown"></div>
+          <p>Dark Brown</p>
+        </div>
+      </article>
+      {/* status */}
+      <Heading3>Status</Heading3>
+      <article className="flex flex-wrap gap-xs">
+        <div className="text-center">
+          <div className="h-xl w-xl bg-succes"></div>
+          <p>Success</p>
+        </div>
+        <div className="text-center">
+          <div className="h-xl w-xl bg-cancel"></div>
+          <p>Cancel</p>
+        </div>
+        <div className="text-center">
+          <div className="h-xl w-xl bg-configure"></div>
+          <p>Configure</p>
+        </div>
+        <div className="text-center">
+          <div className="h-xl w-xl bg-danger"></div>
+          <p>Danger</p>
+        </div>
+      </article>
+
+      {/* spacing */}
+      <Heading2> spacing</Heading2>
+      <article className="flex flex-wrap gap-xs">
+        <div className="text-center">
+          <div className="h-xl w-xxs bg-primary-500"></div>
+          <p>xxs</p>
+        </div>
+        <div className="text-center">
+          <div className="h-xl w-xs bg-primary-500"></div>
+          <p>xs</p>
+        </div>
+        <div className="text-center">
+          <div className="h-xl w-s bg-primary-500"></div>
+          <p>s</p>
+        </div>
+        <div className="text-center">
+          <div className="h-xl w-sm bg-primary-500"></div>
+          <p>sm</p>
+        </div>
+        <div className="text-center">
+          <div className="h-xl w-m bg-primary-500"></div>
+          <p>m</p>
+        </div>
+        <div className="text-center">
+          <div className="h-xl w-ml bg-primary-500"></div>
+          <p>ml</p>
+        </div>
+        <div className="text-center">
+          <div className="h-xl w-lg bg-primary-500"></div>
+          <p>lg</p>
+        </div>
+        <div className="text-center">
+          <div className="h-xl w-xl bg-primary-500"></div>
+          <p>xl</p>
+        </div>
+        <div className="text-center">
+          <div className="h-xl w-2xl bg-primary-500"></div>
+          <p>2xl</p>
+        </div>
+        <div className="text-center">
+          <div className="h-xl w-3xl bg-primary-500"></div>
+          <p>3xl</p>
+        </div>
+        <div className="text-center">
+          <div className="h-xl w-4xl bg-primary-500"></div>
+          <p>4xl</p>
+        </div>
+        <div className="text-center">
+          <div className="h-xl w-5xl bg-primary-500"></div>
+          <p>5xl</p>
+        </div>
+        <div className="text-center">
+          <div className="h-xl w-6xl bg-primary-500"></div>
+          <p>6xl</p>
+        </div>
+        <div className="text-center">
+          <div className="h-xl w-7xl bg-primary-500"></div>
+          <p>7xl</p>
+        </div>
+        <div className="text-center">
+          <div className="h-xl w-8xl bg-primary-500"></div>
+          <p>8xl</p>
+        </div>
+        <div className="text-center">
+          <div className="h-xl w-9xl bg-primary-500"></div>
+          <p>9xl</p>
         </div>
       </article>
     </div>

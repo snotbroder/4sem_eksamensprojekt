@@ -83,11 +83,7 @@ h1 {
   line-height: 77%;
   letter-spacing: -1%;
 }
-p {
-  font-family: "bebas-neue", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
+
 body {
   background: var(--background);
   color: var(--foreground);
