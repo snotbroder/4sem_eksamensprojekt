@@ -18,10 +18,10 @@ export default function Footer({}) {
         </div>
         <div>
           <Heading4>Åbningstider</Heading4>
-          <div>
+          <div className="w-5/6 md:w-4/6">
             <div className="flex justify-between">
               <Body>Mandag til torsdag</Body>
-              <Body>17-24</Body>
+              <Body className="">17-24</Body>
             </div>
             <div className="flex justify-between">
               <Body>Fredag & lørdag</Body>
@@ -37,7 +37,15 @@ export default function Footer({}) {
           </Body>
         </div>
       </article>
-      <Image></Image>
+      <article className="flex self-end ">
+        <Image
+          src="/Image_bank/logo/logo-dark.svg"
+          alt="logo in darkbrown"
+          width={573}
+          height={202}
+          className=""
+        ></Image>
+      </article>
     </footer>
   );
 }

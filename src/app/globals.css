@@ -71,6 +71,12 @@
   --spacing-7xl: 112px;
   --spacing-8xl: 120px;
   --spacing-9xl: 128px;
+
+  --font-weight-thin: 200;
+  --font-weight-light: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-bold: 900;
 }
 
 @media (prefers-color-scheme: dark) {
