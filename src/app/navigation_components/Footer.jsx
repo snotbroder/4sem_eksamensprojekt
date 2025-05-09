@@ -7,8 +7,8 @@ import Image from "next/image";
 
 export default function Footer({}) {
   return (
-    <footer className="bg-primary-500 grid grid-cols-2 ">
-      <article>
+    <footer className="bg-primary-500 grid grid-cols-2  ">
+      <article className="ml-s md:ml-6xl">
         <div></div>
         <div>
           <Heading4>Adresse</Heading4>
