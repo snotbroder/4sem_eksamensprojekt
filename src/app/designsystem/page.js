@@ -3,6 +3,7 @@ import Heading2 from "../designsystem_components/Heading2";
 import Heading3 from "../designsystem_components/Heading3";
 import Heading4 from "../designsystem_components/Heading4";
 import Body from "../designsystem_components/Body";
+import Footer from "../navigation_components/Footer";
 
 export default function designsystem() {
   return (
@@ -192,6 +193,7 @@ export default function designsystem() {
           <p>9xl</p>
         </div>
       </article>
+      <Footer></Footer>
     </div>
   );
 }
