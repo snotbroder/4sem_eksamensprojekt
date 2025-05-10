@@ -3,11 +3,11 @@ function Dashboard_menucard() {
   var items = ["item1", "item2", "item3", "item4"];
 
   return (
-    <article className="bg-[#F9F9F9] w-[360px] h-auto p-sm rounded-md shadow-lg">
+    <article className="bg-slate-100 w-[360px] h-auto p-sm rounded-md shadow-lg">
       <ul className="flex flex-col gap-s">
         <li className="flex gap-s items-center">
           {/* Husk at fjerne text-size tailwindcss fra h1 element */}
-          <h1 className="text-3xl">Menu card</h1>
+          <h1>Menu card</h1>
           <h1>icon</h1>
         </li>
         <li className="w-full border-2 border-configure bg-configure">

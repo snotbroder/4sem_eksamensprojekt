@@ -5,18 +5,29 @@ import { FaArrowUp } from "react-icons/fa";
 import { FaHome } from "react-icons/fa";
 import { MdEventNote } from "react-icons/md";
 import { IoRestaurant } from "react-icons/io5";
-function IconComponent({ icon }) {
-  return (
-    <i className="text-darkbrown">
-      {icon === "add" && <IoAddSharp />}
-      {icon === "user" && <FiUser />}
-      {icon === "mail" && <HiOutlineMail />}
-      {icon === "arrow" && <FaArrowUp />}
-      {icon === "home" && <FaHome />}
-      {icon === "event" && <MdEventNote />}
-      {icon === "restaurant" && <IoRestaurant />}
-    </i>
-  );
+function IconComponent({ icon, size = "1.25rem", className = "" }) {
+  const commonProps = {
+    className: `text-darkbrown`,
+    size,
+  };
+  switch (icon) {
+    case "add":
+      return <IoAddSharp {...commonProps} className={`text-darkbrown ${className}`} />;
+    case "user":
+      return <FiUser {...commonProps} className={`text-darkbrown ${className}`} />;
+    case "mail":
+      return <HiOutlineMail {...commonProps} className={`text-darkbrown ${className}`} />;
+    case "arrow":
+      return <FaArrowUp {...commonProps} className={`text-darkbrown ${className}`} />;
+    case "home":
+      return <FaHome {...commonProps} className={`text-darkbrown ${className}`} />;
+    case "event":
+      return <MdEventNote {...commonProps} className={`text-darkbrown ${className}`} />;
+    case "restaurant":
+      return <IoRestaurant {...commonProps} className={`text-darkbrown ${className}`} />;
+    default:
+      return null;
+  }
 }
 
 export default IconComponent;
