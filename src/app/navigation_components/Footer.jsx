@@ -1,54 +1,43 @@
-import Heading1 from "../designsystem_components/Heading1";
-import Heading2 from "../designsystem_components/Heading2";
-import Heading3 from "../designsystem_components/Heading3";
-import Heading4 from "../designsystem_components/Heading4";
-import Body from "../designsystem_components/Body";
 import Image from "next/image";
 
 export default function Footer({}) {
   return (
-    <footer className="bg-primary-500 grid grid-cols-2  ">
-      <article className="ml-s md:ml-6xl ">
+    <footer className="bg-primary-500 grid grid-cols-2 md:grid-cols-3">
+      <article className="ml-s md:ml-6xl py-s  grid gap-xs md:col-span-2 ">
         <div>
           <div></div>
           <div>
-            <Heading4>Adresse</Heading4>
-            <Body>
+            <h4>Adresse</h4>
+            <p>
               Gl. Kongevej 27 <br></br> 1610 København V
-            </Body>
+            </p>
           </div>
         </div>
-        <div className="grid md:grid-cols-2">
+        <div className="grid md:grid-cols-2 gap-xs">
           <div>
-            <Heading4>Åbningstider</Heading4>
+            <h4>Åbningstider</h4>
             <div className="w-5/6 md:w-4/6">
               <div className="flex justify-between">
-                <Body>Mandag til torsdag</Body>
-                <Body className="">17-24</Body>
+                <p>Mandag til torsdag</p>
+                <p className="">17-24</p>
               </div>
               <div className="flex justify-between">
-                <Body>Fredag & lørdag</Body>
-                <Body>17.30-24</Body>
+                <p>Fredag & lørdag</p>
+                <p>17.30-24</p>
               </div>
             </div>
           </div>
           <div>
-            <Heading4>Kontakt</Heading4>
-            <Body>
+            <h4>Kontakt</h4>
+            <p>
               <a href="mailto:hej@restaurantlamar.com">hej@restaurantlamar</a>
               <br></br> <a href="tel:+4526362727">+45 26 36 27 27</a>
-            </Body>
+            </p>
           </div>
         </div>
       </article>
-      <article className="flex self-end justify-self-end ">
-        <Image
-          src="/Image_bank/logo/logo-dark.svg"
-          alt="logo in darkbrown"
-          width={573}
-          height={202}
-          className=""
-        ></Image>
+      <article className=" bg-[url('/Image_bank/logo/logo-dark-90deg.svg')] bg-contain bg-no-repeat bg-bottom-right md:bg-[url('/Image_bank/logo/logo-dark.svg')] ">
+        <div></div>
       </article>
     </footer>
   );

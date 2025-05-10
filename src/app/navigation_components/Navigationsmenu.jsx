@@ -1,4 +1,3 @@
-import Body from "../designsystem_components/Body";
 import Image from "next/image";
 
 export default function Footer({}) {

@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://use.typekit.net/wyl2nbc.css");
+@import url("https://use.typekit.net/lkt7gbv.css");
 
 :root {
   --background: #fffef1;
@@ -13,7 +14,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-bebas: "Bebas Neue", "sans-serif";
-  --font-neue: "Neue-haas-grotesk-display", "sans-serif";
+  --font-neue: "neue-haas-grotesk-display", sans-serif;
   /* colors */
 
   /* primary */
@@ -124,6 +125,8 @@ body {
   color: var(--foreground);
   @apply font-neue;
   @apply font-light;
+  @apply text-body-normal-mobile;
+  @apply md:text-body-normal-desktop;
 }
 
 /* Animations */
