@@ -1,5 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://use.typekit.net/wyl2nbc.css");
 @import "tailwindcss";
-@import url("https://use.typekit.net/lkt7gbv.css");
 
 :root {
   --background: #fffef1;
@@ -80,7 +81,7 @@
   }
 }
 h1 {
-  font-family: "bebas-neue", sans-serif;
+  font-family: "Bebas Neue", sans-serif;
   font-weight: 400;
   font-style: normal;
   line-height: 77%;
@@ -90,8 +91,63 @@ h1 {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
 }
+
+/*   font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal; */
+
+p {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--color-darkbrown);
+}
+/* Neue Haas Grotesk Display Pro 45 Light
+font-family: "neue-haas-grotesk-display", sans-serif;
+font-weight: 400;
+font-style: normal;
+
+Neue Haas Grotesk Display Pro 46 Light Italic
+font-family: "neue-haas-grotesk-display", sans-serif;
+font-weight: 400;
+font-style: italic;
+
+Neue Haas Grotesk Display Pro 75 Bold
+font-family: "neue-haas-grotesk-display", sans-serif;
+font-weight: 700;
+font-style: normal;
+
+Neue Haas Grotesk Display Pro 76 Bold Italic
+font-family: "neue-haas-grotesk-display", sans-serif;
+font-weight: 700;
+font-style: italic;
+
+Neue Haas Grotesk Display Pro 95 Black
+font-family: "neue-haas-grotesk-display", sans-serif;
+font-weight: 900;
+font-style: normal;
+
+Neue Haas Grotesk Text Pro 55 Roman
+font-family: "neue-haas-grotesk-text", sans-serif;
+font-weight: 400;
+font-style: normal;
+
+Neue Haas Grotesk Text Pro 56 Italic
+font-family: "neue-haas-grotesk-text", sans-serif;
+font-weight: 400;
+font-style: italic;
+
+Neue Haas Grotesk Text Pro 75 Bold
+font-family: "neue-haas-grotesk-text", sans-serif;
+font-weight: 700;
+font-style: normal;
+
+Neue Haas Grotesk Text Pro 76 Bold Italic
+font-family: "neue-haas-grotesk-text", sans-serif;
+font-weight: 700;
+font-style: italic; */
 
 /* Animations */
 @keyframes slow-wiggle {
