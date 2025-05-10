@@ -1,3 +1,4 @@
+import Button from "../button_components/Button";
 export default function designsystem() {
   return (
     <div className="mx-s md:mx-6xl">
@@ -185,6 +186,11 @@ export default function designsystem() {
           <p>9xl</p>
         </div>
       </article>
+      <h2>Buttons</h2>
+      <Button variant="primary">Primary</Button>
+      <Button variant="secondary">Secondary</Button>
+      <Button variant="forms">Forms</Button>
+      <Button variant="cta">Cta</Button>
     </div>
   );
 }
