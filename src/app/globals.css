@@ -12,7 +12,8 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-
+  --font-bebas: "Bebas Neue", "sans-serif";
+  --font-neue: "neue-haas-grotesk-display", sans-serif;
   /* colors */
 
   /* primary */
@@ -72,6 +73,12 @@
   --spacing-7xl: 112px;
   --spacing-8xl: 120px;
   --spacing-9xl: 128px;
+
+  --font-weight-thin: 200;
+  --font-weight-light: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-bold: 900;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -84,14 +91,50 @@ h1 {
   font-family: "Bebas Neue", sans-serif;
   font-weight: 400;
   font-style: normal;
+  @apply font-bebas;
+>>>>>>> navigation
   line-height: 77%;
   letter-spacing: -1%;
+  @apply md:text-headline1-desktop;
+  @apply text-headline1-mobile;
+  @apply font-light;
+}
+
+h2 {
+  @apply font-neue;
+  @apply text-headline2-mobile;
+  @apply md:text-headline2-desktop;
+  @apply italic;
+  @apply font-bold;
+}
+h3 {
+  @apply text-headline3-mobile;
+  @apply md:text-headline3-desktop;
+  @apply font-black;
+}
+h4 {
+  @apply text-headline3-mobile;
+  @apply md:text-headline3-desktop;
+  @apply font-bold;
+}
+h2,
+h3,
+h4 {
+  @apply uppercase;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+<<<<<<< HEAD
   /* font-family: Arial, Helvetica, sans-serif; */
+=======
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  @apply font-neue;
+  @apply font-light;
+  @apply text-body-normal-mobile;
+  @apply md:text-body-normal-desktop;
+>>>>>>> navigation
 }
 
 /*   font-family: "Bebas Neue", sans-serif;

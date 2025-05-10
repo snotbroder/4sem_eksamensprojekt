@@ -1,34 +1,27 @@
-import Heading1 from "../designsystem_components/Heading1";
-import Heading2 from "../designsystem_components/Heading2";
-import Heading3 from "../designsystem_components/Heading3";
-import Heading4 from "../designsystem_components/Heading4";
-import Body from "../designsystem_components/Body";
-
 export default function designsystem() {
   return (
     <div className="mx-s md:mx-6xl">
-      <Heading2>designsystem</Heading2>
+      <h2>designsystem</h2>
       {/* headings */}
-      <Heading2>Headings</Heading2>
-      <Heading1>h1</Heading1>
-      <Heading2>Heading2</Heading2>
-      <Heading3>Heading3</Heading3>
-      <Heading4>Heading4</Heading4>
-      <Body>
-        {" "}
-        Bodytext - Regular Lorem ipsum dolor sit amet, consectetur adipiscing
+      <h2>Headings</h2>
+      <h1>heading1</h1>
+      <h2>heading2</h2>
+      <h3>heading3</h3>
+      <h4>heading4</h4>
+      <p>
+        Body text - Regular Lorem ipsum dolor sit amet, consectetur adipiscing
         elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
         ut aliquip ex ea commodo consequat. Duis aute irure dolor in
         reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
         pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
         qui officia deserunt mollit anim id est laborum.
-      </Body>
+      </p>
 
       {/* colours */}
-      <Heading2> Colours</Heading2>
+      <h2> Colours</h2>
       {/* primary */}
-      <Heading3>primary</Heading3>
+      <h3>primary</h3>
       <article className="flex flex-wrap gap-xs">
         <div className="text-center">
           <div className="h-xl w-xl bg-primary-200"></div>
@@ -60,7 +53,7 @@ export default function designsystem() {
         </div>
       </article>
       {/* secondary */}
-      <Heading3>secondary</Heading3>
+      <h3>secondary</h3>
       <article className="flex flex-wrap gap-xs">
         <div className="text-center">
           <div className="h-xl w-xl bg-secondary-200"></div>
@@ -92,7 +85,7 @@ export default function designsystem() {
         </div>
       </article>
       {/* neutral */}
-      <Heading3>Neutral</Heading3>
+      <h3>Neutral</h3>
       <article className="flex flex-wrap gap-xs">
         <div className="text-center">
           <div className="h-xl w-xl bg-beige "></div>
@@ -104,7 +97,7 @@ export default function designsystem() {
         </div>
       </article>
       {/* status */}
-      <Heading3>Status</Heading3>
+      <h3>Status</h3>
       <article className="flex flex-wrap gap-xs">
         <div className="text-center">
           <div className="h-xl w-xl bg-succes"></div>
@@ -125,7 +118,7 @@ export default function designsystem() {
       </article>
 
       {/* spacing */}
-      <Heading2> spacing</Heading2>
+      <h2> spacing</h2>
       <article className="flex flex-wrap gap-xs">
         <div className="text-center">
           <div className="h-xl w-xxs bg-primary-500"></div>
