@@ -112,8 +112,8 @@ h3 {
   @apply font-black;
 }
 h4 {
-  @apply text-headline3-mobile;
-  @apply md:text-headline3-desktop;
+  @apply text-headline4-mobile;
+  @apply md:text-headline4-desktop;
   @apply font-bold;
 }
 h2,
