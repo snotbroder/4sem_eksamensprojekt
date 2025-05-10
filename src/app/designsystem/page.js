@@ -2,9 +2,11 @@ import Button from "../button_components/Button";
 export default function designsystem() {
   return (
     <div className="mx-s md:mx-6xl">
-      <h2>designsystem</h2>
+      <h1 className="py-ml border-b border-darkbrown break-all">
+        designsystem
+      </h1>
       {/* headings */}
-      <h2>Headings</h2>
+      <h2 className="pt-ml">Headings</h2>
       <h1>heading1</h1>
       <h2>heading2</h2>
       <h3>heading3</h3>
