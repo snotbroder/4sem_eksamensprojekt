@@ -4,8 +4,48 @@ export default function About() {
   return (
     <div>
       <div>
-        <div className="md:grid md:grid-cols-2 md:gap-ml md:p-ml md:items-start">
-          <div className="mt-ml px-xs md:px-[0px] md:sticky md:top-[20%] md:self-start">
+        <div className=" px-s md:px-6xl grid gap-xs  md:grid-cols-2 md:items-start">
+          <div className=" md:order-2 ">
+            <article className=" relative h-[50vh] md:h-[150vh]">
+              <Image
+                src="/Image_bank/aboutus/fire.png"
+                alt="making food and it spews"
+                width={162}
+                height={250}
+                className="absolute -top-1 right-1/12"
+              />
+              <Image
+                src="/Image_bank/aboutus/interior2.png"
+                alt="discolight"
+                width={100}
+                height={200}
+                className="absolute top-1/12"
+              />
+              <Image
+                src="/Image_bank/aboutus/food1.png"
+                alt="discolight"
+                width={162}
+                height={227}
+                className="absolute bottom-0"
+              />
+
+              <Image
+                src="/Image_bank/aboutus/team2.png"
+                alt="discolight"
+                width={162}
+                height={227}
+                className="absolute bottom-0 right-0"
+              />
+              <Image
+                src="/Image_bank/aboutus/lamarrules.svg"
+                alt="lamar rules"
+                width={209}
+                height={246}
+                className="w-2/4 absolute left-1/2 top-1/2 translate-[-50%]"
+              />
+            </article>
+          </div>
+          <div className=" md:order-1 md:sticky md:top-[15%] md:self-start">
             <h1>
               About <br></br>lamar
             </h1>
@@ -16,36 +56,12 @@ export default function About() {
               Lamar is the third of our sister restaurants, where we focus on
               city life and partying. The decor is a tribute to the chaotic, raw
               and imperfect and a way to make Vesterbro less polished.
-              <br></br> <br></br>Here, it is the ingredients and inspiration
-              that dictate the menu. Our food is unpretentious and there are no
-              rules in the kitchen. The foundation of the kitchen is somewhere
-              in Southern Europe in terms of ingredients and methods of worship,
-              where we often take inspiration from the Middle East and Asia. For
-              us, it doesn't matter where the food comes from, as long as it
-              tastes good. Therefore, there is no real framework for what
-              cuisine we are. We serve a whole lot of wine, shots, cheeky
-              cocktails and cold beers.
+              <br></br> Our food is unpretentious and there are no rules in the
+              kitchen. For us, it doesn't matter where the food comes from, as
+              long as it tastes good. Therefore, it is the ingredients and
+              inspiration that dictate the menu. We serve a whole lot of wine,
+              shots, cheeky cocktails and cold beers.
             </p>
-          </div>
-          <div className="flex flex-col md:gap-ml">
-            <Image
-              src="/Image_bank/aboutus/interior2.png"
-              alt="discolight"
-              width={162}
-              height={227}
-            />
-            <Image
-              src="/Image_bank/aboutus/interior2.png"
-              alt="discolight"
-              width={162}
-              height={227}
-            />
-            <Image
-              src="/Image_bank/aboutus/interior2.png"
-              alt="discolight"
-              width={162}
-              height={227}
-            />
           </div>
         </div>
       </div>
