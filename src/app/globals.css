@@ -81,12 +81,13 @@
   --font-weight-bold: 900;
 }
 
-@media (prefers-color-scheme: dark) {
+/* Darkmode */
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 h1 {
   font-family: "Bebas Neue", sans-serif;
   font-weight: 400;
@@ -143,6 +144,8 @@ p {
   font-style: normal;
   color: var(--color-darkbrown);
 }
+
+/* Fonts */
 /* Neue Haas Grotesk Display Pro 45 Light
 font-family: "neue-haas-grotesk-display", sans-serif;
 font-weight: 400;
