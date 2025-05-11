@@ -1,13 +1,19 @@
 import Image from "next/image";
+import { CiInstagram } from "react-icons/ci";
+import { PiSmileyLight } from "react-icons/pi";
 
 export default function Footer({}) {
   return (
     <footer className="bg-primary-500 grid grid-cols-2 ">
       <article className="ml-s md:ml-6xl py-s  grid gap-xs ">
         <div>
-          <div className="flex gap-xs">
-            <i></i>
-            <i></i>
+          <div className="flex gap-xxs">
+            <a href="https://www.instagram.com/restaurant_lamar/">
+              <CiInstagram className="w-s h-s md:w-sm md:h-sm fill-darkbrown hover:fill-beige" />
+            </a>
+            <a href="https://www.findsmiley.dk/1220927">
+              <PiSmileyLight className="w-s h-s   md:w-sm md:h-sm fill-darkbrown hover:fill-beige" />
+            </a>
           </div>
           <div>
             <h4>Adresse</h4>
