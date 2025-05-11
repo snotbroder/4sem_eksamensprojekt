@@ -1,22 +1,21 @@
 import Dashboard_header from "../dashboard_components/Dashboard_header";
 import Dashboard_navigation from "../dashboard_components/Dashboard_navigation";
 import "../globals.css";
-import { ClerkProvider, SignInButton, SignUpButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { ClerkProvider, SignInButton, SignedIn, SignedOut } from "@clerk/nextjs";
 
 export const metadata = {
-  title: "Dashboard",
+  title: "Lamar Dashboard",
   description: "Great food, great vibes",
 };
 
 export default function DashboardLayout({ children }) {
   return (
-    <ClerkProvider className="h-screen">
+    <ClerkProvider>
       <Dashboard_header />
-
       <SignedOut>
-        <h1>HEJSA</h1>
+        <h1>U r logged out</h1>
+        <p>please sign in :)</p>
         <SignInButton />
-        <SignUpButton />
       </SignedOut>
       <SignedIn>
         <div className="bg-white flex">
