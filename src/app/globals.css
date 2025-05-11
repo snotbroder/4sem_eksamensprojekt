@@ -95,7 +95,7 @@ h1 {
   line-height: 77%;
   letter-spacing: -1%;
   @apply text-headline1-mobile;
-  @apply md:text-headline1-desktop;
+  @apply lg:text-headline1-desktop;
   @apply font-light;
 }
 
