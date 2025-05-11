@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { getAllItems, deleteItem, editItem } from "../api.js";
 import { ToastContainer, toast } from "react-toastify";
+import Dashboard_menucard from "./Dashboard_menucard.jsx";
 
 function TestVisualizer() {
   const [menus, setMenus] = useState([]); //Laver et state for at "lagre" den fetchede data fra databasen
@@ -65,18 +66,28 @@ function TestVisualizer() {
 
     editItem(selectedMenu.uuid, "menu-database", updatedData);
 
+    toast.success("Successfully edited menu", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      theme: "light",
+    });
+    dialog.close();
     SetOpenEditmode(false);
   }
 
   return (
     <>
       <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick={false} rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="light" />
-      <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 gap-sm">
+      <ul className="flex flex-wrap gap-sm">
         {/* Looper hen over den fetchede data */}
         {menus.length > 0 ? (
           menus.map((menu) => (
             <li className="flex flex-col gap-xxs" key={menu.uuid} onClick={() => clickHandler(menu.uuid)}>
-              <h4>{menu.menuTitle}</h4> <p>{menu.course1}</p>
+              <Dashboard_menucard uuid={menu.uuid} menuTitle={menu.menuTitle} />
             </li>
           ))
         ) : (

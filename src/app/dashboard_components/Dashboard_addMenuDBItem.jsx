@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import { addItem } from "../api";
 import { ToastContainer, toast } from "react-toastify";
-function Dashboard_menuDBItem() {
+function Dashboard_addMenuDBItem() {
   const menuData = [
     {
       menuTitle: "",
@@ -88,4 +88,4 @@ function Dashboard_menuDBItem() {
   );
 }
 
-export default Dashboard_menuDBItem;
+export default Dashboard_addMenuDBItem;

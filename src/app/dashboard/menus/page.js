@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 import { storeSelectedNavigation } from "@/stores/storeSelectedNavigation";
 import Dashboard_pageName from "@/app/dashboard_components/Dashboard_pageName";
-import Dashboard_menuDBItem from "@/app/dashboard_components/Dashboard_menuDBItem";
+import Dashboard_addMenuDBItem from "@/app/dashboard_components/Dashboard_addMenuDBItem";
 import Dashboard_menuDBVisualiser from "@/app/dashboard_components/Dashboard_menuDBVisualiser";
 
 export default function menusPage() {
@@ -21,13 +21,13 @@ export default function menusPage() {
   return (
     <>
       <Dashboard_pageName text="menus" />
-      <section className="flex justify-between">
-        <p className="w-[400px]">Click on an existing menu to configure or delete the selected menu. Or create a new one using the button.</p>
+      <section className="flex justify-between ">
+        <p className="max-w-[400px] ">Click on an existing menu to configure or delete the selected menu. Or create a new one using the button.</p>
         <button className="border-gray-200 border-2 p-xxs " onClick={handleOpenAddMenu}>
           {openAddMenu ? "Back" : "Add new menu"}
         </button>
       </section>
-      {openAddMenu ? <Dashboard_menuDBItem /> : <Dashboard_menuDBVisualiser />}
+      {openAddMenu ? <Dashboard_addMenuDBItem /> : <Dashboard_menuDBVisualiser />}
     </>
   );
 }

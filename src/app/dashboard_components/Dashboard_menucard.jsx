@@ -1,14 +1,12 @@
 import Dashboard_tag from "./Dashboard_tag";
-function Dashboard_menucard() {
+function Dashboard_menucard({ menuTitle, uuid }) {
   var items = ["item1", "item2", "item3", "item4"];
 
   return (
-    <article className="bg-slate-100 w-[360px] h-auto p-sm rounded-md shadow-lg">
+    <article className="bg-gray-100 w-[360px] h-auto p-sm rounded-md shadow-lg ">
       <ul className="flex flex-col gap-s">
         <li className="flex gap-s items-center">
-          {/* Husk at fjerne text-size tailwindcss fra h1 element */}
-          <h1>Menu card</h1>
-          <h1>icon</h1>
+          <h4>{menuTitle}</h4>
         </li>
         <li className="w-full border-2 border-configure bg-configure">
           <button className="text-center p-xxs">Button text</button>
@@ -21,15 +19,18 @@ function Dashboard_menucard() {
             </li>
           ))
         ) : (
-          <p>Ingen menuer at vise(</p>
+          <p>Ingen menuer at vise</p>
         )}
-        <li className="flex gap-xs">
+        <li className="flex gap-xs flex-wrap">
           <Dashboard_tag content=""></Dashboard_tag>
           <Dashboard_tag content=""></Dashboard_tag>
+          <Dashboard_tag content={uuid}></Dashboard_tag>
         </li>
         <li>
           <article>
-            <p className="font-bold">Menu note</p>
+            <p>
+              <strong>Menu note</strong>
+            </p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, culpa.</p>
           </article>
         </li>
