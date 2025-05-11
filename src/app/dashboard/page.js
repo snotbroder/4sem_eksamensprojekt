@@ -1,9 +1,18 @@
 "use client";
+import { useEffect } from "react";
 import Dashboard_card from "../dashboard_components/Dashboard_card";
 import Dashboard_pageName from "../dashboard_components/Dashboard_pageName";
 import { SignIn, useUser } from "@clerk/nextjs";
+
+import { storeSelectedNavigation } from "@/stores/storeSelectedNavigation";
+
 export default function dashboard() {
   const { user } = useUser();
+  const setSelected = storeSelectedNavigation((state) => state.setStoreSelectedNavigation); // always called
+
+  useEffect(() => {
+    setSelected("home");
+  }, [setSelected]); // safe because this hook always runs now
 
   if (!user) return <SignIn />;
 
