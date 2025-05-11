@@ -233,7 +233,7 @@ export default function Footer() {
       {showMenu && (
         <div
           ref={menuRef}
-          className=" backdrop-blur-md fixed top-[88px] left-0 w-full lg:hidden grid gap-ml bg-[url('/Image_bank/illustrations/lamarbuilding-burgermenu.svg')] bg-cover bg-center z-[1000] border-b border-darkbrown "
+          className="  backdrop-blur-3xl fixed top-[88px] left-0 w-full lg:hidden grid gap-ml bg-[url('/Image_bank/illustrations/lamarbuilding-burgermenu.svg')] bg-cover bg-center z-[1000] border-b border-darkbrown "
         >
           <ul className="flex flex-col text-center pt-sm gap-xxs ">
             <li className="mx-auto">
