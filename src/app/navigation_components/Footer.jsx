@@ -5,7 +5,10 @@ export default function Footer({}) {
     <footer className="bg-primary-500 grid grid-cols-2 ">
       <article className="ml-s md:ml-6xl py-s  grid gap-xs ">
         <div>
-          <div></div>
+          <div className="flex gap-xs">
+            <i></i>
+            <i></i>
+          </div>
           <div>
             <h4>Adresse</h4>
             <p>
