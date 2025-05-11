@@ -1,7 +1,12 @@
+"use client";
 import Dashboard_card from "../dashboard_components/Dashboard_card";
 import Dashboard_pageName from "../dashboard_components/Dashboard_pageName";
-
+import { SignIn, useUser } from "@clerk/nextjs";
 export default function dashboard() {
+  const { user } = useUser();
+
+  if (!user) return <SignIn />;
+
   return (
     <>
       <Dashboard_pageName text="home" />
