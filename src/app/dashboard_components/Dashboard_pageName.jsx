@@ -1,8 +1,11 @@
 function Dashboard_pageName({ text }) {
   return (
-    <span className="flex overflow-clip pt-2 ">
-      <h1 className=" md:!text-[270px] mr-xxs">{text}</h1> <h1 className=" md:!text-[270px] text-stroke-1 text-stroke-red-500">{text}</h1>
-    </span>
+    <div className="flex overflow-hidden pt-2 gap-[-40px] md:gap-[-60px]">
+      <h1 className="md:!text-[270px] text-darkbrown">{text}</h1>
+      <h1 className="md:!text-[270px] stroke-text">{text}</h1>
+      <h1 className="md:!text-[270px] stroke-text">{text}</h1>
+      <h1 className="md:!text-[270px] stroke-text">{text}</h1>
+    </div>
   );
 }
 

@@ -200,3 +200,8 @@ font-style: italic; */
     margin-top: 0px;
   }
 }
+
+.stroke-text {
+  -webkit-text-stroke: 2px var(--color-darkbrown);
+  color: transparent;
+}
