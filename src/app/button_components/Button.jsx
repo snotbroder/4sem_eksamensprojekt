@@ -15,7 +15,7 @@ const Button = ({ variant = "primary", children, href = "/" }) => {
   };
 
   return (
-    <button onClick={clickHandle}>
+    <button>
       <Link
         className={`${buttonStyling} ${variantClasses[variant]}`}
         href={href}
