@@ -4,7 +4,7 @@ import { PiSmileyLight } from "react-icons/pi";
 
 export default function Footer({}) {
   return (
-    <footer className="bg-primary-500 grid grid-cols-2 ">
+    <footer className="bg-primary-500 grid grid-cols-2 z-10 relative">
       <article className="ml-s md:ml-6xl py-s  grid gap-xs ">
         <div>
           <div className="flex gap-xxs">
