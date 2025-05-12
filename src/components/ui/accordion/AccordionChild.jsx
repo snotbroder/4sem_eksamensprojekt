@@ -1,7 +1,7 @@
 "use client";
 import { IoAddSharp } from "react-icons/io5";
 import { useState } from "react";
-import IconComponent from "../../admin_components/IconComponent";
+import IconComponent from "@/components/ui/IconComponent";
 
 function AccordionChild({ head, copy }) {
   const [openAccordion, setOpenAccordion] = useState(false);

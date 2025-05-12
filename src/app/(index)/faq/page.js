@@ -1,5 +1,5 @@
 import Image from "next/image";
-import AccordionParent from "../admin_components/AccordionParent";
+import AccordionParent from "../../../components/ui/accordion/AccordionParent";
 import accordionContentFAQ from "/src/copy_content/accordionFAQ.js";
 
 export default function About() {
