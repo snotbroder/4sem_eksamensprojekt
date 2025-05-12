@@ -1,4 +1,3 @@
-import React from "react";
 import Link from "next/link";
 
 const Button = ({ variant = "primary", children, href = "/" }) => {
@@ -16,7 +15,7 @@ const Button = ({ variant = "primary", children, href = "/" }) => {
   };
 
   return (
-    <button>
+    <button onClick={clickHandle}>
       <Link
         className={`${buttonStyling} ${variantClasses[variant]}`}
         href={href}
