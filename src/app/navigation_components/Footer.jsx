@@ -1,11 +1,20 @@
 import Image from "next/image";
+import { CiInstagram } from "react-icons/ci";
+import { PiSmileyLight } from "react-icons/pi";
 
 export default function Footer({}) {
   return (
-    <footer className="bg-primary-500 grid grid-cols-2 md:grid-cols-3">
-      <article className="ml-s md:ml-6xl py-s  grid gap-xs md:col-span-2 ">
+    <footer className="bg-primary-500 grid grid-cols-2 ">
+      <article className="ml-s md:ml-6xl py-s  grid gap-xs ">
         <div>
-          <div></div>
+          <div className="flex gap-xxs">
+            <a href="https://www.instagram.com/restaurant_lamar/">
+              <CiInstagram className="w-s h-s md:w-sm md:h-sm fill-darkbrown hover:fill-beige" />
+            </a>
+            <a href="https://www.findsmiley.dk/1220927">
+              <PiSmileyLight className="w-s h-s   md:w-sm md:h-sm fill-darkbrown hover:fill-beige" />
+            </a>
+          </div>
           <div>
             <h4>Adresse</h4>
             <p>
@@ -13,11 +22,11 @@ export default function Footer({}) {
             </p>
           </div>
         </div>
-        <div className="grid md:grid-cols-2 gap-xs">
+        <div className="grid lg:flex gap-xs lg:gap-m">
           <div>
             <h4>Åbningstider</h4>
-            <div className="w-5/6 md:w-4/6">
-              <div className="flex justify-between">
+            <div className="w-fit ">
+              <div className="flex justify-between gap-xs">
                 <p>Mandag til torsdag</p>
                 <p className="">17-24</p>
               </div>
@@ -36,7 +45,7 @@ export default function Footer({}) {
           </div>
         </div>
       </article>
-      <article className=" bg-[url('/Image_bank/logo/logo-dark-90deg.svg')] bg-contain bg-no-repeat bg-bottom-right md:bg-[url('/Image_bank/logo/logo-dark.svg')] ">
+      <article className=" bg-[url('/Image_bank/logo/logo-dark-90deg.svg')] transition-all duration-300 ease-in-out bg-contain bg-no-repeat bg-bottom-right md:bg-[url('/Image_bank/logo/logo-dark.svg')] ">
         <div></div>
       </article>
     </footer>
