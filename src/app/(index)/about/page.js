@@ -4,7 +4,7 @@ export default function About() {
   return (
     <div>
       <div>
-        <div className=" px-s lg:px-6xl grid gap-xs  lg:grid-cols-2 lg:items-start">
+        <div className=" mt-[10vh]  px-s lg:px-6xl grid gap-xs  lg:grid-cols-2 lg:items-start">
           <div className=" lg:order-2 ">
             <article className=" relative h-[50vh] lg:h-[150vh]">
               <Image
