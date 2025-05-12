@@ -1,6 +1,6 @@
 "use client";
 import { storeSelectedNavigation } from "@/stores/storeSelectedNavigation";
-import Dashboard_navchild from "./Dashboard-navchild";
+import Dashboard_navchild from "./Dashboard_navchild";
 
 function Dashboard_navigation() {
   const selectedNavigation = storeSelectedNavigation((state) => state.selectedNavigation);

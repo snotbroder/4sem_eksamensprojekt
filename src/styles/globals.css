@@ -227,3 +227,16 @@ font-style: italic; */
     transform: translateX(0px);
   }
 }
+
+label + input {
+  @apply border border-gray-300 rounded p-1 w-full;
+}
+input {
+  margin-top: var(--spacing-xxs);
+}
+article label {
+  font-weight: 600;
+}
+input:invalid {
+  @apply border-danger bg-red-100;
+}

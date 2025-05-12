@@ -11,7 +11,8 @@ export default function menusPage() {
 
   useEffect(() => {
     setSelected("menus");
-  }, [setSelected]); // safe because this hook always runs now
+  }, []); //Sæt navmenu selected state
+  // setSelected <<< used to be in useEffect bracket
   const [openAddMenu, setOpenAddMenu] = useState(false);
 
   function handleOpenAddMenu() {
