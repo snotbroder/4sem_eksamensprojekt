@@ -1,9 +1,9 @@
-import Test from "../admin_components/Test";
-import TestVisualizer from "../admin_components/TestVisualizer";
+// import Test from "@/app/admin_components/Test";
+// import TestVisualizer from "../admin_components/TestVisualizer";
 import Section_text_and_image from "../../../components/layout/Section_text_and_image";
 import Section_text_background_and_images from "../../../components/layout/Section_text_background_and_images";
 import Section_breakup_w_component from "../../../components/layout/Section_breakup_w_component";
-import TestComponent from "../admin_components/TestComponent";
+import TestComponent from "@/components/testing/TestComponent";
 import Dashboard_card from "../../../components/dashboard/Dashboard_card";
 import Dashboard_menucard from "../../../components/dashboard/Dashboard_menucard";
 import AccordionParent from "../../../components/ui/accordion/AccordionParent";
