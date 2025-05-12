@@ -4,48 +4,48 @@ export default function About() {
   return (
     <div>
       <div>
-        <div className=" px-s md:px-6xl grid gap-xs  md:grid-cols-2 md:items-start">
-          <div className=" md:order-2 ">
-            <article className=" relative h-[50vh] md:h-[150vh]">
+        <div className=" px-s lg:px-6xl grid gap-xs  lg:grid-cols-2 lg:items-start">
+          <div className=" lg:order-2 ">
+            <article className=" relative h-[50vh] lg:h-[150vh]">
               <Image
                 src="/Image_bank/aboutus/fire.png"
                 alt="making food and it spews"
                 width={162}
                 height={250}
-                className="absolute -top-1 right-1/12"
+                className="absolute -top-1 right-0"
               />
               <Image
                 src="/Image_bank/aboutus/interior2.png"
                 alt="discolight"
                 width={100}
                 height={200}
-                className="absolute top-1/12"
+                className="absolute top-1/4 left-1/4 translate-[-50%]"
               />
               <Image
                 src="/Image_bank/aboutus/food1.png"
                 alt="discolight"
-                width={162}
-                height={227}
+                width={132}
+                height={200}
                 className="absolute bottom-0"
               />
 
               <Image
-                src="/Image_bank/aboutus/team2.png"
+                src="/Image_bank/aboutus/team1.png"
                 alt="discolight"
-                width={162}
-                height={227}
-                className="absolute bottom-0 right-0"
+                width={122}
+                height={207}
+                className="absolute bottom-xs right-1/4 translate-x-[50%]"
               />
               <Image
                 src="/Image_bank/aboutus/lamarrules.svg"
                 alt="lamar rules"
                 width={209}
                 height={246}
-                className="w-2/4 absolute left-1/2 top-1/2 translate-[-50%]"
+                className=" absolute left-1/2 top-1/2 translate-[-50%]"
               />
             </article>
           </div>
-          <div className=" md:order-1 md:sticky md:top-[15%] md:self-start">
+          <div className=" lg:order-1 lg:sticky lg:top-[15%] lg:self-start">
             <h1>
               About <br></br>lamar
             </h1>
