@@ -1,4 +1,4 @@
-import Button from "../button_components/Button";
+import Button from "../../../components/ui/buttons/Button";
 export default function designsystem() {
   return (
     <div className="mx-s md:mx-6xl grid gap-ml py-xl overflow-hidden">
@@ -11,15 +11,7 @@ export default function designsystem() {
         <h2>heading2</h2>
         <h3>heading3</h3>
         <h4>heading4</h4>
-        <p>
-          Body text - Regular Lorem ipsum dolor sit amet, consectetur adipiscing
-          elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-          aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-          laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-          in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+        <p>Body text - Regular Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </article>
 
       {/* colours */}

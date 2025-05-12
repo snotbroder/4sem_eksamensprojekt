@@ -1,7 +1,7 @@
 "use client";
 import { useEffect } from "react";
-import Dashboard_card from "../dashboard_components/Dashboard_card";
-import Dashboard_pageName from "../dashboard_components/Dashboard_pageName";
+import Dashboard_card from "../../components/dashboard/Dashboard_card";
+import Dashboard_pageName from "../../components/dashboard/Dashboard_pageName";
 import { SignIn, useUser } from "@clerk/nextjs";
 
 import { storeSelectedNavigation } from "@/stores/storeSelectedNavigation";

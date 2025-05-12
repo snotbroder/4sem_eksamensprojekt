@@ -2,9 +2,9 @@
 import { useEffect, useState } from "react";
 
 import { storeSelectedNavigation } from "@/stores/storeSelectedNavigation";
-import Dashboard_pageName from "@/app/dashboard_components/Dashboard_pageName";
-import Dashboard_addMenuDBItem from "@/app/dashboard_components/Dashboard_addMenuDBItem";
-import Dashboard_menuDBVisualiser from "@/app/dashboard_components/Dashboard_menuDBVisualiser";
+import Dashboard_pageName from "@/components/dashboard/Dashboard_pageName";
+import Dashboard_addMenuDBItem from "@/components/dashboard/Dashboard_addMenuDBItem";
+import Dashboard_menuDBVisualiser from "@/components/dashboard/Dashboard_menuDBVisualiser";
 
 export default function menusPage() {
   const setSelected = storeSelectedNavigation((state) => state.setStoreSelectedNavigation); // always called

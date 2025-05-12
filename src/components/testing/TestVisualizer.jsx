@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { getAllItems, deleteItem, editItem } from "../api.js";
 import { useStoreTest } from "@/stores/useStoreTest";
-import Toast from "./Toast";
+import Toast from "./Toast.js";
 
 function TestVisualizer() {
   const [menus, setMenus] = useState([]); //Laver et state for at "lagre" den fetchede data fra databasen

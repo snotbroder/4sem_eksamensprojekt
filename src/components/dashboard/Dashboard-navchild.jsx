@@ -1,4 +1,4 @@
-import IconComponent from "../admin_components/IconComponent";
+import IconComponent from "../ui/IconComponent";
 
 function Dashboard_navchild({ head, icon, destination, selected }) {
   return (

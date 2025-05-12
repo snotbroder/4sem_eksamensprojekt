@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-import { addItem } from "../api";
+import { addItem } from "../../app/api";
 import { ToastContainer, toast } from "react-toastify";
 function Dashboard_addMenuDBItem() {
   const menuData = [

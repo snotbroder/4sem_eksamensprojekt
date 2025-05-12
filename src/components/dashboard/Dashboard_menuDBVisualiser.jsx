@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getAllItems, deleteItem, editItem } from "../api.js";
+import { getAllItems, deleteItem, editItem } from "../../app/api.js";
 import { ToastContainer, toast } from "react-toastify";
 import Dashboard_menucard from "./Dashboard_menucard.jsx";
 
