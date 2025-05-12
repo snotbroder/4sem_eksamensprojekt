@@ -159,7 +159,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <div className="border-b border-darkbrown backdrop-blur-2xl fixed w-full top-0 z-[1000] bg-[url('/Image_bank/illustrations/layerblur.png')] bg-cover bg-center">
+    <div className="border-b border-darkbrown backdrop-blur-md fixed w-full top-0 z-[1000] bg-[url('/Image_bank/illustrations/layerblur.png')] bg-cover bg-center">
       <nav className="flex flex-row justify-between px-s lg:px-6xl self-center py-xs">
         {/* Logo */}
         <a href="/">
