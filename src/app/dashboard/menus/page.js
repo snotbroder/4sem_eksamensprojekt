@@ -27,7 +27,13 @@ export default function menusPage() {
           {openAddMenu ? "Back" : "Add new menu"}
         </button>
       </section>
-      {openAddMenu ? <Dashboard_addMenuDBItem /> : <Dashboard_menuDBVisualiser />}
+      {openAddMenu ? (
+        <div className="slideIn">
+          <Dashboard_addMenuDBItem />
+        </div>
+      ) : (
+        <Dashboard_menuDBVisualiser />
+      )}
     </>
   );
 }

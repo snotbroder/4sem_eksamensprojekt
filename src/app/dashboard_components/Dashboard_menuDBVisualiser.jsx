@@ -82,12 +82,12 @@ function TestVisualizer() {
   return (
     <>
       <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick={false} rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="light" />
-      <ul className="flex flex-wrap gap-sm">
+      <ul className="flex flex-wrap gap-sm my-s">
         {/* Looper hen over den fetchede data */}
         {menus.length > 0 ? (
           menus.map((menu) => (
             <li className="flex flex-col gap-xxs" key={menu.uuid} onClick={() => clickHandler(menu.uuid)}>
-              <Dashboard_menucard uuid={menu.uuid} menuTitle={menu.menuTitle} />
+              <Dashboard_menucard menuData={menu} />
             </li>
           ))
         ) : (

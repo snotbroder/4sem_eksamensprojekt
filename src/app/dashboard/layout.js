@@ -22,7 +22,7 @@ export default function DashboardLayout({ children }) {
         <SignedIn>
           <div className="bg-white flex min-h-screen">
             <Dashboard_navigation />
-            <main className="flex-grow overflow-auto m-sm ml-8xl mt-8xl min-h-screen">{children}</main>
+            <main className="flex-grow overflow-auto m-sm md:ml-8xl mt-3xl md:mt-8xl min-h-screen">{children}</main>
           </div>
         </SignedIn>
       </ClerkProvider>
