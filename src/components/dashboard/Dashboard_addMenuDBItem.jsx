@@ -107,12 +107,12 @@ function Dashboard_addMenuDBItem() {
           <input name="price" id="price" value={menu[0].price} onChange={handleChange}></input>
           <div className="flex flex-col">
             <label htmlFor="bgColor">Background color</label>
-            <select name="bgColor" id="bgColor" value={menu[0].bgColor} onChange={handleChange}>
-              <option>Primary-200</option>
-              <option>Primary-400</option>
-              <option>Secondary-200</option>
-              <option>Secondary-400</option>
-              <option>Secondary-500</option>
+            <select className="capitalize" name="bgColor" id="bgColor" value={menu[0].bgColor} onChange={handleChange}>
+              <option>primary-200</option>
+              <option>primary-400</option>
+              <option>secondary-200</option>
+              <option>secondary-400</option>
+              <option>secondary-500</option>
             </select>
           </div>
           <label htmlFor="menuNote">Menu note</label>

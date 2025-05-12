@@ -26,6 +26,7 @@ function Dashboard_menucard({ menuData, uuid }) {
           <Dashboard_tag content={`${menuData.price},-`}></Dashboard_tag>
           <Dashboard_tag content={`${courseKeys.length} ${courseKeys.length == 1 ? "course" : "courses"}`}></Dashboard_tag>
           <Dashboard_tag content={menuData.uuid}></Dashboard_tag>
+          <Dashboard_tag bgColor={menuData.bgColor} content={menuData.bgColor}></Dashboard_tag>
         </li>
         <li>
           <article>
