@@ -176,7 +176,7 @@ export default function Footer() {
           <li className="self-center">
             <a
               href="/menu"
-              className="navlink hover:border-b border-solid hover:border-darkbrown transition-all duration-200"
+              className="navlink  hover:underline decoration-1 underline-offset-4  transition-all duration-200"
             >
               Menu
             </a>
@@ -184,7 +184,7 @@ export default function Footer() {
           <li className="self-center">
             <a
               href="/about"
-              className="navlink hover:border-b border-solid hover:border-darkbrown transition-all duration-200"
+              className="navlink  hover:underline decoration-1 underline-offset-4  transition-all duration-200"
             >
               About
             </a>
@@ -192,7 +192,7 @@ export default function Footer() {
           <li className="self-center">
             <a
               href="/faq"
-              className="navlink hover:border-b border-solid hover:border-darkbrown transition-all duration-200"
+              className="navlink  hover:underline decoration-1 underline-offset-4  transition-all duration-200"
             >
               F.A.Q.
             </a>
