@@ -135,7 +135,11 @@ export default function Footer() {
   // Close on outside click
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target) && !burgerRef.current.contains(event.target)) {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        !burgerRef.current.contains(event.target)
+      ) {
         setShowMenu(false);
       }
     };
@@ -156,26 +160,40 @@ export default function Footer() {
 
   return (
     <div className="border-b border-darkbrown backdrop-blur-2xl sticky top-0 z-[1000] bg-[url('/Image_bank/illustrations/layerblur.png')] bg-cover bg-center">
-      <nav className="flex flex-row justify-between px-s md:px-6xl self-center py-xs">
+      <nav className="flex flex-row justify-between px-s lg:px-6xl self-center py-xs">
         {/* Logo */}
         <a href="/">
-          <Image src="/Image_bank/logo/logo-red.svg" alt="logo in red" width={157} height={55} />
+          <Image
+            src="/Image_bank/logo/logo-red.svg"
+            alt="logo in red"
+            width={157}
+            height={55}
+          />
         </a>
 
         {/* Desktop Menu */}
         <ul className="hidden lg:flex flex-row gap-8 self-center">
           <li className="self-center">
-            <a href="/menu" className="navlink  hover:underline decoration-1 underline-offset-4  transition-all duration-200">
+            <a
+              href="/menu"
+              className="navlink  hover:underline decoration-1 underline-offset-4  transition-all duration-200"
+            >
               Menu
             </a>
           </li>
           <li className="self-center">
-            <a href="/about" className="navlink  hover:underline decoration-1 underline-offset-4  transition-all duration-200">
+            <a
+              href="/about"
+              className="navlink  hover:underline decoration-1 underline-offset-4  transition-all duration-200"
+            >
               About
             </a>
           </li>
           <li className="self-center">
-            <a href="/faq" className="navlink  hover:underline decoration-1 underline-offset-4  transition-all duration-200">
+            <a
+              href="/faq"
+              className="navlink  hover:underline decoration-1 underline-offset-4  transition-all duration-200"
+            >
               F.A.Q.
             </a>
           </li>
@@ -183,21 +201,40 @@ export default function Footer() {
         </ul>
 
         {/* Burger Icon (Mobile) */}
-        <div ref={burgerRef} className="self-center lg:hidden p-2 cursor-pointer z-[1100]" onClick={() => setShowMenu(!showMenu)}>
+        <div
+          ref={burgerRef}
+          className="self-center lg:hidden p-2 cursor-pointer z-[1100]"
+          onClick={() => setShowMenu(!showMenu)}
+        >
           <div className="relative w-10 h-8">
             {/* Top */}
-            <span className={`absolute left-0 w-10 h-0.5 bg-primary-500 transition-transform duration-300 ${showMenu ? "rotate-45 top-3.5" : "top-0"}`} />
+            <span
+              className={`absolute left-0 w-10 h-0.5 bg-primary-500 transition-transform duration-300 ${
+                showMenu ? "rotate-45 top-3.5" : "top-0"
+              }`}
+            />
             {/* Middle */}
-            <span className={`absolute left-0 w-10 h-0.5 bg-primary-500 transition-opacity duration-300 ${showMenu ? "opacity-0" : "opacity-100 top-3.5"}`} />
+            <span
+              className={`absolute left-0 w-10 h-0.5 bg-primary-500 transition-opacity duration-300 ${
+                showMenu ? "opacity-0" : "opacity-100 top-3.5"
+              }`}
+            />
             {/* Bottom */}
-            <span className={`absolute left-0 w-10 h-0.5 bg-primary-500 transition-transform duration-300 ${showMenu ? "-rotate-45 top-3.5" : "top-7"}`} />
+            <span
+              className={`absolute left-0 w-10 h-0.5 bg-primary-500 transition-transform duration-300 ${
+                showMenu ? "-rotate-45 top-3.5" : "top-7"
+              }`}
+            />
           </div>
         </div>
       </nav>
 
       {/* Mobile Menu */}
       {showMenu && (
-        <div ref={menuRef} className="  backdrop-blur-3xl fixed top-[88px] left-0 w-full lg:hidden grid gap-ml bg-[url('/Image_bank/illustrations/lamarbuilding-burgermenu.svg')] bg-cover bg-center z-[1000] border-b border-darkbrown ">
+        <div
+          ref={menuRef}
+          className="  backdrop-blur-3xl fixed top-[88px] left-0 w-full lg:hidden grid gap-ml bg-[url('/Image_bank/illustrations/lamarbuilding-burgermenu.svg')] bg-cover bg-center z-[1000] border-b border-darkbrown "
+        >
           <ul className="flex flex-col text-center pt-sm gap-xxs ">
             <li className="mx-auto">
               <Button variant="cta">Book</Button>
