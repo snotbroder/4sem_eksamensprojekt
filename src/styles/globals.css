@@ -89,34 +89,42 @@
     --foreground: #ededed;
   }
 } */
+html {
+  scroll-behavior: smooth;
+}
 h1 {
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 400;
-  font-style: normal;
   @apply font-bebas;
   line-height: 77%;
   letter-spacing: -1%;
   @apply text-headline1-mobile;
   @apply lg:text-headline1-desktop;
   @apply font-light;
+  @apply transition-all;
+  @apply ease-in-out;
 }
 
 h2 {
   @apply font-neue;
   @apply text-headline2-mobile;
-  @apply md:text-headline2-desktop;
+  @apply lg:text-headline2-desktop;
   @apply italic;
   @apply font-bold;
+  @apply transition-all;
+  @apply ease-in-out;
 }
 h3 {
   @apply text-headline3-mobile;
-  @apply md:text-headline3-desktop;
+  @apply lg:text-headline3-desktop;
   @apply font-black;
+  @apply transition-all;
+  @apply ease-in-out;
 }
 h4 {
   @apply text-headline4-mobile;
-  @apply md:text-headline4-desktop;
+  @apply lg:text-headline4-desktop;
   @apply font-bold;
+  @apply transition-all;
+  @apply ease-in-out;
 }
 h2,
 h3,
@@ -136,7 +144,9 @@ body {
   @apply font-neue;
   @apply font-light;
   @apply text-body-normal-mobile;
-  @apply md:text-body-normal-desktop;
+  @apply lg:text-body-normal-desktop;
+  @apply transition-all;
+  @apply ease-in-out;
 }
 
 /*   font-family: "Bebas Neue", sans-serif;

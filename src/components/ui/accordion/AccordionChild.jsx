@@ -12,7 +12,7 @@ function AccordionChild({ head, copy }) {
   }
   return (
     <li
-      className="px-xxs border-t-2 border-darkbrown cursor-pointer p-xs"
+      className="px-xxs border-t-1 border-darkbrown cursor-pointer p-xs"
       onClick={handleClick}
     >
       <span className="flex justify-between items-center">
