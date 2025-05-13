@@ -6,6 +6,7 @@ import { FaHome } from "react-icons/fa";
 import { MdEventNote } from "react-icons/md";
 import { IoRestaurant } from "react-icons/io5";
 import { MdArrowBackIosNew } from "react-icons/md";
+import { MdEdit } from "react-icons/md";
 
 function IconComponent({ icon, size = "1.25rem", className = "" }) {
   const commonProps = {
@@ -29,6 +30,8 @@ function IconComponent({ icon, size = "1.25rem", className = "" }) {
       return <IoRestaurant {...commonProps} className={`text-darkbrown ${className}`} />;
     case "arrowback":
       return <MdArrowBackIosNew {...commonProps} className={`text-darkbrown ${className}`} />;
+    case "edit":
+      return <MdEdit {...commonProps} className={`text-darkbrown ${className}`} />;
     default:
       return null;
   }
