@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       {/* lå i body className: ${geistSans.variable} ${geistMono.variable} */}
 
-      <body className={`antialiased`} className="overflow-hidden">
+      <body className={`antialiased`}>
         <Navigationsmenu></Navigationsmenu>
         {children}
         <Footer></Footer>
