@@ -73,8 +73,8 @@ function Dashboard_addMenuDBItem() {
   }
 
   return (
-    <section className="bg-gray-100 p-m md:p-xl mt-s">
-      <h2>Tilføj menu</h2>
+    <section className="bg-gray-100 p-m md:p-xl mt-s rounded-md">
+      <h2>create a new menu</h2>
       {/* Jeg bruger onSubmit, da det er bedre for next.js. Desuden, hvis jeg ikke laver en arrowfunction,
        er det sværre at implementere manglende udfyldte indputfeldte osv.*/}
       <form onSubmit={sendData}>
@@ -84,7 +84,7 @@ function Dashboard_addMenuDBItem() {
               <label htmlFor="menuTitle" className="form-label">
                 Menu title*
               </label>
-              <input type="text" name="menuTitle" id="menuTitle" className="form-input" value={menu[0].menuTitle} onChange={handleChange} required></input>
+              <input type="text" name="menuTitle" id="menuTitle" className="form-input" value={menu[0].menuTitle} onChange={handleChange} required placeholder="E.g.: Fish season menu"></input>
             </div>
 
             {[...Array(courseCount)].map((_, index) => (
@@ -109,7 +109,7 @@ function Dashboard_addMenuDBItem() {
               <label className="form-label" htmlFor="menuNote">
                 Menu note
               </label>
-              <input type="text" name="menuNote" id="menuNote" className="form-input" value={menu[0].menuNote} onChange={handleChange}></input>
+              <input type="text" name="menuNote" id="menuNote" className="form-input" value={menu[0].menuNote} onChange={handleChange} placeholder="E.g.: This menu is also served pescetarian. . ."></input>
             </div>
             <div className="form-field">
               <label className="form-label" htmlFor="price">
