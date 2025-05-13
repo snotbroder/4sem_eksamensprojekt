@@ -5,7 +5,7 @@ function Dashboard_menucard({ menuData }) {
   //var items = ["item1", "item2", "item3", "item4"];
 
   return (
-    <article className="slideIn bg-gray-100 w-[300px] md:w-[360px] h-auto p-sm rounded-md shadow-lg group transition-all duration-100 hover:-mt-xxs hover:mb-xxs hover:cursor-pointer">
+    <article className="slideIn bg-gray-100 w-[300px] md:w-[360px] h-auto p-sm rounded-md shadow-lg group transition-all duration-100 hover:-mt-xxs hover:mb-xxs hover:cursor-pointer border-2 border-transparent  hover:border-configure">
       <ul className="flex flex-col gap-s">
         <li className="flex gap-xxs items-top">
           <h2>{menuData.menuTitle}</h2>

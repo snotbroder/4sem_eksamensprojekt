@@ -248,7 +248,7 @@ font-style: italic; */
 
   .form-input:invalid,
   select:invalid {
-    @apply border-red-500 bg-red-50;
+    @apply border-danger bg-danger/50;
   }
   .disabled-button {
     @apply bg-gray-300 text-gray-400;
