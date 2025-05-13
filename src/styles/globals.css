@@ -248,12 +248,27 @@ font-style: italic; */
 
   .form-input:invalid,
   select:invalid {
-    @apply border-danger bg-danger/50;
+    @apply border-danger bg-danger/5;
   }
   .disabled-button {
     @apply bg-gray-300 text-gray-400;
   }
   ::placeholder {
     @apply italic;
+  }
+}
+
+@layer base {
+  dialog {
+    @apply bg-[#F9F9F9] m-auto rounded-md border-2 border-configure md:w-[500px]  p-xs;
+  }
+  dialog::backdrop {
+    backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.206);
+  }
+
+  /* Fundet på reddit, det var smart */
+  body:has(dialog[open]) {
+    overflow: hidden;
   }
 }

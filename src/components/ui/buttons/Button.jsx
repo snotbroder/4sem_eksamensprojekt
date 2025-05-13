@@ -1,6 +1,6 @@
 const Button = ({ variant = "primary", children, onClick, type = "button", disabled = "" }) => {
   // //definer den styling (Tailwind classes, der gør sig gældende for alle knapper)
-  const buttonStyling = " px-[30px] py-xxs flex items-center max-h-[34px] justify-center transition-all duration-100 uppercase hover:rounded-xs cursor-pointer";
+  const buttonStyling = " px-[30px] py-xxs flex items-center max-h-[34px] justify-center transition-all duration-100 uppercase hover:rounded-xs cursor-pointer text-darkbrown";
   // //definer den styling (Tailwind classes), der gør sig gældende for de forskellige varianter
   const variantClasses = {
     primary: "bg-secondary-500  border border-secondary-500 hover:bg-transparent ",

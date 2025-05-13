@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { getAllItems, deleteItem, editItem } from "../../app/api.js";
 import { ToastContainer, toast } from "react-toastify";
 import Dashboard_menucard from "./Dashboard_menucard.jsx";
+import Button from "../ui/buttons/Button.jsx";
 
 function TestVisualizer() {
   const [menus, setMenus] = useState([]); //Laver et state for at "lagre" den fetchede data fra databasen
@@ -37,15 +38,7 @@ function TestVisualizer() {
     }
     dialog.close(); // Luk dialog
 
-    toast.success("Successfully deleted menu", {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: false,
-      pauseOnHover: true,
-      draggable: true,
-      theme: "light",
-    });
+    toast.success("Successfully deleted menu");
   }
 
   const [editMode, SetOpenEditmode] = useState(false);
@@ -57,31 +50,24 @@ function TestVisualizer() {
 
   function sendData(e) {
     e.preventDefault();
-    const updatedData = { menuTitle: editedMenu.menuTitle, course1: editedMenu.course1 };
+    const updatedData = { ...editedMenu }; // spread data
 
     if (!updatedData.menuTitle || !updatedData.course1) {
-      alert("Please fill data");
+      toast.error("Please fill data");
       return;
     }
 
     editItem(selectedMenu.uuid, "menu-database", updatedData);
-
-    toast.success("Successfully edited menu", {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: false,
-      pauseOnHover: true,
-      draggable: true,
-      theme: "light",
-    });
+    // Update local menus state
+    setMenus((prevMenus) => prevMenus.map((menu) => (menu.uuid === selectedMenu.uuid ? { ...menu, ...updatedData } : menu))); //sammenlign den gamle og opdaterede data, hvis der er ny opdateret data så ændr denne i localstate
+    toast.success("Successfully updated menu");
     dialog.close();
     SetOpenEditmode(false);
   }
 
   return (
     <>
-      <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick={false} rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="light" />
+      <ToastContainer position="top-right" autoClose={5000} pauseOnHover />
       <ul className="flex flex-wrap gap-sm my-s">
         {/* Looper hen over den fetchede data */}
         {menus.length > 0 ? (
@@ -94,42 +80,144 @@ function TestVisualizer() {
           <p className="animate-pulse">Loading menu...</p>
         )}
       </ul>
-      <dialog className="m-auto" id="dialog">
+      <dialog id="dialog">
         <div className="p-6 flex flex-col gap-4">
           {editMode ? (
-            <div className="flex flex-col gap-2">
-              <h3>
-                Editing menu <strong>{selectedMenu.menuTitle}</strong>
-              </h3>
-              <form className="flex flex-col" onSubmit={sendData}>
-                <label htmlFor="menuTitle">Menu Titel</label>
-                <input className="border-gray-200 border-2 w-60" name="menuTitle" id="menuTitle" value={editedMenu.menuTitle || ""} onChange={(e) => setEditedMenu({ ...editedMenu, menuTitle: e.target.value })}></input>
-                <label htmlFor="course1">Course 1 text</label>
-                <input className="border-gray-200 border-2 w-60" name="course1" id="course1" value={editedMenu.course1 || ""} onChange={(e) => setEditedMenu({ ...editedMenu, course1: e.target.value })}></input>
-                <button className="border-2 bg-green-300 hover:bg-green-400 mt-4" type="submit">
-                  Edit changes
-                </button>
+            <div className="flex flex-col gap-2 slideIn">
+              <header>
+                <p>
+                  <strong>Configuring</strong>
+                </p>
+                <h2>{selectedMenu ? selectedMenu.menuTitle : "Error: No menu selected"}</h2>
+              </header>
+              <form onSubmit={sendData}>
+                <div className="grid md:grid-cols-2 gap-xxs">
+                  <article>
+                    <div className="form-field">
+                      <label htmlFor="menuTitle" className="form-label">
+                        Menu title*
+                      </label>
+                      <input type="text" name="menuTitle" id="menuTitle" className="form-input" value={editedMenu.menuTitle} onChange={(e) => setEditedMenu({ ...editedMenu, menuTitle: e.target.value })}></input>
+                    </div>
+                    <div className="form-field">
+                      <label htmlFor="course1" className="form-label">
+                        Course 1*
+                      </label>
+                      <input type="text" name="course1" id="course1" className="form-input" value={editedMenu.course1} onChange={(e) => setEditedMenu({ ...editedMenu, course1: e.target.value })}></input>
+                    </div>
+                    <div className="form-field">
+                      <label htmlFor="course2" className="form-label">
+                        Course 2
+                      </label>
+                      <input type="text" name="course2" id="course2" className="form-input" value={editedMenu.course2} onChange={(e) => setEditedMenu({ ...editedMenu, course2: e.target.value })}></input>
+                    </div>
+                    <div className="form-field">
+                      <label htmlFor="course3" className="form-label">
+                        Course 3
+                      </label>
+                      <input type="text" name="course3" id="course3" className="form-input" value={editedMenu.course3} onChange={(e) => setEditedMenu({ ...editedMenu, course3: e.target.value })}></input>
+                    </div>
+                    <div className="form-field">
+                      <label htmlFor="course4" className="form-label">
+                        Course 4
+                      </label>
+                      <input type="text" name="course4" id="course4" className="form-input" value={editedMenu.course4} onChange={(e) => setEditedMenu({ ...editedMenu, course4: e.target.value })}></input>
+                    </div>
+                    <div className="form-field">
+                      <label htmlFor="course5" className="form-label">
+                        Course 5
+                      </label>
+                      <input type="text" name="course5" id="course5" className="form-input" value={editedMenu.course5} onChange={(e) => setEditedMenu({ ...editedMenu, course5: e.target.value })}></input>
+                    </div>
+                    <div className="flex flex-col form-field">
+                      <label htmlFor="bgColor" className="form-label">
+                        Background color*
+                      </label>
+                      <select className="capitalize form-select" name="bgColor" id="bgColor" value={editedMenu.bgColor} onChange={(e) => setEditedMenu({ ...editedMenu, bgColor: e.target.value })} required>
+                        <option></option>
+                        <option>primary-200</option>
+                        <option>primary-400</option>
+                        <option>secondary-200</option>
+                        <option>secondary-400</option>
+                        <option>secondary-500</option>
+                      </select>
+                    </div>
+                  </article>
+                  <article>
+                    <div className="form-field">
+                      <label htmlFor="course6" className="form-label">
+                        Course 6
+                      </label>
+                      <input type="text" name="course6" id="course6" className="form-input" value={editedMenu.course6} onChange={(e) => setEditedMenu({ ...editedMenu, course6: e.target.value })}></input>
+                    </div>
+                    <div className="form-field">
+                      <label htmlFor="course7" className="form-label">
+                        Course 7
+                      </label>
+                      <input type="text" name="course7" id="course7" className="form-input" value={editedMenu.course7} onChange={(e) => setEditedMenu({ ...editedMenu, course7: e.target.value })}></input>
+                    </div>
+                    <div className="form-field">
+                      <label htmlFor="course8" className="form-label">
+                        Course 8
+                      </label>
+                      <input type="text" name="course8" id="course8" className="form-input" value={editedMenu.course8} onChange={(e) => setEditedMenu({ ...editedMenu, course8: e.target.value })}></input>
+                    </div>
+                    <div className="form-field">
+                      <label htmlFor="course9" className="form-label">
+                        Course 9
+                      </label>
+                      <input type="text" name="course9" id="course9" className="form-input" value={editedMenu.course9} onChange={(e) => setEditedMenu({ ...editedMenu, course9: e.target.value })}></input>
+                    </div>
+                    <div className="form-field">
+                      <label htmlFor="course10" className="form-label">
+                        Course 10
+                      </label>
+                      <input type="text" name="course10" id="course10" className="form-input" value={editedMenu.course10} onChange={(e) => setEditedMenu({ ...editedMenu, course10: e.target.value })}></input>
+                    </div>
+                    <div className="form-field">
+                      <label htmlFor="menuNote" className="form-label">
+                        Menu note
+                      </label>
+                      <input type="text" name="menuNote" id="menuNote" className="form-input" value={editedMenu.menuNote} onChange={(e) => setEditedMenu({ ...editedMenu, menuNote: e.target.value })}></input>
+                    </div>
+                    <div className="form-field">
+                      <label htmlFor="price" className="form-label">
+                        Price
+                      </label>
+                      <input type="text" name="price" id="price" className="form-input" value={editedMenu.price} onChange={(e) => setEditedMenu({ ...editedMenu, price: e.target.value })}></input>
+                    </div>
+                  </article>
+                </div>
+                <p>*Required</p>
+                <Button variant="success" type="submit">
+                  save changes
+                </Button>
               </form>
 
-              <button className="bg-gray-300 hover:bg-gray-400" onClick={() => handleOpenEditmode()}>
-                Cancel edit
-              </button>
+              <Button variant="primary" onClick={() => handleOpenEditmode()}>
+                cancel edit
+              </Button>
             </div>
           ) : (
-            <div className="flex flex-col gap-2">
-              What u want?
-              <p>
-                Selected menu: <strong>{selectedMenu ? selectedMenu.menuTitle : "Error: No menu selected"}</strong>
-              </p>
-              <button className="bg-yellow-300 hover:bg-yellow-400" onClick={() => handleOpenEditmode()}>
-                Edit
-              </button>
-              <button className="bg-red-400 hover:bg-red-500" onClick={() => handleDelete()}>
-                <strong>Delete</strong>
-              </button>
-              <button className="bg-gray-300 hover:bg-gray-400" onClick={() => dialog.close()} autoFocus>
-                Close
-              </button>
+            <div className="flex flex-col gap-s">
+              <header>
+                <p>
+                  <strong>Configuring</strong>
+                </p>
+                <h2>{selectedMenu ? selectedMenu.menuTitle : "Error: No menu selected"}</h2>
+              </header>
+              <p>Choose an option.</p>
+              <footer className="flex flex-col gap-xxs">
+                <Button variant="configure" onClick={handleOpenEditmode}>
+                  configure content
+                </Button>
+                <Button variant="danger" onClick={handleDelete}>
+                  delete
+                </Button>
+                <Button variant="primary" onClick={() => dialog.close()}>
+                  Close
+                </Button>
+              </footer>
             </div>
           )}
         </div>
