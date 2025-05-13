@@ -59,7 +59,7 @@ function TestVisualizer() {
 
     editItem(selectedMenu.uuid, "menu-database", updatedData);
     // Update local menus state
-    setMenus((prevMenus) => prevMenus.map((menu) => (menu.uuid === selectedMenu.uuid ? { ...menu, ...updatedData } : menu))); //sammenlign den gamle og opdaterede data, hvis der er ny opdateret data så ændr denne i localstate
+    setMenus((prevMenus) => prevMenus.map((menu) => (menu.uuid === selectedMenu.uuid ? { ...menu, ...updatedData } : menu))); // tjek for samme uuid, ogsammenlign den gamle og opdaterede data, hvis der er ny opdateret data så ændr denne i localstate
     toast.success("Successfully updated menu");
     dialog.close();
     SetOpenEditmode(false);
@@ -81,7 +81,7 @@ function TestVisualizer() {
         )}
       </ul>
       <dialog id="dialog">
-        <div className="p-6 flex flex-col gap-4">
+        <div className="p-6 flex flex-col gap-4 slideIn">
           {editMode ? (
             <div className="flex flex-col gap-2 slideIn">
               <header>
