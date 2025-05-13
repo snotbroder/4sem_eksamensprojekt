@@ -2,6 +2,7 @@
 @import url("https://use.typekit.net/wyl2nbc.css");
 @import "tailwindcss";
 
+@tailwind utilities;
 :root {
   --background: #fffef1;
   --foreground: #3c1f1f;
@@ -39,7 +40,7 @@
   --color-darkbrown: #3c1f1f;
 
   /* status */
-  --color-succes: #81ff89;
+  --color-success: #81ff89;
   --color-cancel: #f4e046;
   --color-configure: #f3811d;
   --color-danger: #f54b4a;
@@ -228,15 +229,28 @@ font-style: italic; */
   }
 }
 
-label + input {
-  @apply border border-gray-300 rounded p-1 w-full;
-}
-input {
-  margin-top: var(--spacing-xxs);
-}
-article label {
-  font-weight: 600;
-}
-input:invalid {
-  @apply border-danger bg-red-100;
+@layer utilities {
+  .form-field {
+    @apply mb-s;
+  }
+
+  .form-label {
+    @apply block mb-xxs font-semibold;
+  }
+
+  .form-input {
+    @apply w-full border border-darkbrown p-xs rounded-sm h-sm;
+  }
+
+  .form-select {
+    @apply w-full border border-darkbrown p-xxs rounded-sm capitalize;
+  }
+
+  .form-input:invalid,
+  select:invalid {
+    @apply border-red-500 bg-red-50;
+  }
+  .disabled-button {
+    @apply bg-gray-300 text-gray-400;
+  }
 }

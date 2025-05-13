@@ -3,24 +3,21 @@ import { useState } from "react";
 
 import { addItem } from "../../app/api";
 import { ToastContainer, toast } from "react-toastify";
+import Button from "../ui/buttons/Button";
 function Dashboard_addMenuDBItem() {
-  const menuData = [
-    {
-      menuTitle: "",
-      course1: "",
-      course2: "",
-      course3: "",
-      course4: "",
-      course5: "",
-      course6: "",
-      course7: "",
-      price: "",
-      menuNote: "",
-      bgColor: "",
-    },
-  ];
+  const initialMenu = {
+    menuTitle: "",
+    price: "",
+    menuNote: "",
+    bgColor: "",
+  };
 
-  const [menu, setMenu] = useState(menuData);
+  // Add 10 course keys to initialMenu
+  for (let i = 1; i <= 10; i++) {
+    initialMenu[`course${i}`] = "";
+  }
+  const [menu, setMenu] = useState([initialMenu]);
+  const [courseCount, setCourseCount] = useState(1); //Start med to courses
 
   const handleChange = (e) => {
     //hent ændringen fra det ændrede inputfelt
@@ -37,6 +34,21 @@ function Dashboard_addMenuDBItem() {
     setMenu(updatedMenu);
     // setMenus(updatedMenu);
   };
+  const addCourseField = () => {
+    if (courseCount < 10) {
+      setCourseCount(courseCount + 1);
+    }
+    return;
+  };
+
+  const removeCourseField = () => {
+    if (courseCount > 1) {
+      const newMenu = { ...menu[0], [`course${courseCount}`]: "" };
+      setMenu([newMenu]);
+      setCourseCount(courseCount - 1);
+    }
+    return;
+  };
 
   function sendData(e) {
     e.preventDefault(); // For at stoppe siden reloades, ellers når den ikke at sende den opdaterede data/state med. den tømmer feltene når der reloades
@@ -47,35 +59,17 @@ function Dashboard_addMenuDBItem() {
 
     if (!data.menuTitle || !data.course1 || !data.price || !data.bgColor) {
       // Hvis IKKE alt er som det skal, opdater toast indhold og type
-      toast.error("Please fill all required inputs", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: false,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
+      toast.error("Please fill all required inputs");
 
       return;
     }
-    toast.success("Added new menu", {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: false,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-    });
+    toast.success("Added new menu");
 
     // Hvis alt går som det skal, opdater toast indhold og type
     addItem(data, "menu-database");
-
     //empty input fields
-    setMenu(menuData);
+    setMenu([initialMenu]);
+    setCourseCount(1);
   }
 
   return (
@@ -83,46 +77,76 @@ function Dashboard_addMenuDBItem() {
       <h2>Tilføj menu</h2>
       {/* Jeg bruger onSubmit, da det er bedre for next.js. Desuden, hvis jeg ikke laver en arrowfunction,
        er det sværre at implementere manglende udfyldte indputfeldte osv.*/}
-      <form className="grid grid-cols-2 gap-s md:gap-lg max-w-[1000px] mx-auto" onSubmit={sendData}>
-        <article>
-          <label htmlFor="menuTitle">Menu title</label>
-          <input name="menuTitle" id="menuTitle" value={menu[0].menuTitle} onChange={handleChange}></input>
-          <label htmlFor="course1">Course 1</label>
-          <input name="course1" id="course1" value={menu[0].course1} onChange={handleChange}></input>
-          <label htmlFor="course2">Course 2</label>
-          <input name="course2" id="course2" value={menu[0].course2} onChange={handleChange}></input>
-          <label htmlFor="course3">Course 3</label>
-          <input name="course3" id="course3" value={menu[0].course3} onChange={handleChange}></input>
-          <label htmlFor="course4">Course 4</label>
-          <input name="course4" id="course4" value={menu[0].course4} onChange={handleChange}></input>
-          <label htmlFor="course5">Course 5</label>
-          <input name="course5" id="course5" value={menu[0].course5} onChange={handleChange}></input>
-        </article>
-        <article>
-          <label htmlFor="course6">Course 6</label>
-          <input name="course6" id="course6" value={menu[0].course6} onChange={handleChange}></input>
-          <label htmlFor="course7">Course 7</label>
-          <input name="course7" id="course7" value={menu[0].course7} onChange={handleChange}></input>
-          <label htmlFor="price">Price</label>
-          <input name="price" id="price" value={menu[0].price} onChange={handleChange}></input>
-          <div className="flex flex-col">
-            <label htmlFor="bgColor">Background color</label>
-            <select className="capitalize" name="bgColor" id="bgColor" value={menu[0].bgColor} onChange={handleChange}>
-              <option>primary-200</option>
-              <option>primary-400</option>
-              <option>secondary-200</option>
-              <option>secondary-400</option>
-              <option>secondary-500</option>
-            </select>
-          </div>
-          <label htmlFor="menuNote">Menu note</label>
-          <input className="h-[25.2%]" name="menuNote" id="menuNote" value={menu[0].menuNote} onChange={handleChange}></input>
-        </article>
-        <button className="border-2 border-gray-300 rounded w-30" type="submit">
-          Submit
-        </button>
+      <form onSubmit={sendData}>
+        <section className="grid md:grid-cols-2 gap-s md:gap-lg max-w-[1000px]">
+          <article>
+            <div className="form-field">
+              <label htmlFor="menuTitle" className="form-label">
+                Menu title*
+              </label>
+              <input type="text" name="menuTitle" id="menuTitle" className="form-input" value={menu[0].menuTitle} onChange={handleChange} required></input>
+            </div>
+
+            {[...Array(courseCount)].map((_, index) => (
+              <div key={index} className="form-field">
+                <label htmlFor={`course${index + 1}`} className="form-label">
+                  {`Course ${index + 1}${index === 0 ? "*" : ""}`}
+                </label>
+                <input
+                  type="text"
+                  name={`course${index + 1}`}
+                  id={`course${index + 1}`}
+                  className="form-input"
+                  value={menu[0][`course${index + 1}`]}
+                  onChange={handleChange}
+                  required={index === 0} // only course1 is required
+                />
+              </div>
+            ))}
+          </article>
+          <article>
+            <div className="form-field">
+              <label className="form-label" htmlFor="menuNote">
+                Menu note
+              </label>
+              <input type="text" name="menuNote" id="menuNote" className="form-input" value={menu[0].menuNote} onChange={handleChange}></input>
+            </div>
+            <div className="form-field">
+              <label className="form-label" htmlFor="price">
+                Price*
+              </label>
+              <input type="number" name="price" id="price" className="form-input" value={menu[0].price} onChange={handleChange} required></input>
+            </div>
+            <div className="flex flex-col form-field">
+              <label htmlFor="bgColor" className="form-label">
+                Background color*
+              </label>
+              <select className="capitalize form-select" name="bgColor" id="bgColor" value={menu[0].bgColor} onChange={handleChange} required>
+                <option></option>
+                <option>primary-200</option>
+                <option>primary-400</option>
+                <option>secondary-200</option>
+                <option>secondary-400</option>
+                <option>secondary-500</option>
+              </select>
+            </div>
+          </article>
+        </section>
+        <p className="sm mb-xxs">*Required</p>
+        <div className="flex md:gap-lg my-xs">
+          <Button className="disabled-button" type="button" variant="configure" disabled={courseCount == 10} onClick={addCourseField}>
+            Add Course
+          </Button>
+          <Button type="button" variant="danger" disabled={courseCount <= 1} onClick={removeCourseField}>
+            Remove Last Course
+          </Button>
+        </div>
+
+        <Button variant="success" type="submit" disabled={!menu[0].menuTitle || !menu[0].course1 || !menu[0].price || !menu[0].bgColor}>
+          save new menu
+        </Button>
       </form>
-      <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick={false} rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="light" />
+      <ToastContainer position="top-right" autoClose={5000} pauseOnHover />
     </section>
   );
 }

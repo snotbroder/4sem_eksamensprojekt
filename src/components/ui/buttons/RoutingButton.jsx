@@ -1,6 +1,8 @@
-const Button = ({ variant = "primary", children, onClick, type = "button", disabled = "" }) => {
+import Link from "next/link";
+
+const RoutingButton = ({ variant = "primary", children, href = "/" }) => {
   // //definer den styling (Tailwind classes, der gør sig gældende for alle knapper)
-  const buttonStyling = " px-[30px] py-xxs flex items-center max-h-[34px] justify-center transition-all duration-100 uppercase hover:rounded-xs cursor-pointer";
+  const buttonStyling = " px-[30px] max-h-[34px] py-xxs flex items-center justify-center transition-all duration-100 uppercase hover:rounded-xs curso-pointer";
   // //definer den styling (Tailwind classes), der gør sig gældende for de forskellige varianter
   const variantClasses = {
     primary: "bg-secondary-500  border border-secondary-500 hover:bg-transparent ",
@@ -10,15 +12,13 @@ const Button = ({ variant = "primary", children, onClick, type = "button", disab
     configure: "border bg-configure border-configure hover:bg-transparent hover:border-darkbrown w-full",
     danger: "border bg-danger border-danger hover:bg-transparent hover:border-darkbrown w-full",
     success: "border bg-success border-success hover:bg-transparent hover:border-darkbrown w-full",
-    disabled: "border bg-gray-300 border-gray-400 w-full cursor-not-allowed opacity-70",
   };
-  const combinedStyles = `${buttonStyling} ${disabled ? variantClasses["disabled"] : variantClasses[variant]}`;
 
   return (
-    <button type={type} className={combinedStyles} onClick={onClick} disabled={disabled}>
+    <Link className={`${buttonStyling} ${variantClasses[variant]}`} href={href}>
       {children}
-    </button>
+    </Link>
   );
 };
 
-export default Button;
+export default RoutingButton;
