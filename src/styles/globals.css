@@ -281,4 +281,9 @@ font-style: italic; */
   body:has(dialog[open]) {
     overflow: hidden;
   }
+
+  .burgermenu-backdrop {
+    backdrop-filter: blur(30px);
+    background-color: rgba(0, 0, 0, 0.206);
+  }
 }
