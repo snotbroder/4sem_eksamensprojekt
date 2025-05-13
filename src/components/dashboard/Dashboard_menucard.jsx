@@ -5,7 +5,7 @@ function Dashboard_menucard({ menuData }) {
   //var items = ["item1", "item2", "item3", "item4"];
 
   return (
-    <article className="slideIn bg-gray-100 w-[300px] md:w-[360px] h-auto p-sm rounded-md shadow-lg group transition-all duration-100 hover:-mt-xxs hover:cursor-pointer">
+    <article className="slideIn bg-gray-100 w-[300px] md:w-[360px] h-auto p-sm rounded-md shadow-lg group transition-all duration-100 hover:-mt-xxs hover:mb-xxs hover:cursor-pointer">
       <ul className="flex flex-col gap-s">
         <li className="flex gap-xxs items-top">
           <h2>{menuData.menuTitle}</h2>
@@ -30,12 +30,18 @@ function Dashboard_menucard({ menuData }) {
           <Dashboard_tag content={`${courseKeys.length} ${courseKeys.length == 1 ? "course" : "courses"}`}></Dashboard_tag>
           <Dashboard_tag bgColor={menuData.bgColor} content={menuData.bgColor}></Dashboard_tag>
         </li>
-        {menuData.menuNote && (
+        {menuData.menuNote ? (
           <li>
             <p>
               <strong>Menu note</strong>
             </p>
             <p>{menuData.menuNote}</p>
+          </li>
+        ) : (
+          <li>
+            <p>
+              <strong>No menu note</strong>
+            </p>
           </li>
         )}
       </ul>
