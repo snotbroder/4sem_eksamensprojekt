@@ -4,7 +4,7 @@ import { FaArrowDown } from "react-icons/fa";
 export default function Home() {
   return (
     <div className="">
-      <section className="h-[100vh] lg:bg-[url('/Image_bank/repeatingtext/lamar_repeating_secondary500_herodesktop.svg'),_url('/Image_bank/bg-images/heroimage_index_desktop.png')] bg-[url('/Image_bank/repeatingtext/lamar_repeating_secondary500_heromobile.svg'),_url('/Image_bank/bg-images/heroimage_index_mobile.png')] bg-center   lg:bg-left-bottom bg-cover pt-[13vh] relative grid">
+      <section className="h-[100vh] lg:bg-[url('/Image_bank/repeatingtext/lamar_repeating_secondary500_herodesktop.svg'),_url('/Image_bank/bg-images/heroimage_index_desktop.webp')] bg-[url('/Image_bank/repeatingtext/lamar_repeating_secondary500_heromobile.svg'),_url('/Image_bank/bg-images/heroimage_index_mobile.webp')] bg-center   lg:bg-left-bottom bg-cover pt-[13vh] relative grid">
         <div className=" px-s py-xs lg:px-6xl h-full flex flex-col justify-between lg:h-fit  lg:justify-end lg:flex-row gap-xxs  ">
           <h4 className="text-right">
             Gl. Kongevej 27 <br /> 1610 København V
