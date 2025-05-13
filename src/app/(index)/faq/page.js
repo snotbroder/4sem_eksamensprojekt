@@ -2,7 +2,7 @@ import Image from "next/image";
 import AccordionParent from "../../../components/ui/accordion/AccordionParent";
 import accordionContentFAQ from "/src/copy_content/accordionFAQ.js";
 
-export default function About() {
+export default function Faq() {
   return (
     <div className="grid md:grid-cols-5">
       <div className="px-s md:px-6xl md:col-span-3 mt-[13vh]">
