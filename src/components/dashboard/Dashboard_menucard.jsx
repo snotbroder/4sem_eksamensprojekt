@@ -23,19 +23,19 @@ function Dashboard_menucard({ menuData, uuid }) {
           <p>Ingen items på menuen</p>
         )}
         <li className="flex gap-xs flex-wrap">
-          <Dashboard_tag content={`${menuData.price},-`}></Dashboard_tag>
+          <Dashboard_tag content={`Price: ${menuData.price},-`}></Dashboard_tag>
           <Dashboard_tag content={`${courseKeys.length} ${courseKeys.length == 1 ? "course" : "courses"}`}></Dashboard_tag>
-          <Dashboard_tag content={menuData.uuid}></Dashboard_tag>
+          {/* <Dashboard_tag content={menuData.uuid}></Dashboard_tag> */}
           <Dashboard_tag bgColor={menuData.bgColor} content={menuData.bgColor}></Dashboard_tag>
         </li>
-        <li>
-          <article>
+        {menuData.menuNote && (
+          <li>
             <p>
               <strong>Menu note</strong>
             </p>
             <p>{menuData.menuNote}</p>
-          </article>
-        </li>
+          </li>
+        )}
       </ul>
     </article>
   );
