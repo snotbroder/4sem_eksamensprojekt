@@ -1,5 +1,8 @@
 import Image from "next/image";
 import { FaArrowDown } from "react-icons/fa";
+import Section_text_and_image from "@/components/layout/Section_text_and_image";
+import Section_text_background_and_images from "@/components/layout/Section_text_background_and_images";
+import MyGif from "/public/Image_bank/gifs/foodandwine.gif";
 
 export default function Home() {
   return (
@@ -35,7 +38,19 @@ export default function Home() {
           <FaArrowDown className="self-center fill-beige size-s" />
         </a>
       </section>
-      <section id="menu"></section>
+      <section id="menu">
+        <Section_text_and_image
+          h1={"Menu"}
+          h2={"At lamar we make the decision for you"}
+          p={
+            "At Lamar the kitchen puts together the menu and it is served at a fresh pace. We care that the food tastes good, that’s our dishes change depending on the season. The menus has to be ordered for the whole table, and shared family-style."
+          }
+          btn_txt={"Read more"}
+          btn_href={"/menu"}
+          img={MyGif}
+        ></Section_text_and_image>
+      </section>
+      <Section_text_background_and_images></Section_text_background_and_images>
       <div className="flex flex-col text-green-400  ">
         <div className="m-auto mt-52 text-4xl">
           <h1 className="">PERIODT!</h1>
