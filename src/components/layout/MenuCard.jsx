@@ -1,7 +1,7 @@
 function MenuCard() {
   return (
-    <article className="bg-secondary-200 flex flex-col justify-between w-full m-xs p-s lg:m-ml  place-items-end">
-      <div className="w-full place-items-end grid gap-xxs">
+    <section className="bg-secondary-200 flex flex-col justify-between w-full m-xs p-s lg:m-ml  place-items-end">
+      <article className="w-full place-items-end grid gap-xxs">
         <hr className="w-full fill-darkbrown"></hr>
         <h2>Menu title</h2>
         <hr className="w-full fill-darkbrown"></hr>
@@ -10,8 +10,8 @@ function MenuCard() {
           <h3 className="price">xDKK</h3>
         </div>
         <p>note</p>
-      </div>
-      <div className="">
+      </article>
+      <article className="">
         <p>serving 1</p>
         <p>serving 2</p>
         <p>serving 3</p>
@@ -19,8 +19,8 @@ function MenuCard() {
         <p>serving 5</p>
         <p>serving 6</p>
         <p>serving 7</p>
-      </div>
-    </article>
+      </article>
+    </section>
   );
 }
 export default MenuCard;
