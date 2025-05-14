@@ -3,6 +3,7 @@ import { FaArrowDown } from "react-icons/fa";
 import Section_text_and_image from "@/components/layout/Section_text_and_image";
 import Section_text_background_and_images from "@/components/layout/Section_text_background_and_images";
 import MyGif from "/public/Image_bank/gifs/foodandwine.gif";
+import Animation from "@/components/aos/Animation";
 
 export default function Home() {
   return (
@@ -38,20 +39,41 @@ export default function Home() {
           <FaArrowDown className="self-center fill-beige size-s" />
         </a>
       </section>
-      <section id="menu" className=" mx-s md:mx-6xl">
+      <Animation>
+        <section
+          data-aos="fade-up"
+          duration="300"
+          id="menu"
+          className=" mx-s md:mx-6xl"
+        >
+          <Section_text_and_image
+            h1={"Menu"}
+            h2={"At lamar we make the decision for you"}
+            p={
+              "At Lamar the kitchen puts together the menu and it is served at a fresh pace. We care that the food tastes good, that’s our dishes change depending on the season. The menus has to be ordered for the whole table, and shared family-style."
+            }
+            btn_txt={"Read more"}
+            btn_href={"/menu"}
+            img={MyGif}
+            reversedOrderMobile={true}
+          ></Section_text_and_image>
+        </section>
+      </Animation>
+
+      <Section_text_background_and_images></Section_text_background_and_images>
+      <section className=" mx-s md:mx-6xl">
         <Section_text_and_image
-          h1={"Menu"}
-          h2={"At lamar we make the decision for you"}
+          h1={"About lamar"}
+          h2={"Big city vibe and sizzling party atmosphere"}
           p={
-            "At Lamar the kitchen puts together the menu and it is served at a fresh pace. We care that the food tastes good, that’s our dishes change depending on the season. The menus has to be ordered for the whole table, and shared family-style."
+            "At Lamar, time stands still when you walk in the door. Take a seat and let us sweep you off your feet with our delicious food and attentive service. Hip hop music, great wines, cheeky drinks and cold beers."
           }
           btn_txt={"Read more"}
-          btn_href={"/menu"}
+          btn_href={"/about"}
           img={MyGif}
-          reversedOrderMobile={true}
+          reversedOrder={true}
         ></Section_text_and_image>
       </section>
-      <Section_text_background_and_images></Section_text_background_and_images>
       <div className="flex flex-col text-green-400  ">
         <div className="m-auto mt-52 text-4xl">
           <h1 className="">PERIODT!</h1>
