@@ -8,6 +8,7 @@ function Section_text_and_image({
   btn_href,
   img,
   reversedOrder,
+  reversedOrderMobile,
 }) {
   return (
     <section
@@ -15,7 +16,11 @@ function Section_text_and_image({
         reversedOrder ? "md:[direction:rtl]" : ""
       }`}
     >
-      <article className={`flex flex-col w-auto  `}>
+      <article
+        className={`flex flex-col w-auto ${
+          reversedOrderMobile ? "order-2 md:order-none]" : ""
+        }`}
+      >
         <div
           className={`my-auto flex flex-col ${
             reversedOrder ? "md:[direction:ltr]" : ""
@@ -29,7 +34,7 @@ function Section_text_and_image({
           </div>
         </div>
       </article>
-      <article className=" w-fill h-fill aspect-square">
+      <article className="w-fill h-fill self-center">
         <div className="self-center ">
           <Image src={img} width={600} height={600} alt="Building"></Image>
         </div>

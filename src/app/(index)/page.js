@@ -38,7 +38,7 @@ export default function Home() {
           <FaArrowDown className="self-center fill-beige size-s" />
         </a>
       </section>
-      <section id="menu">
+      <section id="menu" className=" mx-s md:mx-6xl">
         <Section_text_and_image
           h1={"Menu"}
           h2={"At lamar we make the decision for you"}
@@ -48,6 +48,7 @@ export default function Home() {
           btn_txt={"Read more"}
           btn_href={"/menu"}
           img={MyGif}
+          reversedOrderMobile={true}
         ></Section_text_and_image>
       </section>
       <Section_text_background_and_images></Section_text_background_and_images>
