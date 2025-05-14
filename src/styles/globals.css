@@ -220,10 +220,13 @@ font-style: italic; */
 }
 
 .stroke-text {
-  -webkit-text-stroke: 2px var(--color-darkbrown);
+  -webkit-text-stroke: 1px var(--color-darkbrown);
   color: transparent;
 }
-
+.price {
+  @apply font-light;
+  @apply italic;
+}
 .slideIn {
   animation: slideInAnimation 0.7s;
 }
