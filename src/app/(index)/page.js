@@ -2,6 +2,7 @@ import Image from "next/image";
 import { FaArrowDown } from "react-icons/fa";
 import Section_text_and_image from "@/components/layout/Section_text_and_image";
 import Section_text_background_and_images2 from "@/components/layout/Section_text_background_and_images2";
+import Section_sister_restaurants from "@/components/layout/Section_sister_restaurants";
 import FoodAndWine_Gif from "/public/Image_bank/gifs/illustration-foodandwine.gif";
 import Facade_Gif from "/public/Image_bank/gifs/illustration-facade.gif";
 import Animation from "@/components/aos/Animation";
@@ -75,6 +76,7 @@ export default function Home() {
           reversedOrder={true}
         ></Section_text_and_image>
       </section>
+      <Section_sister_restaurants></Section_sister_restaurants>
       <div className="flex flex-col text-green-400  ">
         <div className="m-auto mt-52 text-4xl">
           <h1 className="">PERIODT!</h1>
