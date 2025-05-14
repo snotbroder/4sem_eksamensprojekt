@@ -12,7 +12,7 @@ function Section_text_and_image({
 }) {
   return (
     <section
-      className={`flex flex-col md:grid md:grid-cols-2 my-3xl md:gap-6xl  ${
+      className={`flex flex-col md:grid md:grid-cols-2 my-3xl gap-sm md:gap-6xl  ${
         reversedOrder ? "md:[direction:rtl]" : ""
       }`}
     >

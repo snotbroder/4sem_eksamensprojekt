@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { FaArrowDown } from "react-icons/fa";
 import Section_text_and_image from "@/components/layout/Section_text_and_image";
-import Section_text_background_and_images from "@/components/layout/Section_text_background_and_images";
-import MyGif from "/public/Image_bank/gifs/foodandwine.gif";
+import Section_text_background_and_images2 from "@/components/layout/Section_text_background_and_images2";
+import FoodAndWine_Gif from "/public/Image_bank/gifs/illustration-foodandwine.gif";
+import Facade_Gif from "/public/Image_bank/gifs/illustration-facade.gif";
 import Animation from "@/components/aos/Animation";
 
 export default function Home() {
@@ -54,13 +55,13 @@ export default function Home() {
             }
             btn_txt={"Read more"}
             btn_href={"/menu"}
-            img={MyGif}
+            img={FoodAndWine_Gif}
             reversedOrderMobile={true}
           ></Section_text_and_image>
         </section>
       </Animation>
 
-      <Section_text_background_and_images></Section_text_background_and_images>
+      <Section_text_background_and_images2></Section_text_background_and_images2>
       <section className=" mx-s md:mx-6xl">
         <Section_text_and_image
           h1={"About lamar"}
@@ -70,7 +71,7 @@ export default function Home() {
           }
           btn_txt={"Read more"}
           btn_href={"/about"}
-          img={MyGif}
+          img={Facade_Gif}
           reversedOrder={true}
         ></Section_text_and_image>
       </section>
