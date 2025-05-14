@@ -32,7 +32,7 @@ function AccordionChild({ head, copy }) {
       </span>
       <p
         className={`transition-all duration-200 ease-in-out overflow-hidden ${
-          openAccordion ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+          openAccordion ? "max-h-40 opacity-100" : "max-h-0 opacity-0 hidden "
         }`}
       >
         {copy}

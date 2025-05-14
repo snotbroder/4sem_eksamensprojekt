@@ -1,7 +1,7 @@
 var accordionContentFAQ = [
   {
     head: "Whaf I'm a party of more than 9 people?",
-    copy: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, consectetur.",
+    copy: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, consectetur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, consectetur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, consectetur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, consectetur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, consectetur.",
   },
   {
     head: "Looking for a job",
