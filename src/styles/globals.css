@@ -101,6 +101,7 @@ h1 {
   @apply font-light;
   @apply transition-all;
   @apply ease-in-out;
+  @apply py-xxs;
 }
 
 h2 {
@@ -111,6 +112,7 @@ h2 {
   @apply font-bold;
   @apply transition-all;
   @apply ease-in-out;
+  @apply py-xxs;
 }
 h3 {
   @apply text-headline3-mobile;
@@ -118,6 +120,7 @@ h3 {
   @apply font-black;
   @apply transition-all;
   @apply ease-in-out;
+  @apply py-xxs;
 }
 h4 {
   @apply text-headline4-mobile;
@@ -158,6 +161,7 @@ p {
   font-weight: 400;
   font-style: normal;
   color: var(--color-darkbrown);
+  @apply py-xxs;
 }
 
 /* Fonts */

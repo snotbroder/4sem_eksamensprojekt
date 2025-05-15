@@ -22,10 +22,18 @@ function Section_text_background_and_images() {
   }, []);
 
   return (
-    <section className="h-[30rem] bg-[url(/Image_bank/Lamar_repeating_backdrop_primary500.svg)] bg-bottom-left p-lg">
+    <section className="h-[30rem] bg-[url(/Image_bank/Lamar_repeating_backdrop_primary500.svg)] bg-bottom-left  p-lg">
       <article id="box" className="relative w-full p-xl h-full ">
         {images.map((image) => (
-          <Image key={image.id} src={image.src} alt="Atmospheric image" style={{ top: `${image.y}%`, left: `${image.x}%` }} width={150} height={150} className="absolute animate-[slow-wiggle_50s_ease_infinite] delay-150"></Image>
+          <Image
+            key={image.id}
+            src={image.src}
+            alt="Atmospheric image"
+            style={{ top: `${image.y}%`, left: `${image.x}%` }}
+            width={150}
+            height={150}
+            className="absolute animate-[slow-wiggle_50s_ease_infinite] delay-150"
+          ></Image>
         ))}
       </article>
     </section>
