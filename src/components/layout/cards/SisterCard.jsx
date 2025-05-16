@@ -9,11 +9,14 @@ function SisterCard({
   heading1_stroke,
   heading2_stroke,
   heading3_stroke,
+  selfend,
 }) {
   return (
-    <section className=" m-xs  relative w-2/3 lg:w-1/4">
+    <section
+      className={`relative w-2/3 lg:w-[30%] h-fit ${selfend ? "self-end" : ""}`}
+    >
       <article
-        className={`bg-${bgcolor} w-full h-full p-xs flex flex-col justify-between`}
+        className={`bg-${bgcolor} h-full lg:h-fit  p-xs flex flex-col justify-between`}
       >
         <div>
           <h2 className="sistercardheading text-center">{restaurant}</h2>
@@ -26,33 +29,33 @@ function SisterCard({
         >
           Read more
         </Link>
-      </article>
-      <article
-        className={`w-full h-full place-content-center bg-[url('/Image_bank/bg-images/sisterrestaurants/${restaurant}.webp')] bg-cover text-secondary-500 absolute z-10  flex top-0 left-0 hover:opacity-0 transition-all ease-in-out cursor-pointer`}
-      >
-        <div className="self-center ">
-          <h2
-            className={`sistercardheading ${
-              heading1_stroke ? "stroke-text" : ""
-            }`}
-          >
-            {restaurant}
-          </h2>
-          <h2
-            className={`sistercardheading ${
-              heading2_stroke ? "stroke-text" : ""
-            }`}
-          >
-            {restaurant}
-          </h2>
-          <h2
-            className={`sistercardheading ${
-              heading3_stroke ? "stroke-text" : ""
-            }`}
-          >
-            {restaurant}
-          </h2>
-        </div>
+        <article
+          className={`size-full place-content-center bg-[url('/Image_bank/bg-images/sisterrestaurants/${restaurant}.webp')] bg-cover text-secondary-500 absolute z-10  flex top-0 left-0 hover:opacity-0 transition-all ease-in-out cursor-pointer`}
+        >
+          <div className="self-center ">
+            <h2
+              className={`sistercardheading ${
+                heading1_stroke ? "stroke-text-secondary" : ""
+              }`}
+            >
+              {restaurant}
+            </h2>
+            <h2
+              className={`sistercardheading ${
+                heading2_stroke ? "stroke-text-secondary" : ""
+              }`}
+            >
+              {restaurant}
+            </h2>
+            <h2
+              className={`sistercardheading ${
+                heading3_stroke ? "stroke-text-secondary" : ""
+              }`}
+            >
+              {restaurant}
+            </h2>
+          </div>
+        </article>
       </article>
     </section>
   );

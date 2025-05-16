@@ -227,6 +227,11 @@ font-style: italic; */
   -webkit-text-stroke: 1px var(--color-darkbrown);
   color: transparent;
 }
+.stroke-text-secondary {
+  -webkit-text-stroke: 1px var(--color-secondary-500);
+  color: transparent;
+}
+
 .price {
   @apply font-light;
   @apply italic;
