@@ -43,11 +43,18 @@ function Section_text_background_and_images2() {
           className=" absolute left-1/2 top-1/2 translate-[-50%] lg:w-[300px] "
         />
         <Image
-          src="/Image_bank/repeatingtext/lamar_repeating_primary500.svg"
+          src="/Image_bank/repeatingtext/desktop/lamar_primary500.svg"
           alt="lamar rules"
           width={1280}
           height={694}
-          className=" relative -z-10  w-full  "
+          className="hidden md:block relative -z-10  w-full  "
+        />
+        <Image
+          src="/Image_bank/repeatingtext/mobile/lamar_primary500.svg"
+          alt="lamar rules"
+          width={393}
+          height={490}
+          className="md:hidden relative -z-10  w-full  "
         />
       </article>
     </section>
