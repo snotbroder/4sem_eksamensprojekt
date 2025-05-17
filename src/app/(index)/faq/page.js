@@ -4,8 +4,8 @@ import accordionContentFAQ from "/src/copy_content/accordionFAQ.js";
 
 export default function Faq() {
   return (
-    <div className="grid md:grid-cols-5">
-      <div className="px-s md:px-6xl md:col-span-3 mt-[13vh]">
+    <div className="grid md:grid-cols-5 ">
+      <div className="px-s md:px-6xl md:col-span-3 mt-[12vh] py-m">
         <h1>F.A.Q.</h1>
         <AccordionParent contentSource={accordionContentFAQ}></AccordionParent>
       </div>

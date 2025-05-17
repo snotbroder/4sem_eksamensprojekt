@@ -227,9 +227,22 @@ font-style: italic; */
   -webkit-text-stroke: 1px var(--color-darkbrown);
   color: transparent;
 }
+.stroke-text-secondary {
+  -webkit-text-stroke: 1px var(--color-secondary-500);
+  color: transparent;
+}
+
 .price {
   @apply font-light;
   @apply italic;
+}
+.sistercardheading {
+  @apply font-bebas;
+  font-size: 100px;
+  @apply font-normal;
+  @apply not-italic;
+  line-height: 77%;
+  letter-spacing: -1%;
 }
 .slideIn {
   animation: slideInAnimation 0.7s;
