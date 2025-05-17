@@ -13,10 +13,12 @@ function SisterCard({
 }) {
   return (
     <section
-      className={`relative w-2/3 lg:w-[30%] h-fit ${selfend ? "self-end" : ""}`}
+      className={`relative w-2/3 lg:w-[30%] h-[443px] ${
+        selfend ? "self-end" : ""
+      }`}
     >
       <article
-        className={`bg-${bgcolor} h-full lg:h-fit  p-xs flex flex-col justify-between`}
+        className={`bg-${bgcolor} h-full  p-xs flex flex-col justify-between`}
       >
         <div>
           <h2 className="sistercardheading text-center">{restaurant}</h2>
