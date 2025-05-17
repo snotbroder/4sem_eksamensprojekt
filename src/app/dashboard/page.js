@@ -26,10 +26,6 @@ export default function dashboard() {
         <Dashboard_card href="dashboard/bookings" btntxt="see bookings" head="bookings" icon="event" copy="See large groups planned to use the venue. Send emails or cancel the booking" />
         <Dashboard_card href="dashboard/newsletter" btntxt="send a newsletter" head="newsletter" icon="mail" copy="Send newsletters to subscribers. Notify about a new event or an updated season menu." />
       </section>
-      <RoutingButton variant="configure" href="/dashboard/menus">
-        Edit menus
-      </RoutingButton>
-      <Button>none</Button>
     </>
   );
 }
