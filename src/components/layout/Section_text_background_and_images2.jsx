@@ -32,7 +32,7 @@ function Section_text_background_and_images2() {
             style={{ top: `${image.y}%`, left: `${image.x}%` }}
             width={150}
             height={150}
-            className="absolute "
+            className="absolute lg:w-1/6 "
           ></Image>
         ))}
         <Image
