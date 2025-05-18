@@ -10,6 +10,8 @@ function Section_text_and_image({
   alt,
   reversedOrder,
   reversedOrderMobile,
+  aspectsquare,
+  addPaddingtoText,
 }) {
   return (
     <section
@@ -20,8 +22,9 @@ function Section_text_and_image({
       <article className="flex flex-col w-auto">
         <div
           className={`my-auto flex flex-col ${
-            reversedOrder ? "md:[direction:ltr]" : ""
-          }`}
+            addPaddingtoText ? "pr-sm md:pr-6xl" : ""
+          }
+          ${reversedOrder ? "md:[direction:ltr]" : ""}`}
         >
           <h1>{h1}</h1>
           <h2 className="border-y border-darkbrown ">{h2}</h2>
@@ -31,21 +34,16 @@ function Section_text_and_image({
           </div>
         </div>
       </article>
-      <article
-        className={`w-fill h-fill self-center ${
-          reversedOrderMobile ? "order-first md:order-last" : ""
-        }`}
-      >
-        <div className="self-center  ">
-          <Image
-            src={img}
-            width={600}
-            height={600}
-            alt={alt}
-            className="aspect-square object-cover"
-          ></Image>
-        </div>
-      </article>
+
+      <Image
+        src={img}
+        width={600}
+        height={600}
+        alt={alt}
+        className={`w-full self-center ${
+          aspectsquare ? "aspect-square object-cover" : ""
+        }${reversedOrderMobile ? "order-first md:order-last" : ""}`}
+      ></Image>
     </section>
   );
 }

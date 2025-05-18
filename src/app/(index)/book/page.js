@@ -30,6 +30,8 @@ export default function About() {
         img={"/Image_bank/aboutus/food1.png"}
         alt={"plate of food"}
         reversedOrder={true}
+        aspectsquare={true}
+        addPaddingtoText={true}
       ></Section_text_and_image>
       <section id="forms">
         <Section_breakup_w_component></Section_breakup_w_component>

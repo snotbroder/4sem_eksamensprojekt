@@ -46,7 +46,7 @@ export default function Home() {
           data-aos="fade-up"
           duration="300"
           id="menu"
-          className=" mx-s md:mx-6xl"
+          className=" mx-s md:mx-6xl my-3xl"
         >
           <Section_text_and_image
             h1={"Menu"}
