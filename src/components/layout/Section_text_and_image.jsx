@@ -7,12 +7,13 @@ function Section_text_and_image({
   btn_txt,
   btn_href,
   img,
+  alt,
   reversedOrder,
   reversedOrderMobile,
 }) {
   return (
     <section
-      className={`flex flex-col md:grid md:grid-cols-2 my-3xl gap-sm md:gap-6xl  ${
+      className={`flex flex-col md:grid md:grid-cols-2  gap-sm md:gap-6xl  ${
         reversedOrder ? "md:[direction:rtl]" : ""
       }`}
     >
@@ -35,8 +36,14 @@ function Section_text_and_image({
           reversedOrderMobile ? "order-first md:order-last" : ""
         }`}
       >
-        <div className="self-center ">
-          <Image src={img} width={600} height={600} alt="Building"></Image>
+        <div className="self-center  ">
+          <Image
+            src={img}
+            width={600}
+            height={600}
+            alt={alt}
+            className="aspect-square object-cover"
+          ></Image>
         </div>
       </article>
     </section>
