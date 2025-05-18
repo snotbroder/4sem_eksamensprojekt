@@ -46,7 +46,7 @@ export default function Home() {
           data-aos="fade-up"
           duration="300"
           id="menu"
-          className=" mx-s md:mx-6xl"
+          className=" mx-s md:mx-6xl my-3xl"
         >
           <Section_text_and_image
             h1={"Menu"}
@@ -63,7 +63,7 @@ export default function Home() {
       </Animation>
 
       <Section_text_background_and_images2></Section_text_background_and_images2>
-      <section className=" mx-s md:mx-6xl">
+      <section className=" mx-s md:mx-6xl my-3xl">
         <Section_text_and_image
           h1={"About lamar"}
           h2={"Big city vibe and sizzling party atmosphere"}
@@ -77,12 +77,6 @@ export default function Home() {
         ></Section_text_and_image>
       </section>
       <Section_sister_restaurants></Section_sister_restaurants>
-      <div className="flex flex-col text-green-400  ">
-        <div className="m-auto mt-52 text-4xl">
-          <h1 className="">PERIODT!</h1>
-        </div>
-        <p className="m-auto text-primary-500">Es hora de comer</p>
-      </div>
     </div>
   );
 }

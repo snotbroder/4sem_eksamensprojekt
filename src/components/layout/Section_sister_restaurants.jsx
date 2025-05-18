@@ -2,7 +2,7 @@ import SisterCard from "./cards/SisterCard";
 
 function Section_sister_restaurants() {
   return (
-    <section className="mx-s lg:mx-6xl grid gap-xs">
+    <section className="mx-s lg:mx-6xl grid gap-xs my-3xl">
       <header className="grid">
         <hr></hr>
         <h2>Check out our other restaurants</h2>
