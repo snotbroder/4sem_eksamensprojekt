@@ -12,6 +12,7 @@ function Section_text_and_image({
   reversedOrderMobile,
   aspectsquare,
   addPaddingtoText,
+  noButton,
 }) {
   return (
     <section
@@ -29,7 +30,7 @@ function Section_text_and_image({
           <h1>{h1}</h1>
           <h2 className="border-y border-darkbrown ">{h2}</h2>
           <p>{p}</p>
-          <div className=" place-self-end">
+          <div className={`place-self-end ${noButton ? "hidden" : ""}`}>
             <RoutingButton href={btn_href}>{btn_txt}</RoutingButton>
           </div>
         </div>
