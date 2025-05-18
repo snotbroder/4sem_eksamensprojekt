@@ -4,24 +4,28 @@ import accordionContentJoin from "@/copy_content/accordionJoin";
 import AccordionParent from "@/components/ui/accordion/AccordionParent";
 import RoutingButton from "@/components/ui/buttons/RoutingButton";
 import Section_text_and_image from "@/components/layout/Section_text_and_image";
+import ClipboardCard from "@/components/layout/cards/ClipboardCard";
 export default function About() {
   return (
     <section>
       <Section_breakup_w_component motive={"join"}>
-        <article className="bg-secondary-500 p-sm py-xl grid gap-xs">
-          <div>
-            <h2 className="border-y-darkbrown border-y">Join our team</h2>
-            <p>Apply for positions or send us an unsolicited email!</p>
-          </div>
+        <ClipboardCard>
+          <article className="bg-secondary-500 p-sm py-xl grid gap-xs">
+            <div>
+              <h2 className="border-y-darkbrown border-y">Join our team</h2>
+              <p>Apply for positions or send us an unsolicited email!</p>
+            </div>
 
-          <AccordionParent
-            contentSource={accordionContentJoin}
-          ></AccordionParent>
-          <div className="place-self-end">
-            <RoutingButton variant="forms">Apply here</RoutingButton>
-          </div>
-        </article>
+            <AccordionParent
+              contentSource={accordionContentJoin}
+            ></AccordionParent>
+            <div className="place-self-end">
+              <RoutingButton variant="forms">Apply here</RoutingButton>
+            </div>
+          </article>
+        </ClipboardCard>
       </Section_breakup_w_component>
+
       <Section_text_and_image
         h2={"More than 9 people?"}
         p={"Please fill in this form below"}

@@ -6,7 +6,7 @@ import Section_text_and_image from "@/components/layout/Section_text_and_image";
 import Section_breakup_w_component from "@/components/layout/Section_breakup_w_component copy";
 import Section_text_and_facade from "@/components/layout/Section_text_and_facade";
 import Section_sister_restaurants from "@/components/layout/Section_sister_restaurants";
-
+import ClipboardCard from "@/components/layout/cards/ClipboardCard";
 // UI
 import accordionContentJoin from "@/copy_content/accordionJoin";
 import AccordionParent from "@/components/ui/accordion/AccordionParent";
@@ -99,19 +99,21 @@ export default function About() {
         ></Section_text_and_image>
       </section>
       <Section_breakup_w_component motive={"join"}>
-        <article className="bg-secondary-500 p-sm py-xl grid gap-xs">
-          <div>
-            <h2 className="border-y-darkbrown border-y">Join our team</h2>
-            <p>Apply for positions or send us an unsolicited email!</p>
-          </div>
+        <ClipboardCard>
+          <article className="bg-secondary-500 p-sm py-xl grid gap-xs">
+            <div>
+              <h2 className="border-y-darkbrown border-y">Join our team</h2>
+              <p>Apply for positions or send us an unsolicited email!</p>
+            </div>
 
-          <AccordionParent
-            contentSource={accordionContentJoin}
-          ></AccordionParent>
-          <div className="place-self-end">
-            <RoutingButton variant="forms">Apply here</RoutingButton>
-          </div>
-        </article>
+            <AccordionParent
+              contentSource={accordionContentJoin}
+            ></AccordionParent>
+            <div className="place-self-end">
+              <RoutingButton variant="forms">Apply here</RoutingButton>
+            </div>
+          </article>
+        </ClipboardCard>
       </Section_breakup_w_component>
       <Section_sister_restaurants></Section_sister_restaurants>
     </div>
