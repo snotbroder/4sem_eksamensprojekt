@@ -88,7 +88,7 @@ export default function About() {
         </div>
       </section>
       <Section_text_and_facade></Section_text_and_facade>
-      <section className="mx-s lg:mx-6xl">
+      <section className="mx-s lg:mx-6xl my-3xl">
         <Section_text_and_image
           h2={"From us to you"}
           p={
@@ -113,6 +113,7 @@ export default function About() {
           </div>
         </article>
       </Section_breakup_w_component>
+      <Section_sister_restaurants></Section_sister_restaurants>
     </div>
   );
 }

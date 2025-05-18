@@ -22,7 +22,7 @@ function Section_text_and_image({
       <article className="flex flex-col w-auto">
         <div
           className={`my-auto flex flex-col ${
-            addPaddingtoText ? "pr-sm md:pr-6xl" : ""
+            addPaddingtoText ? "px-sm md:pr-6xl md:pl-0" : ""
           }
           ${reversedOrder ? "md:[direction:ltr]" : ""}`}
         >
