@@ -247,6 +247,9 @@ font-style: italic; */
 .slideIn {
   animation: slideInAnimation 0.7s;
 }
+.slideDown {
+  animation: slideDownAnimation 0.5s;
+}
 
 @keyframes slideInAnimation {
   from {
@@ -256,6 +259,16 @@ font-style: italic; */
   to {
     opacity: 1;
     transform: translateX(0px);
+  }
+}
+@keyframes slideDownAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
   }
 }
 
