@@ -1,9 +1,13 @@
 function MenuCard({ menuData }) {
-  const courseKeys = Object.keys(menuData).filter((key) => key.startsWith("course") && menuData[key]); //Filter gemmem menuData og fin objekter med "course"
+  const courseKeys = Object.keys(menuData).filter(
+    (key) => key.startsWith("course") && menuData[key]
+  ); //Filter gemmem menuData og fin objekter med "course"
   return (
     <article className="bg-beige p-xs md:p-m w-100 md:w-[650px] md:h-[490px] flex flex-col gap-xs overflow-hidden bg-[url('/Image_bank/illustrations/frame-vector-vertical.svg')] md:bg-[url('/Image_bank/illustrations/frame-vector.svg')] bg-no-repeat bg-cover">
       <header className="flex flex-col gap-xs m-xs">
-        <div className={`h-50 md:h-30 bg-${menuData.bgColor} bg-[url('/Image_bank/food_2.svg')] bg-left border-2 border-darkbrown`}></div>
+        <div
+          className={`h-50 md:h-30 bg-${menuData.bgColor} bg-[url('/Image_bank/illustrations/foodandwine2_darkbrown.svg')] bg-left md:bg-cover border-2 border-darkbrown`}
+        ></div>
         <span>
           <strong>Menu note:</strong>
           <p>{menuData.menuNote}</p>
