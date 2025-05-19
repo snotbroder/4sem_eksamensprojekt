@@ -10,7 +10,7 @@ const Button = ({ variant = "primary", children, onClick, type = "button", disab
     configure: "border bg-configure border-configure hover:bg-transparent hover:border-darkbrown w-full",
     danger: "border bg-danger border-danger hover:bg-transparent hover:border-darkbrown w-full",
     success: "border bg-success border-success hover:bg-transparent hover:border-darkbrown w-full",
-    disabled: "border bg-gray-300 border-gray-400 w-full cursor-not-allowed opacity-70",
+    disabled: "border bg-gray-300 border-gray-400 cursor-not-allowed opacity-70",
   };
   const combinedStyles = `${buttonStyling} ${disabled ? variantClasses["disabled"] : variantClasses[variant]}`;
 

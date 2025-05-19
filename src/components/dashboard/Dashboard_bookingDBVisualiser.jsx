@@ -2,7 +2,7 @@
 import { ToastContainer, toast } from "react-toastify";
 import { getAllItems } from "@/app/api";
 import Dashboard_bookingCard from "@/components/dashboard/Dashboard_bookingCard.jsx";
-import AddBooking from "@/components/testing/AddBooking";
+import AddBooking from "@/components/utility/AddBooking";
 import { useState, useEffect } from "react";
 
 function bookingVisualiser() {

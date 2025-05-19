@@ -11,6 +11,8 @@ import ClipboardCard from "@/components/utility/ClipboardCard";
 import accordionContentJoin from "@/copy_content/accordionJoin";
 import AccordionParent from "@/components/ui/accordion/AccordionParent";
 import RoutingButton from "@/components/ui/buttons/RoutingButton";
+import Section_breakup_w_component_request from "@/components/layout/Section_breakup_w_component_request";
+import AddBooking from "@/components/utility/AddBooking";
 
 export default function About() {
   return (
@@ -43,11 +45,11 @@ export default function About() {
       </section>
       <Section_text_and_facade></Section_text_and_facade>
       <section className="mx-s lg:mx-6xl my-3xl">
-        <Section_text_and_image h2={"From us to you"} p={"At Lamar the kitchen puts together the menu and it is served at a fresh pace. We care that the food tastes good, that’s our dishes change depending on the season. The menus has to be ordered for the whole table, and shared family-style."} img={FoodAndWine_Gif} reversedOrder={true} noButton={true}></Section_text_and_image>
+        <Section_text_and_image h2="From us to you" p="At Lamar the kitchen puts together the menu and it is served at a fresh pace. We care that the food tastes good, that’s our dishes change depending on the season. The menus has to be ordered for the whole table, and shared family-style." img={FoodAndWine_Gif} reversedOrder={true} noButton={true}></Section_text_and_image>
       </section>
-      <Section_breakup_w_component motive={"join"}>
+      <Section_breakup_w_component>
         <ClipboardCard>
-          <article className="bg-secondary-500 p-sm py-xl grid gap-xs">
+          <article className="grid gap-xs">
             <div>
               <h2 className="border-y-darkbrown border-y">Join our team</h2>
               <p>Apply for positions or send us an unsolicited email!</p>
@@ -60,6 +62,12 @@ export default function About() {
           </article>
         </ClipboardCard>
       </Section_breakup_w_component>
+      <h1>request</h1>
+      <Section_breakup_w_component_request>
+        <ClipboardCard>
+          <AddBooking></AddBooking>
+        </ClipboardCard>
+      </Section_breakup_w_component_request>
       <Section_sister_restaurants></Section_sister_restaurants>
     </div>
   );

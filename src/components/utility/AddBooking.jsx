@@ -48,8 +48,7 @@ function AddBooking() {
       ...booking[0],
     };
 
-    if (!data.fName) {
-      // || !data.lName || !data.email || !data.phone || !data.message || !data.date || !data.peopleCount || !data.acceptsNewsletter
+    if (!data.fName || !data.lName || !data.email || !data.phone || !data.message || !data.date || !data.peopleCount || !data.acceptsNewsletter) {
       // Hvis IKKE alt er som det skal, opdater toast indhold og type
       toast.error("Please fill all required inputs");
       return;
@@ -63,45 +62,40 @@ function AddBooking() {
   }
 
   return (
-    <section className="">
-      <h2>create a new booking</h2>
+    <section>
+      <h2>Book our venue </h2>
       <form onSubmit={sendData}>
-        <section className="">
+        <section className="grid grid-cols-2 gap-xxs">
           <article>
             <div className="form-field">
               {/* First Name */}
               <label htmlFor="fName" className="form-label">
-                First name
+                First name*
               </label>
               <input type="text" name="fName" id="fName" className="form-input" value={booking[0].fName} onChange={handleChange} required placeholder="John"></input>
-            </div>
-            {/* Last Name */}
-            <div className="form-field">
-              <label htmlFor="lName" className="form-label">
-                Last name
-              </label>
-              <input type="text" name="lName" id="lName" className="form-input" value={booking[0].lName} onChange={handleChange} required placeholder="Johnson"></input>
-            </div>
-            {/* Date */}
-            <div className="form-field">
-              <label htmlFor="date" className="form-label">
-                Date
-              </label>
-              <input type="date" name="date" id="date" className="form-input" value={booking[0].date} onChange={handleChange} required></input>
-            </div>
-            {/* Message */}
-            <div className="form-field">
-              <label htmlFor="message" className="form-label">
-                Message
-              </label>
-              <input type="text" name="message" id="message" className="form-input" value={booking[0].message} onChange={handleChange} required></input>
             </div>
             {/* Email */}
             <div className="form-field">
               <label htmlFor="email" className="form-label">
-                Email
+                Email*
               </label>
               <input type="email" name="email" id="email" className="form-input" value={booking[0].email} onChange={handleChange} required></input>
+            </div>
+            {/* Date */}
+            <div className="form-field">
+              <label htmlFor="date" className="form-label">
+                Date*
+              </label>
+              <input type="date" name="date" id="date" className="form-input" value={booking[0].date} onChange={handleChange} required></input>
+            </div>
+          </article>
+          <article>
+            {/* Last Name */}
+            <div className="form-field">
+              <label htmlFor="lName" className="form-label">
+                Last name*
+              </label>
+              <input type="text" name="lName" id="lName" className="form-input" value={booking[0].lName} onChange={handleChange} required placeholder="Johnson"></input>
             </div>
             {/* Phone */}
             <div className="form-field">
@@ -113,25 +107,33 @@ function AddBooking() {
             {/* People count */}
             <div className="form-field">
               <label htmlFor="peopleCount" className="form-label">
-                People on booking
+                People on booking*
               </label>
               <input type="number" name="peopleCount" id="peopleCount" className="form-input" value={booking[0].peopleCount} onChange={handleChange} min="9" max="60" required></input>
             </div>
-            <div className="form-field">
-              <label htmlFor="acceptsNewsletter" className="form-label">
-                Want to recieve our newsletter?
-              </label>
-              <input type="checkbox" name="acceptsNewsletter" id="acceptsNewsletter" className="form-input" value={booking[0].acceptsNewsletter} onChange={handleChange}></input>
-            </div>
           </article>
-          <article></article>
+          {/* Message */}
+          <div className="form-field col-span-2">
+            <label htmlFor="message" className="form-label">
+              Message
+            </label>
+            <textarea type="text" name="message" id="message" placeholder="Inform us about eg. the occasion or other requests we should know" className="form-input min-h-20 resize-none" value={booking[0].message} onChange={handleChange} required></textarea>
+          </div>
+          {/* Accepts newsletter */}
+          <div className="form-field">
+            <label htmlFor="acceptsNewsletter" className="form-label">
+              Want to recieve our newsletter?
+            </label>
+            <input type="checkbox" name="acceptsNewsletter" id="acceptsNewsletter" className="form-input place-self-start" value={booking[0].acceptsNewsletter} onChange={handleChange}></input>
+          </div>
         </section>
-        <p className="sm mb-xxs">*Required</p>
+        <div className="flex justify-between">
+          <p className="sm mb-xxs">*Required</p>
 
-        <Button variant="success" type="submit" disabled={!booking[0].fName}>
-          {/* || !booking[0].lName || !booking[0].email || !booking[0].phone || !booking[0].message || !booking[0].date || !booking[0].peopleCount || !booking[0].acceptsNewsletter */}
-          Send request
-        </Button>
+          <Button variant="forms" type="submit" disabled={!booking[0].fName || !booking[0].lName || !booking[0].email || !booking[0].message || !booking[0].date || !booking[0].peopleCount}>
+            Request booking
+          </Button>
+        </div>
       </form>
       <ToastContainer position="top-right" autoClose={5000} pauseOnHover />
     </section>
