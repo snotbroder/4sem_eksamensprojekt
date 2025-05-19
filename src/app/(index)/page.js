@@ -58,6 +58,7 @@ export default function Home() {
             btn_href={"/menu"}
             img={FoodAndWine_Gif}
             reversedOrderMobile={true}
+            gap={true}
           ></Section_text_and_image>
         </section>
       </Animation>
@@ -74,6 +75,7 @@ export default function Home() {
           btn_href={"/about"}
           img={Facade_Gif}
           reversedOrder={true}
+          gap={true}
         ></Section_text_and_image>
       </section>
       <Section_sister_restaurants></Section_sister_restaurants>
