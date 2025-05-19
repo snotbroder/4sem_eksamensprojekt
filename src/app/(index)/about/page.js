@@ -15,9 +15,9 @@ import RoutingButton from "@/components/ui/buttons/RoutingButton";
 export default function About() {
   return (
     <div>
-      <section className=" mt-[10vh]  px-s lg:px-6xl grid gap-xs lg:gap-xl  lg:grid-cols-2 lg:items-start">
+      <section className=" mt-[10vh]  px-s lg:px-6xl grid gap-xs lg:gap-xl  lg:grid-cols-2 lg:items-start mb-3xl lg:mb-6xl">
         <div className=" lg:order-2 ">
-          <article className=" relative h-[50vh] lg:h-[150vh] transition-all ease-in-out ">
+          <article className=" relative h-[50vh] lg:h-[185vh] transition-all ease-in-out ">
             <Image
               src="/Image_bank/aboutus/fire.png"
               alt="making food and it spews"
@@ -96,6 +96,7 @@ export default function About() {
           }
           img={FoodAndWine_Gif}
           reversedOrder={true}
+          noButton={true}
         ></Section_text_and_image>
       </section>
       <Section_breakup_w_component motive={"join"}>
