@@ -2,7 +2,7 @@
 import { ToastContainer, toast } from "react-toastify";
 import { getAllItems } from "@/app/api";
 import Dashboard_bookingCard from "@/components/dashboard/Dashboard_bookingCard.jsx";
-import AddBooking from "../testing/addBooking";
+import AddBooking from "@/components/testing/addBooking";
 import { useState, useEffect } from "react";
 
 function bookingVisualiser() {
@@ -39,15 +39,6 @@ function bookingVisualiser() {
         ) : (
           <p className="animate-pulse">Loading bookings...</p>
         )}
-        {/* <li>
-          <Dashboard_bookingCard date="02/06/2025" peopleCount="20" message="Lorem ipsum dolor sit amet." />
-        </li>
-        <li>
-          <Dashboard_bookingCard date="02/06/2025" peopleCount="20" message="Lorem ipsum dolor sit amet." />
-        </li>
-        <li>
-          <Dashboard_bookingCard date="02/06/2025" peopleCount="20" message="Lorem ipsum dolor sit amet." />
-        </li> */}
       </ul>
     </>
   );
