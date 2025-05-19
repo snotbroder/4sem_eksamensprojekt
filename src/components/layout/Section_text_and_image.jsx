@@ -13,17 +13,18 @@ function Section_text_and_image({
   aspectsquare,
   addPaddingtoText,
   noButton,
+  gap,
 }) {
   return (
     <section
-      className={`flex flex-col md:grid md:grid-cols-2  gap-sm md:gap-6xl  ${
+      className={`flex flex-col md:grid md:grid-cols-2   ${
         reversedOrder ? "md:[direction:rtl]" : ""
-      }`}
+      } ${gap ? "gap-sm md:gap-6xl" : ""} `}
     >
       <article className="flex flex-col w-auto">
         <div
           className={`my-auto flex flex-col ${
-            addPaddingtoText ? "px-sm md:pr-6xl md:pl-0" : ""
+            addPaddingtoText ? "px-sm md:px-6xl " : ""
           }
           ${reversedOrder ? "md:[direction:ltr]" : ""}`}
         >
