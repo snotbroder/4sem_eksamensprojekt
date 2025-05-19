@@ -31,19 +31,25 @@ export default function Menu() {
     <>
       <article className="overflow-hidden min-h-screen">
         {/* Parent container */}
-        <div className="grid gap-xs lg:gap-xl lg:grid-cols-2 xl:grid-cols-3 lg:items-start">
+        <div className="grid gap-sm lg:grid-cols-2 xl:grid-cols-5 lg:items-start">
           {/* Menu buttons and info */}
-          <section className=" grid gap-xxs place-items-center sm-wh lg:sticky  lg:top-[15%] lg:self-start col-span-full lg:col-span-1">
-            <div className="mx-xl ">
+          <section className=" grid gap-xxs place-items-center sm-wh  mt-[18vh] md:self-start col-span-full lg:col-span-1 xl:col-span-2">
+            <div className="mx-sm md:mx-6xl ">
               <h1 className="border-b-2 border-darkbrown">Menu</h1>
               {/* <h2 className="border-y-2 border-darkbrown">Sharing- & winemenu, a la carte or theatermenu</h2> */}
-              <p>The menus has to be ordered for the whole table, and sharedfamily-style. Your food will be served at a fresh pace.</p>
+              <p>
+                The menus has to be ordered for the whole table, and
+                sharedfamily-style. Your food will be served at a fresh pace.
+              </p>
             </div>
             <div className="grid gap-xxs">
               {menus.length > 0 ? (
                 menus.map((menu) => (
                   <li className="flex flex-col gap-xxs" key={menu.uuid}>
-                    <Button onClick={() => scrollToCard(menu.uuid)} variant="secondary">
+                    <Button
+                      onClick={() => scrollToCard(menu.uuid)}
+                      variant="secondary"
+                    >
                       {menu.menuTitle}
                     </Button>
                   </li>
@@ -61,12 +67,17 @@ export default function Menu() {
           </section>
 
           {/* Menu cards container */}
-          <div className="col-span-full lg:col-span-1 xl:col-span-2 overflow-hidden">
+          <div className="col-span-full lg:col-span-1 xl:col-span-3 overflow-hidden">
             <section className="pl-xl pr-xl md:pr-3xl h-[100vh] pt-[60px] lg:pt-[120px] bg-[url('/Image_bank/wall_of_photos.jpg')] bg-cover">
               <ul className="snap-x snap-mandatory overflow-x-auto flex gap-xl scroll-smooth scrollbar-none ">
                 {menus.length > 0 ? (
                   menus.map((menu) => (
-                    <li ref={(el) => (cardRefs.current[menu.uuid] = el)} className="snap-start flex-shrink-0 min-w-[90%] sm:min-w-[70%] md:min-w-[50%] xl:min-w-[33%] flex flex-col gap-xxs" key={menu.uuid} onClick={() => clickHandler(menu.uuid)}>
+                    <li
+                      ref={(el) => (cardRefs.current[menu.uuid] = el)}
+                      className="snap-start flex-shrink-0 min-w-[90%] sm:min-w-[70%] md:min-w-[50%] xl:min-w-[33%] flex flex-col gap-xxs"
+                      key={menu.uuid}
+                      onClick={() => clickHandler(menu.uuid)}
+                    >
                       {/* <Dashboard_menucard menuData={menu} /> */}
                       <MenuCard menuData={menu}></MenuCard>
                     </li>
