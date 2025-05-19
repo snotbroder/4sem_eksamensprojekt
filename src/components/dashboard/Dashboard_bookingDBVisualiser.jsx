@@ -25,7 +25,7 @@ function bookingVisualiser() {
         ) : (
           <p className="animate-pulse">Loading menu...</p>
         )} */}
-        <Dashboard_bookingCard head="Booking" copy="Lorem ipsum dolor sit amet." icon="mail" />
+        <Dashboard_bookingCard date="02/06/2025" peopleCount="20" message="Lorem ipsum dolor sit amet." />
       </ul>
     </>
   );

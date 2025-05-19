@@ -1,16 +1,30 @@
+import { useState } from "react";
 import IconComponent from "../ui/IconComponent";
-import RoutingButton from "../ui/buttons/RoutingButton";
+import Dashboard_tag from "./Dashboard_tag";
 
-function BookingCard({ head, copy, icon }) {
+function BookingCard({ date, message, peopleCount }) {
+  const [openBooking, setOpenBooking] = useState(false);
+
   return (
-    <article className="boder-2 border-darkbrown">
-      <main>
-        <span className="flex gap-xs items-center mb-xs">
-          <IconComponent icon={icon} size="1.8rem"></IconComponent>
-          <h2>{head}</h2>
+    <article onClick={() => setOpenBooking((prevState) => !prevState)} className="border-2 border-darkbrown ">
+      <main className="grid grid-cols-4 gap-2xl items-center">
+        <Dashboard_tag content={date} />
+        <span>
+          Booking of <strong>{peopleCount}</strong> people
         </span>
-        <p>{copy}</p>
+
+        <div className="col-span-2">
+          <p>
+            <strong>Message:</strong>
+          </p>
+          <p>{message}</p>
+        </div>
       </main>
+      {openBooking && (
+        <footer className="slideIn">
+          <h1>HALLØJs</h1>
+        </footer>
+      )}
     </article>
   );
 }

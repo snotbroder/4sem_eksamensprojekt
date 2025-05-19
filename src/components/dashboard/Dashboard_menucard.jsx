@@ -7,7 +7,7 @@ function Dashboard_menucard({ menuData }) {
   return (
     <article className="slideIn bg-gray-100 w-[300px] md:w-[360px] h-auto p-sm rounded-md shadow-lg group transition-all duration-100 hover:-mt-xxs hover:mb-xxs hover:cursor-pointer border-2 border-transparent  hover:border-configure">
       <ul className="flex flex-col gap-s">
-        <li className="flex gap-xxs items-top">
+        <li className="flex justify-between items-baseline">
           <h2>{menuData.menuTitle}</h2>
           <span className="transition-all duration-100 opacity-70 group-hover:opacity-100 mt-[6px]">
             <IconComponent className="group-hover:text-configure" size="2rem" icon="edit" />
