@@ -48,7 +48,7 @@ function AddBooking() {
       ...booking[0],
     };
 
-    if (!data.fName || !data.lName || !data.email || !data.phone || !data.message || !data.date || !data.peopleCount || !data.acceptsNewsletter) {
+    if (!data.fName || !data.lName || !data.email || !data.message || !data.date || !data.peopleCount) {
       // Hvis IKKE alt er som det skal, opdater toast indhold og type
       toast.error("Please fill all required inputs");
       return;
@@ -120,7 +120,7 @@ function AddBooking() {
             <textarea type="text" name="message" id="message" placeholder="Inform us about eg. the occasion or other requests we should know" className="form-input min-h-20 resize-none" value={booking[0].message} onChange={handleChange} required></textarea>
           </div>
           {/* Accepts newsletter */}
-          <div className="form-field">
+          <div className="form-field flex">
             <label htmlFor="acceptsNewsletter" className="form-label">
               Want to recieve our newsletter?
             </label>

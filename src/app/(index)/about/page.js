@@ -62,7 +62,6 @@ export default function About() {
           </article>
         </ClipboardCard>
       </Section_breakup_w_component>
-      <h1>request</h1>
       <Section_breakup_w_component_request>
         <ClipboardCard>
           <AddBooking></AddBooking>
