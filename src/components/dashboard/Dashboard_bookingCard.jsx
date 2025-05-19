@@ -2,27 +2,43 @@ import { useState } from "react";
 import IconComponent from "../ui/IconComponent";
 import Dashboard_tag from "./Dashboard_tag";
 
-function BookingCard({ date, message, peopleCount }) {
+function BookingCard({ data }) {
   const [openBooking, setOpenBooking] = useState(false);
 
   return (
-    <article onClick={() => setOpenBooking((prevState) => !prevState)} className="border-2 border-darkbrown ">
-      <main className="grid grid-cols-4 gap-2xl items-center">
-        <Dashboard_tag content={date} />
-        <span>
-          Booking of <strong>{peopleCount}</strong> people
+    <article onClick={() => setOpenBooking((prevState) => !prevState)} className={`hover:bg-gray-200 px-xs py-[4px] group rounded-md border-2 border-transparent  ${openBooking && "hover:border-configure not-hover:border-transparent "} slideIn`}>
+      <main className="grid grid-cols-4 items-center">
+        <Dashboard_tag content={data.date} />
+        <span className="">
+          Booking of <strong>{data.peopleCount}</strong> people
         </span>
 
-        <div className="col-span-2">
+        <div className="">
           <p>
             <strong>Message:</strong>
           </p>
-          <p>{message}</p>
+          {openBooking ? "" : <p>{data.message.length > 20 ? `${data.message.slice(0, 20)}...` : data.message}</p>}
         </div>
+
+        {openBooking ? <IconComponent className="group-hover:text-configure ml-auto" size="2rem" icon="edit" /> : <IconComponent className="opacity-0 ml-auto" icon="edit" size="2rem" />}
       </main>
       {openBooking && (
-        <footer className="slideIn">
-          <h1>HALLØJs</h1>
+        <footer className="slideIn grid grid-cols-4">
+          <div className="flex flex-col">
+            <p>
+              Booked by {data.fName} <strong>{data.lName}</strong>
+            </p>
+            <p>
+              Write to <strong>{data.email}</strong>
+            </p>
+            <p>
+              Call at <strong>{data.phone}</strong>
+            </p>
+            <p>
+              Accepts newsletter? <strong>{data.acceptsNewsletter ? "Yes" : "No"}</strong>
+            </p>
+          </div>
+          <p className="max-w-[600px] col-start-3 col-span-3">{data.message}</p>
         </footer>
       )}
     </article>

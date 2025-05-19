@@ -10,7 +10,7 @@ export async function getTest() {
   console.log("NEXT_PUBLIC_SUPABASE_ANON_KEY", url);
 }
 
-//Tilføj menu function
+//Tilføj data til databasen
 export async function addItem(itemData, tableName) {
   let headersList = {
     apikey: key,
@@ -24,12 +24,18 @@ export async function addItem(itemData, tableName) {
     body: JSON.stringify(itemData),
   });
 
+  //Hvis der sker en fejl i dataen
+  // if (!response.ok) {
+  //   const errorText = await response.text();
+  //   console.error("Error adding data:", errorText);
+  // }
+
   let data = await response.json();
   console.log("Added data:", data);
   return data;
 }
 
-//Se alle items i databasen function
+//Fetch alle items i databasen function
 export async function getAllItems(tableName) {
   const headersList = {
     apikey: key,

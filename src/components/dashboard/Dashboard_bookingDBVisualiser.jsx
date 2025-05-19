@@ -1,31 +1,53 @@
 "use client";
 import { ToastContainer, toast } from "react-toastify";
-
+import { getAllItems } from "@/app/api";
 import Dashboard_bookingCard from "@/components/dashboard/Dashboard_bookingCard.jsx";
+import AddBooking from "../testing/addBooking";
+import { useState, useEffect } from "react";
 
 function bookingVisualiser() {
-  const bookings = { item1: "1", item2: "2", item3: "3" };
-
+  // const bookings = { item1: "1", item2: "2", item3: "3" };
+  const [bookings, setBookings] = useState([]);
   function clickHandler(e) {
     toast.success("Hello");
     console.log(e);
   }
 
+  useEffect(() => {
+    //Kør funktion når kompomenten lades
+
+    //Fetch bookings fra DB
+    async function fetchBookings() {
+      const fetchedBooking = await getAllItems("bookings-database");
+      setBookings(fetchedBooking);
+    }
+    fetchBookings();
+  }, []);
+
   return (
     <>
       <ToastContainer position="top-right" autoClose={5000} pauseOnHover />
-      <ul className="flex flex-col">
+      <AddBooking />
+      <ul className="flex flex-col divide-y divide-gray-300">
         {/* Looper hen over den fetchede data */}
-        {/* {bookings.length > 0 ? (
+        {bookings.length > 0 ? (
           bookings.map((booking, index) => (
             <li className="flex flex-col gap-xxs" key={index}>
-              <h1>booking {booking[0]}</h1>
+              <Dashboard_bookingCard data={booking} />
             </li>
           ))
         ) : (
-          <p className="animate-pulse">Loading menu...</p>
-        )} */}
-        <Dashboard_bookingCard date="02/06/2025" peopleCount="20" message="Lorem ipsum dolor sit amet." />
+          <p className="animate-pulse">Loading bookings...</p>
+        )}
+        {/* <li>
+          <Dashboard_bookingCard date="02/06/2025" peopleCount="20" message="Lorem ipsum dolor sit amet." />
+        </li>
+        <li>
+          <Dashboard_bookingCard date="02/06/2025" peopleCount="20" message="Lorem ipsum dolor sit amet." />
+        </li>
+        <li>
+          <Dashboard_bookingCard date="02/06/2025" peopleCount="20" message="Lorem ipsum dolor sit amet." />
+        </li> */}
       </ul>
     </>
   );
