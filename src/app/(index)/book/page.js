@@ -21,13 +21,13 @@ export default function About() {
           </p>
         </article>
         <article className="flex place-content-center pt-xl lg:pt-[19vh]  bg-[url('/Image_bank/aboutus/interior1.png')] bg-cover p-sm py-m">
-          <ClipboardCard className="self-center ">
+          <ClipboardCard noPadding={true}>
             <Image
               src="/Image_bank/booking.png"
               width={551}
               height={587}
               alt="booking billede"
-              className="w-full h-full object-cover"
+              className="w-full h-full  object-cover "
             ></Image>
           </ClipboardCard>
         </article>
