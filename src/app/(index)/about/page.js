@@ -97,6 +97,7 @@ export default function About() {
           img={FoodAndWine_Gif}
           reversedOrder={true}
           noButton={true}
+          gap={true}
         ></Section_text_and_image>
       </section>
       <Section_breakup_w_component>
