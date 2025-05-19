@@ -2,7 +2,7 @@
 import { ToastContainer, toast } from "react-toastify";
 import { getAllItems } from "@/app/api";
 import Dashboard_bookingCard from "@/components/dashboard/Dashboard_bookingCard.jsx";
-import AddBooking from "@/components/testing/addBooking";
+import AddBooking from "@/components/testing/AddBooking";
 import { useState, useEffect } from "react";
 
 function bookingVisualiser() {
@@ -27,7 +27,7 @@ function bookingVisualiser() {
   return (
     <>
       <ToastContainer position="top-right" autoClose={5000} pauseOnHover />
-      <AddBooking />
+      <AddBooking></AddBooking>
       <ul className="flex flex-col divide-y divide-gray-300">
         {/* Looper hen over den fetchede data */}
         {bookings.length > 0 ? (
