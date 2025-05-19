@@ -4,7 +4,7 @@ import accordionContentJoin from "@/copy_content/accordionJoin";
 import AccordionParent from "@/components/ui/accordion/AccordionParent";
 import RoutingButton from "@/components/ui/buttons/RoutingButton";
 import Section_text_and_image from "@/components/layout/Section_text_and_image";
-import ClipboardCard from "@/components/layout/cards/ClipboardCard";
+import ClipboardCard from "@/components/utility/ClipboardCard";
 export default function About() {
   return (
     <section>
@@ -16,9 +16,7 @@ export default function About() {
               <p>Apply for positions or send us an unsolicited email!</p>
             </div>
 
-            <AccordionParent
-              contentSource={accordionContentJoin}
-            ></AccordionParent>
+            <AccordionParent contentSource={accordionContentJoin}></AccordionParent>
             <div className="place-self-end">
               <RoutingButton variant="forms">Apply here</RoutingButton>
             </div>
@@ -26,17 +24,7 @@ export default function About() {
         </ClipboardCard>
       </Section_breakup_w_component>
 
-      <Section_text_and_image
-        h2={"More than 9 people?"}
-        p={"Please fill in this form below"}
-        btn_txt={"Request"}
-        btn_href={"#forms"}
-        img={"/Image_bank/aboutus/food1.png"}
-        alt={"plate of food"}
-        reversedOrder={true}
-        aspectsquare={true}
-        addPaddingtoText={true}
-      ></Section_text_and_image>
+      <Section_text_and_image h2={"More than 9 people?"} p={"Please fill in this form below"} btn_txt={"Request"} btn_href={"#forms"} img={"/Image_bank/aboutus/food1.png"} alt={"plate of food"} reversedOrder={true} aspectsquare={true} addPaddingtoText={true}></Section_text_and_image>
       <section id="forms">
         <Section_breakup_w_component></Section_breakup_w_component>
       </section>
