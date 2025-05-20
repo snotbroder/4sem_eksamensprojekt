@@ -29,13 +29,14 @@ export default function Menu() {
 
   return (
     <>
-      <article className="overflow-hidden min-h-screen">
+      {/* min-h-screen */}
+      <article className="overflow-hidden ">
         {/* Parent container */}
         <div className="grid gap-sm lg:grid-cols-2 xl:grid-cols-5 lg:items-start">
           {/* Menu buttons and info */}
           <section className=" grid gap-xxs place-items-center sm-wh  mt-[18vh] md:self-start col-span-full lg:col-span-1 xl:col-span-2">
             <div className="mx-sm md:mx-6xl ">
-              <h1 className="border-b-2 border-darkbrown">Menu</h1>
+              <h1 className="border-b border-darkbrown">Menu</h1>
               {/* <h2 className="border-y-2 border-darkbrown">Sharing- & winemenu, a la carte or theatermenu</h2> */}
               <p>
                 The menus has to be ordered for the whole table, and
@@ -67,8 +68,8 @@ export default function Menu() {
           </section>
 
           {/* Menu cards container */}
-          <div className="col-span-full lg:col-span-1 xl:col-span-3 overflow-hidden">
-            <section className="pl-xl pr-xl md:pr-3xl h-[100vh] pt-[60px] lg:pt-[120px] bg-[url('/Image_bank/wall_of_photos.jpg')] bg-cover">
+          <div className="col-span-full lg:col-span-1 xl:col-span-3 overflow-hidden bg-[url('/Image_bank/wall_of_photos.jpg')] bg-cover">
+            <section className="pl-xl pr-xl md:pr-3xl py-[60px] lg:pt-[120px] ">
               <ul className="snap-x snap-mandatory overflow-x-auto flex gap-xl scroll-smooth scrollbar-none ">
                 {menus.length > 0 ? (
                   menus.map((menu) => (
