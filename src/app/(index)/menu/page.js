@@ -34,7 +34,7 @@ export default function Menu() {
         {/* Parent container */}
         <div className="grid gap-sm lg:grid-cols-2 xl:grid-cols-5 lg:items-start">
           {/* Menu buttons and info */}
-          <section className="mx-sm md:mx-6xl grid gap-xxs place-items-center sm-wh  mt-[18vh] md:self-start col-span-full lg:col-span-1 xl:col-span-2">
+          <section className="mx-sm lg:mx-6xl grid gap-xxs place-items-center sm-wh  mt-[18vh] md:self-start col-span-full lg:col-span-1 xl:col-span-2">
             <div className=" justify-self-start ">
               <h1 className="border-b border-darkbrown">Menu</h1>
               {/* <h2 className="border-y-2 border-darkbrown">Sharing- & winemenu, a la carte or theatermenu</h2> */}
