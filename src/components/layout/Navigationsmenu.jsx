@@ -5,39 +5,51 @@ import Image from "next/image";
 import Button from "../ui/buttons/Button";
 import RoutingButton from "../ui/buttons/RoutingButton";
 import Link from "next/link";
+import Burgermenu from "./Burgermenu";
 
 export default function Footer() {
   const [showMenu, setShowMenu] = useState(false);
-  const menuRef = useRef(null);
-  const burgerRef = useRef(null);
+  // const menuRef = useRef(null);
+  // const burgerRef = useRef(null);
 
   // Close on outside click
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target) && !burgerRef.current.contains(event.target)) {
-        setShowMenu(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  // useEffect(() => {
+  //   const handleClickOutside = (event) => {
+  //     if (menuRef.current && !menuRef.current.contains(event.target) && !burgerRef.current.contains(event.target)) {
+  //       setShowMenu(false);
+  //     }
+  //   };
+  //   document.addEventListener("mousedown", handleClickOutside);
+  //   return () => document.removeEventListener("mousedown", handleClickOutside);
+  // }, []);
 
   // Close menu on desktop resize
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     if (window.innerWidth >= 1024) {
+  //       setShowMenu(false);
+  //     }
+  //   };
+  //   window.addEventListener("resize", handleResize);
+  //   return () => window.removeEventListener("resize", handleResize);
+  // }, []);
+
+  // Denne snippet gør at når burgermenuen renderes, vil man ikke kunne scroll det bagvedliggende content.
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 1024) {
-        setShowMenu(false);
-      }
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    if (showMenu) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    return () => document.body.classList.remove("overflow-hidden"); // cleanup
+  }, [showMenu]);
 
   return (
     <div className="border-b border-darkbrown backdrop-blur-md fixed w-full top-0 z-[1000] bg-[url('/Image_bank/illustrations/layerblur.png')] bg-cover bg-center">
       <nav className="flex flex-row justify-between px-s lg:px-6xl self-center py-xs">
         {/* Logo */}
-        <Link href="/">
+        <Link onClick={() => setShowMenu(!showMenu)} href="/">
           <Image src="/Image_bank/logo/logo-red.svg" alt="logo in red" width={157} height={55} />
         </Link>
 
@@ -64,7 +76,7 @@ export default function Footer() {
         </ul>
 
         {/* Burger Icon (Mobile) */}
-        <div ref={burgerRef} className="self-center lg:hidden p-2 cursor-pointer z-[1100]" onClick={() => setShowMenu(!showMenu)}>
+        <div className="self-center lg:hidden p-2 cursor-pointer z-[1100]" onClick={() => setShowMenu(!showMenu)}>
           <div className="relative w-10 h-8">
             {/* Top */}
             <span className={`absolute left-0 w-10 h-0.5 bg-primary-500 transition-transform duration-300 ${showMenu ? "rotate-45 top-3.5" : "top-0"}`} />
@@ -77,48 +89,50 @@ export default function Footer() {
       </nav>
 
       {/* Mobile Menu */}
-      {showMenu && (
-        <div ref={menuRef} className="burgermenu-backdrop   w-full lg:hidden grid gap-ml bg-[url('/Image_bank/illustrations/lamarbuilding-burgermenu.svg')] bg-cover bg-center z-[1000] border-y border-darkbrown ">
-          <ul className="flex flex-col text-center pt-sm gap-xxs ">
-            <li className="mx-auto">
-              <RoutingButton variant="cta" href="book">
-                Book
-              </RoutingButton>
-            </li>
-            <li>
-              <Link href="/menu" className="block navlink">
-                Menu
-              </Link>
-            </li>
-            <li>
-              <Link href="/about" className="block navlink">
-                About
-              </Link>
-            </li>
-            <li>
-              <Link href="/faq" className="block navlink">
-                F.A.Q.
-              </Link>
-            </li>
-          </ul>
-          <div className="text-center grid gap-xxs pb-sm">
-            <p>
-              Gl. Kongevej 27 <br /> 1610 København V
-            </p>
-            <hr className="w-m mx-auto" />
-            <div className="w-fit mx-auto">
-              <div className="flex justify-between gap-xs">
-                <p>Mandag til torsdag</p>
-                <p>17-24</p>
-              </div>
-              <div className="flex justify-between">
-                <p>Fredag & lørdag</p>
-                <p>17.30-24</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      {
+        showMenu && <Burgermenu showMenu={showMenu} setShowMenu={setShowMenu} />
+
+        // <div ref={menuRef} className="burgermenu-backdrop   w-full lg:hidden grid gap-ml bg-[url('/Image_bank/illustrations/lamarbuilding-burgermenu.svg')] bg-cover bg-center z-[1000] border-y border-darkbrown ">
+        //   <ul className="flex flex-col text-center pt-sm gap-xxs ">
+        //     <li className="mx-auto">
+        //       <RoutingButton variant="cta" href="book">
+        //         Book
+        //       </RoutingButton>
+        //     </li>
+        //     <li>
+        //       <Link href="/menu" className="block navlink">
+        //         Menu
+        //       </Link>
+        //     </li>
+        //     <li>
+        //       <Link href="/about" className="block navlink">
+        //         About
+        //       </Link>
+        //     </li>
+        //     <li>
+        //       <Link href="/faq" className="block navlink">
+        //         F.A.Q.
+        //       </Link>
+        //     </li>
+        //   </ul>
+        //   <div className="text-center grid gap-xxs pb-sm">
+        //     <p>
+        //       Gl. Kongevej 27 <br /> 1610 København V
+        //     </p>
+        //     <hr className="w-m mx-auto" />
+        //     <div className="w-fit mx-auto">
+        //       <div className="flex justify-between gap-xs">
+        //         <p>Mandag til torsdag</p>
+        //         <p>17-24</p>
+        //       </div>
+        //       <div className="flex justify-between">
+        //         <p>Fredag & lørdag</p>
+        //         <p>17.30-24</p>
+        //       </div>
+        //     </div>
+        //   </div>
+        // </div>
+      }
     </div>
   );
 }
