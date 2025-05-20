@@ -34,8 +34,8 @@ export default function Menu() {
         {/* Parent container */}
         <div className="grid gap-sm lg:grid-cols-2 xl:grid-cols-5 lg:items-start">
           {/* Menu buttons and info */}
-          <section className=" grid gap-xxs place-items-center sm-wh  mt-[18vh] md:self-start col-span-full lg:col-span-1 xl:col-span-2">
-            <div className="mx-sm md:mx-6xl ">
+          <section className="mx-sm md:mx-6xl grid gap-xxs place-items-center sm-wh  mt-[18vh] md:self-start col-span-full lg:col-span-1 xl:col-span-2">
+            <div className=" justify-self-start ">
               <h1 className="border-b border-darkbrown">Menu</h1>
               {/* <h2 className="border-y-2 border-darkbrown">Sharing- & winemenu, a la carte or theatermenu</h2> */}
               <p>
@@ -89,6 +89,26 @@ export default function Menu() {
               </ul>
             </section>
           </div>
+          <article className="bg-beige p-xs md:p-m w-100 md:w-[650px] md:h-[500px]  flex flex-col gap-xs overflow-hidden bg-[url('/Image_bank/illustrations/frame-vector-vertical.svg')] aspect-[393/626] md:aspect-[465/617] md:bg-[url('/Image_bank/illustrations/frame-vector.svg')]  bg-no-repeat bg-cover ">
+            <header className="flex flex-col gap-xs m-xs">
+              <div
+                className={`h-50 md:h-30 bg-primary-200 bg-[url('/Image_bank/illustrations/foodandwine2_darkbrown.svg')] bg-left md:bg-cover border-2 border-darkbrown`}
+              ></div>
+              <span>
+                <strong>Menu note:</strong>
+                <p>Requested should be 2 dishes</p>
+              </span>
+            </header>
+            <main className="border-y mx-xs border-darkbrown flex justify-between place-items-baseline">
+              <h2>A la carte</h2>
+              <h4 className="italic">dd,-</h4>
+            </main>
+            <footer>
+              <ul className="mx-xs md:h-[130px] flex flex-col flex-wrap gap-xxs">
+                <li></li>
+              </ul>
+            </footer>
+          </article>
         </div>
       </article>
     </>
