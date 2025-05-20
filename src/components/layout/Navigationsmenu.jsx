@@ -49,7 +49,7 @@ export default function Footer() {
     <div className="border-b border-darkbrown backdrop-blur-md fixed w-full top-0 z-[1000] bg-[url('/Image_bank/illustrations/layerblur.png')] bg-cover bg-center">
       <nav className="flex flex-row justify-between px-s lg:px-6xl self-center py-xs">
         {/* Logo */}
-        <Link onClick={() => setShowMenu(!showMenu)} href="/">
+        <Link onClick={() => setShowMenu(false)} href="/">
           <Image src="/Image_bank/logo/logo-red.svg" alt="logo in red" width={157} height={55} />
         </Link>
 
