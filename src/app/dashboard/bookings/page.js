@@ -24,7 +24,7 @@ export default function menusPage() {
   return (
     <>
       <Dashboard_pageName text="bookings" />
-      <section className="flex justify-between">
+      <section className="flex justify-between my-s">
         {openAddBooking ? <p className="max-w-[400px] ">Create a Please take note of the required fields for creating a new booking.</p> : <p className="max-w-[400px]">Manage current bookings. Contact the booker through clicking on a booking. Cancel/delete or edit an existing booking.</p>}
 
         <Button variant="primary" onClick={handleOpenAddBooking}>
