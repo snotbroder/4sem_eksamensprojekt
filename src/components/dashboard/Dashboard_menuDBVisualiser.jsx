@@ -80,6 +80,7 @@ function TestVisualizer() {
           <p className="animate-pulse">Loading menu...</p>
         )}
       </ul>
+      {/* Edit mode / dialog popup */}
       <dialog id="dialog">
         <div className="p-6 flex flex-col gap-4 slideIn">
           {editMode ? (

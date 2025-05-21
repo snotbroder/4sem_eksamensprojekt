@@ -2,7 +2,7 @@ import { useState } from "react";
 import IconComponent from "../ui/IconComponent";
 import Dashboard_tag from "./Dashboard_tag";
 
-function BookingCard({ data }) {
+function BookingCard({ data, onEditClick }) {
   const [openBooking, setOpenBooking] = useState(false);
   const createdDate = data.created_at.split("T")[0];
   return (
@@ -20,10 +20,23 @@ function BookingCard({ data }) {
           {openBooking ? "" : <p>{data.message.length > 20 ? `${data.message.slice(0, 20)}...` : data.message}</p>}
         </div>
 
-        {openBooking ? <IconComponent className="group-hover:text-configure ml-auto" size="2rem" icon="edit" /> : <IconComponent className="opacity-0 ml-auto" icon="edit" size="2rem" />}
+        {openBooking ? (
+          <button
+            className="ml-auto slideIn"
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation(); // Prioriterer click på denne knap, og ikke dens parent booking card
+              onEditClick?.(data.uuid); // Send data uuid gennem prop
+            }}
+          >
+            <IconComponent className="hover:text-configure hover:border-2 border-configure rounded-sm" size="2rem" icon="edit" />
+          </button>
+        ) : (
+          <IconComponent className="opacity-0" icon="edit" size="2rem" />
+        )}
       </main>
       {openBooking && (
-        <footer className="slideIn grid grid-cols-4">
+        <footer className="slideDown grid grid-cols-4">
           <div className="flex flex-col">
             <p>
               Booked by {data.fName} <strong>{data.lName}</strong>

@@ -356,13 +356,3 @@ font-style: italic; */
     transform: translateX(0px);
   }
 }
-
-.delay1 {
-  animation-delay: 0.2s;
-}
-.delay2 {
-  animation-delay: 0.3s;
-}
-.delay3 {
-  animation-delay: 0.4s;
-}
