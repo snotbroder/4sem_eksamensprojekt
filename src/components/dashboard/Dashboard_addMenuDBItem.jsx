@@ -74,11 +74,31 @@ function Dashboard_addMenuDBItem() {
 
   return (
     <section className="bg-gray-100 p-m md:p-xl mt-s rounded-md">
-      <h2>create a new menu</h2>
+      <div className="grid md:grid-cols-2 gap-s md:gap-lg">
+        <div>
+          <h2>create a new menu</h2>
+          <p className="sm mb-xxs">*Required</p>
+        </div>
+        <div>
+          <Button variant="success" type="submit" disabled={!menu[0].menuTitle || !menu[0].course1 || !menu[0].price || !menu[0].bgColor}>
+            save new menu
+          </Button>
+
+          <div className="flex gap-xxs mt-xs">
+            <Button type="button" variant="configure" disabled={courseCount == 10} onClick={addCourseField}>
+              Add Course
+            </Button>
+            <Button type="button" variant="danger" disabled={courseCount <= 1} onClick={removeCourseField}>
+              Remove Last Course
+            </Button>
+          </div>
+        </div>
+      </div>
+
       {/* Jeg bruger onSubmit, da det er bedre for next.js. Desuden, hvis jeg ikke laver en arrowfunction,
        er det sværre at implementere manglende udfyldte indputfeldte osv.*/}
       <form onSubmit={sendData}>
-        <section className="grid md:grid-cols-2 gap-s md:gap-lg max-w-[1000px]">
+        <section className="grid md:grid-cols-2 gap-s md:gap-lg max-w-[1000px] m-auto">
           <article>
             <div className="form-field">
               <label htmlFor="menuTitle" className="form-label">
@@ -87,36 +107,6 @@ function Dashboard_addMenuDBItem() {
               <input type="text" name="menuTitle" id="menuTitle" className="form-input" value={menu[0].menuTitle} onChange={handleChange} required placeholder="E.g.: Fish season menu"></input>
             </div>
 
-            {[...Array(courseCount)].map((_, index) => (
-              <div key={index} className="form-field">
-                <label htmlFor={`course${index + 1}`} className="form-label">
-                  {`Course ${index + 1}${index === 0 ? "*" : ""}`}
-                </label>
-                <input
-                  type="text"
-                  name={`course${index + 1}`}
-                  id={`course${index + 1}`}
-                  className="form-input"
-                  value={menu[0][`course${index + 1}`]}
-                  onChange={handleChange}
-                  required={index === 0} // only course1 is required
-                />
-              </div>
-            ))}
-          </article>
-          <article>
-            <div className="form-field">
-              <label className="form-label" htmlFor="menuNote">
-                Menu note
-              </label>
-              <input type="text" name="menuNote" id="menuNote" className="form-input" value={menu[0].menuNote} onChange={handleChange} placeholder="E.g.: This menu is also served pescetarian. . ."></input>
-            </div>
-            <div className="form-field">
-              <label className="form-label" htmlFor="price">
-                Price*
-              </label>
-              <input type="number" name="price" id="price" className="form-input" value={menu[0].price} onChange={handleChange} required></input>
-            </div>
             <div className="flex flex-col form-field">
               <label htmlFor="bgColor" className="form-label">
                 Background color*
@@ -131,20 +121,39 @@ function Dashboard_addMenuDBItem() {
               </select>
             </div>
           </article>
+          <article>
+            <div className="form-field">
+              <label className="form-label" htmlFor="menuNote">
+                Menu note
+              </label>
+              <input type="text" name="menuNote" id="menuNote" className="form-input" value={menu[0].menuNote} onChange={handleChange} placeholder="E.g.: This menu is also served pescetarian. . ."></input>
+            </div>
+            <div className="form-field">
+              <label className="form-label" htmlFor="price">
+                Price*
+              </label>
+              <input type="number" name="price" id="price" className="form-input" value={menu[0].price} onChange={handleChange} required></input>
+            </div>
+          </article>
         </section>
-        <p className="sm mb-xxs">*Required</p>
-        <div className="flex md:gap-lg my-xs">
-          <Button className="disabled-button" type="button" variant="configure" disabled={courseCount == 10} onClick={addCourseField}>
-            Add Course
-          </Button>
-          <Button type="button" variant="danger" disabled={courseCount <= 1} onClick={removeCourseField}>
-            Remove Last Course
-          </Button>
-        </div>
-
-        <Button variant="success" type="submit" disabled={!menu[0].menuTitle || !menu[0].course1 || !menu[0].price || !menu[0].bgColor}>
-          save new menu
-        </Button>
+        <article className="flex md:flex-row flex-wrap max-w-[1000px] gap-x-sm  m-auto">
+          {[...Array(courseCount)].map((_, index) => (
+            <div key={index} className="form-field ">
+              <label htmlFor={`course${index + 1}`} className="form-label">
+                {`Course ${index + 1}${index === 0 ? "*" : ""}`}
+              </label>
+              <input
+                type="text"
+                name={`course${index + 1}`}
+                id={`course${index + 1}`}
+                className="form-input"
+                value={menu[0][`course${index + 1}`]}
+                onChange={handleChange}
+                required={index === 0} // only course1 is required
+              />
+            </div>
+          ))}
+        </article>
       </form>
       <ToastContainer position="top-right" autoClose={5000} pauseOnHover />
     </section>
