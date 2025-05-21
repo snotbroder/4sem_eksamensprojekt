@@ -30,7 +30,7 @@ var sisterRestaurantData = [
     address: "Refsnæsgade 32, 2200 København N",
     description:
       "Omar is the firstborn, the o-g, where it all started and the playground that has layed the foundation for why we do what we do. We celebrate neighborhood, diversity, laissez-faire, beautiful hosting, good taste and festivitas.",
-    bgcolor: "primary-500",
+    bgcolor: "primary-400",
     addresscolor: "secondary-700",
     href: "https://www.restaurantomar.dk/menu",
     // selfend: false,

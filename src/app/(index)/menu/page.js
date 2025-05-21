@@ -6,6 +6,7 @@ import { useEffect, useState, useRef } from "react";
 import { getAllItems } from "@/app/api";
 import ClipboardCard from "@/components/utility/ClipboardCard";
 import Wineshelf_Gif from "/public/Image_bank/gifs/illustration-wineshelf.gif";
+
 export default function Menu() {
   const [menus, setMenus] = useState([]);
   useEffect(() => {
@@ -93,11 +94,9 @@ export default function Menu() {
           </div>
         </div>
 
-        {/* a la carte billedramme w-full */}
-
-        <section className="grid md:grid-cols-2 gap-xs px-sm lg:px-6xl py-3xl bg-[url('/Image_bank/aboutus/spoons.png')] bg-cover ">
+        <section className="grid md:grid-cols-2 gap-3xl md:gap-sm px-sm lg:px-6xl py-3xl bg-[url('/Image_bank/aboutus/spoons.png')] bg-cover ">
           <ClipboardCard bgcolor="secondary-200">
-            <article className="  flex flex-col justify-between h-full ">
+            <article className="  flex flex-col gap-sm md:justify-between h-full ">
               <div className="grid gap-sm">
                 <header className="   pt-xs ">
                   <h2 className="border-y border-darkbrown">A la carte</h2>
@@ -310,57 +309,63 @@ export default function Menu() {
             </article>
           </ClipboardCard>
         </section>
-        <section className="grid md:grid-cols-2 gap-xs px-sm lg:px-6xl py-3xl">
+        <section className="grid md:grid-cols-2 gap-3xl md:gap-sm px-sm lg:px-6xl py-3xl">
           <ClipboardCard bgcolor="secondary-300">
-            <article className="  flex flex-col justify-between ">
+            <article className="  flex flex-col gap-sm ">
               <header className="  pt-xs ">
                 <h2 className="border-y border-darkbrown">Winemenu</h2>
               </header>
               <main className=" ">
                 <article className="flex justify-between">
-                  <p>Grilled focaccia & aoli</p>
-
-                  <p className="price">65DKK</p>
+                  <div>
+                    <p>Landwein(1 liter) </p>
+                    <p className="price -mt-xs">
+                      Grüner veltliner, Austria, NV
+                    </p>
+                  </div>
+                  <p className="price">80 / 450DKK</p>
                 </article>
                 <article className="flex justify-between">
-                  <p>Salted scallop with lime, daikon & coriander</p>
-
-                  <p className="price">125DKK</p>
+                  <div>
+                    <p> Riesling trocken </p>
+                    <p className="price -mt-xs">Riesling, Moselle, 2022</p>
+                  </div>
+                  <p className="price">95 / 425DKK</p>
                 </article>
                 <article className="flex justify-between">
-                  <p>Stracciatella, grilled leek & fresh mint</p>
-
-                  <p className="price">115DKK</p>
+                  <div>
+                    <p> Soave </p>
+                    <p className="price -mt-xs">Garganega, Italy, 2022</p>
+                  </div>
+                  <p className="price">100 / 450DKK</p>
                 </article>
                 <article className="flex justify-between">
-                  <p>Potato croquette, parsley cream & herb salad</p>
-
-                  <p className="price">130DKK</p>
+                  <div>
+                    <p>Les bruchots </p>
+                    <p className="price -mt-xs">Chardonnay, Burgundy, 2023</p>
+                  </div>
+                  <p className="price">125 / 525DKK</p>
                 </article>
                 <article className="flex justify-between">
-                  <p>Fried pollock, kimchi, oyster sauce & spring onion</p>
-
-                  <p className="price">155DKK</p>
+                  <div>
+                    <p>Bourgogne pinot noir</p>
+                    <p className="price -mt-xs">Pinot noir, Burgundy, 2022</p>
+                  </div>
+                  <p className="price">125 / 545DKK</p>
                 </article>
                 <article className="flex justify-between">
-                  <p>Pork belly, satay, pak choi & teriyaki</p>
-
-                  <p className="price">135DKK</p>
+                  <div>
+                    <p> Get up </p>
+                    <p className="price -mt-xs">Gamay, Beaujolais, 2023</p>
+                  </div>
+                  <p className="price">100 / 450DKK</p>
                 </article>
                 <article className="flex justify-between">
-                  <p>Deep-fried Camembert with blackcurrant</p>
-
-                  <p className="price">85DKK</p>
-                </article>
-                <article className="flex justify-between">
-                  <p>Plum ice cream, almond & double cream</p>
-
-                  <p className="price">85DKK</p>
-                </article>
-                <article className="flex justify-between">
-                  <p>Banana ice cream, chocolate, crème anglaise & hazelnut</p>
-
-                  <p className="price">85DKK</p>
+                  <div>
+                    <p> Cuvée anatole rosé </p>
+                    <p className="price -mt-xs">Gamay, Burgundy, 2022</p>
+                  </div>
+                  <p className="price">585DKK</p>
                 </article>
               </main>
             </article>
