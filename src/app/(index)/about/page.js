@@ -25,7 +25,7 @@ export default function About() {
         <section className=" mt-[18vh]  px-s lg:px-6xl grid gap-sm lg:gap-xl  lg:grid-cols-2 lg:items-start mb-3xl lg:mb-6xl">
           <div
             data-aos="fade-up"
-            className="grid gap-xxs lg:sticky lg:top-[15%] lg:self-start bg-beige z-50"
+            className="grid  lg:sticky lg:top-[15%] lg:self-start bg-beige z-50"
           >
             <h1>
               About <br></br>lamar

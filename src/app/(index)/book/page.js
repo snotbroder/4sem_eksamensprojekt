@@ -49,18 +49,21 @@ export default function About() {
           h2={"More than 9 people?"}
           p={"Please fill in this form below"}
           btn_txt={"Request"}
-          btn_href={"#forms"}
+          btn_href="#forms"
           img={"/Image_bank/aboutus/food1.png"}
           alt={"plate of food"}
           reversedOrder={true}
           aspectsquare={true}
           addPaddingtoText={true}
         ></Section_text_and_image>
-        <Section_breakup_w_component_request>
-          <ClipboardCard bgcolor="secondary-500">
-            <AddBooking></AddBooking>
-          </ClipboardCard>
-        </Section_breakup_w_component_request>
+        <section id="forms">
+          <Section_breakup_w_component_request>
+            <ClipboardCard bgcolor="secondary-500">
+              <AddBooking></AddBooking>
+            </ClipboardCard>{" "}
+          </Section_breakup_w_component_request>
+        </section>
+
         <Section_sister_restaurants></Section_sister_restaurants>
       </Animation>
     </section>
