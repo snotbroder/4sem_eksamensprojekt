@@ -46,7 +46,7 @@ export default function Home() {
           data-aos="fade-up"
           duration="300"
           id="menu"
-          className=" mx-s md:mx-6xl my-3xl"
+          className=" mx-s lg:mx-6xl my-3xl"
         >
           <Section_text_and_image
             h1={"Menu"}
@@ -64,7 +64,7 @@ export default function Home() {
       </Animation>
 
       <Section_text_background_and_images></Section_text_background_and_images>
-      <section className=" mx-s md:mx-6xl my-3xl">
+      <section className=" mx-s lg:mx-6xl my-3xl">
         <Section_text_and_image
           h1={"About lamar"}
           h2={"Big city vibe and sizzling party atmosphere"}

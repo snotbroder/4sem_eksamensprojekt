@@ -2,6 +2,7 @@
 import Image from "next/image";
 import FoodAndWine_Gif from "/public/Image_bank/gifs/illustration-foodandwine.gif";
 import Wineshelf_Gif from "/public/Image_bank/gifs/illustration-wineshelf.gif";
+import Winebottle_Gif from "/public/Image_bank/gifs/illustration-winebottle.gif";
 // Sections
 import Section_text_and_image from "@/components/layout/Section_text_and_image";
 import Section_breakup_w_component from "@/components/layout/Section_breakup_w_component_join";
@@ -114,6 +115,22 @@ export default function About() {
                 width={172}
                 height={237}
                 className="absolute  translate-x-[50%] bottom-sm hidden lg:block right-1/9 lg:w-[42%] "
+              />
+              <Image
+                data-aos="fade-up"
+                src={Winebottle_Gif}
+                alt="Winebottle spinning around"
+                width={172}
+                height={237}
+                className="absolute  translate-x-[50%] top-0 hidden lg:block left-0 lg:w-[12%] rotate-25 "
+              />
+              <Image
+                data-aos="fade-up"
+                src={Winebottle_Gif}
+                alt="Winebottle spinning around"
+                width={172}
+                height={237}
+                className="absolute  translate-x-[50%] top-5/10 hidden lg:block right-1/9 lg:w-[12%] -rotate-25 "
               />
             </article>
           </Animation>
