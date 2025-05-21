@@ -21,26 +21,30 @@ import Animation from "@/components/aos/Animation";
 export default function About() {
   return (
     <div>
-      <section className=" mt-[18vh]  px-s lg:px-6xl grid gap-sm lg:gap-xl  lg:grid-cols-2 lg:items-start mb-3xl lg:mb-6xl">
-        <div className="grid gap-xxs lg:sticky lg:top-[15%] lg:self-start bg-beige z-50">
-          <h1>
-            About <br></br>lamar
-          </h1>
-          <hr></hr>
-          <h2>Hiphop, party, and city vibe</h2>
-          <hr></hr>
-          <p className="mb-sm ">
-            Lamar is the third in our family of restaurants, celebrating city
-            life and vibrant nightlife. The chaotic, raw and imperfect interior
-            is a way to make Vesterbro less polished.
-            <br></br> Our food is unpretentious and guided by taste, not rules
-            or origin. Ingredients and inspiration shape the menu. We serve
-            plenty of wine, shots, cheeky cocktails, and cold beers.
-          </p>
-        </div>
-        <div>
-          <Animation>
-            <article className=" relative h-[50vh] lg:h-[185vh] transition-all ease-in-out ">
+      <Animation>
+        <section className=" mt-[18vh]  px-s lg:px-6xl grid gap-sm lg:gap-xl  lg:grid-cols-2 lg:items-start mb-3xl lg:mb-6xl">
+          <div
+            data-aos="fade-up"
+            className="grid gap-xxs lg:sticky lg:top-[15%] lg:self-start bg-beige z-50"
+          >
+            <h1>
+              About <br></br>lamar
+            </h1>
+            <hr></hr>
+            <h2>Hiphop, party, and city vibe</h2>
+            <hr></hr>
+            <p className="mb-sm ">
+              Lamar is the third in our family of restaurants, celebrating city
+              life and vibrant nightlife. The chaotic, raw and imperfect
+              interior is a way to make Vesterbro less polished.
+              <br></br> Our food is unpretentious and guided by taste, not rules
+              or origin. Ingredients and inspiration shape the menu. We serve
+              plenty of wine, shots, cheeky cocktails, and cold beers.
+            </p>{" "}
+          </div>
+
+          <div>
+            <article className="my-3xl lg:my-0 relative h-[50vh] lg:h-[185vh] transition-all ease-in-out ">
               <Image
                 data-aos="fade-up"
                 src="/Image_bank/aboutus/fire.png"
@@ -133,42 +137,43 @@ export default function About() {
                 className="absolute  translate-x-[50%] top-5/10 hidden lg:block right-1/9 lg:w-[12%] -rotate-25 "
               />
             </article>
-          </Animation>
-        </div>
-      </section>
-      <section className="hidden lg:block">
-        <Section_text_and_facade></Section_text_and_facade>
-      </section>
+          </div>
+        </section>
+        <section data-aos="fade-in" className="hidden lg:block">
+          <Section_text_and_facade></Section_text_and_facade>
+        </section>
 
-      <section className="mx-s lg:mx-6xl my-3xl">
-        <Section_text_and_image
-          h2="From us to you"
-          p="At Lamar the kitchen puts together the menu and it is served at a fresh pace. We care that the food tastes good, that’s our dishes change depending on the season. The menus has to be ordered for the whole table, and shared family-style."
-          img={FoodAndWine_Gif}
-          reversedOrder={true}
-          noButton={true}
-          gap={true}
-        ></Section_text_and_image>
-      </section>
-      <Section_breakup_w_component>
-        <ClipboardCard bgcolor="secondary-500">
-          <article className="grid gap-xs">
-            <div>
-              <h2 className="border-y-darkbrown border-y">Join our team</h2>
-              <p>Apply for positions or send us an unsolicited email!</p>
-            </div>
+        <section className="mx-s lg:mx-6xl my-3xl">
+          <Section_text_and_image
+            h2="From us to you"
+            p="At Lamar the kitchen puts together the menu and it is served at a fresh pace. We care that the food tastes good, that’s our dishes change depending on the season. The menus has to be ordered for the whole table, and shared family-style."
+            img={FoodAndWine_Gif}
+            alt="food and wine, food getting eaten and wine pouring"
+            reversedOrder={true}
+            noButton={true}
+            gap={true}
+          ></Section_text_and_image>
+        </section>
+        <Section_breakup_w_component>
+          <ClipboardCard bgcolor="secondary-500">
+            <article className="grid gap-xs">
+              <div>
+                <h2 className="border-y-darkbrown border-y">Join our team</h2>
+                <p>Apply for positions or send us an unsolicited email!</p>
+              </div>
 
-            <AccordionParent
-              contentSource={accordionContentJoin}
-            ></AccordionParent>
-            <div className="place-self-end">
-              <RoutingButton variant="forms">Apply here</RoutingButton>
-            </div>
-          </article>
-        </ClipboardCard>
-      </Section_breakup_w_component>
+              <AccordionParent
+                contentSource={accordionContentJoin}
+              ></AccordionParent>
+              <div className="place-self-end">
+                <RoutingButton variant="forms">Apply here</RoutingButton>
+              </div>
+            </article>
+          </ClipboardCard>
+        </Section_breakup_w_component>
 
-      <Section_sister_restaurants></Section_sister_restaurants>
+        <Section_sister_restaurants></Section_sister_restaurants>
+      </Animation>
     </div>
   );
 }

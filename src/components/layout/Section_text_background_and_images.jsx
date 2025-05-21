@@ -7,6 +7,7 @@ function Section_text_background_and_images() {
     <section className=" py-xl ">
       <article id="box" className="relative   ">
         <Image
+          data-aos="fade-up"
           src="/Image_bank/aboutus/food2.png"
           alt="Picture of people talking and food and wine at the table"
           width={162}
@@ -14,6 +15,7 @@ function Section_text_background_and_images() {
           className="absolute -top-lg right-xs lg:w-1/5  lg:object-cover"
         />
         <Image
+          data-aos="fade-up"
           src="/Image_bank/atmosphere/Image_4.jpg"
           alt="Picture of a waiter working"
           width={120}
@@ -21,6 +23,7 @@ function Section_text_background_and_images() {
           className="absolute -bottom-xl left-1/4 md:w-1/5 md:left-4/6 translate-x-[-50%] w-1/4"
         />
         <Image
+          data-aos="fade-up"
           src="/Image_bank/aboutus/food1.png"
           alt="plates of food"
           width={162}
@@ -29,6 +32,7 @@ function Section_text_background_and_images() {
         />
 
         <Image
+          data-aos="fade-up"
           src="/Image_bank/atmosphere/Image_1.jpg"
           alt="Picture of the restaurants facade"
           width={152}
@@ -36,6 +40,7 @@ function Section_text_background_and_images() {
           className="absolute bottom-1/6 md:w-1/6  right-1/4 md:right-5/6 translate-[50%]"
         />
         <Image
+          data-aos="fade-up"
           src="/Image_bank/aboutus/lamarrules.svg"
           alt="lamar rules"
           width={209}

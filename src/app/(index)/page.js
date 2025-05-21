@@ -10,38 +10,39 @@ import Animation from "@/components/aos/Animation";
 export default function Home() {
   return (
     <div className="">
-      <section className="h-[100vh] lg:bg-[url('/Image_bank/repeatingtext/desktop/lamar_secondary500_herodesktop.svg'),_url('/Image_bank/bg-images/heroimage_index_desktop.webp')] bg-[url('/Image_bank/repeatingtext/mobile/lamar_secondary500_heromobile.svg'),_url('/Image_bank/bg-images/heroimage_index_mobile.webp')] bg-center   lg:bg-left-bottom bg-cover pt-[90px]  relative grid">
-        <div className=" px-s py-xs lg:px-6xl h-full flex flex-col justify-between lg:h-fit  lg:justify-end lg:flex-row gap-xxs  ">
-          <div className="self-end text-right w-fit relative  ">
-            <h4 className="relative z-10">
-              Gl. Kongevej 27 <br /> 1610 København V
-            </h4>
-            <div className="bg-beige shadow-beige shadow-2xl blur-3xl  absolute w-full h-full top-0 "></div>
-          </div>
-          <hr className="collapse lg:visible rotate-90 w-ml self-center  " />
-          <div className="w-fit relative">
-            <div className="w-fit relative z-10">
-              <div className="flex justify-between gap-xs">
-                <h4>Mandag til torsdag</h4>
-                <h4>17-24</h4>
-              </div>
-              <div className="flex justify-between shadow-beige shadow-6xl">
-                <h4>Fredag & lørdag</h4>
-                <h4>17.30-24</h4>
-              </div>
-            </div>
-            <div className="bg-beige shadow-beige shadow-2xl blur-3xl  absolute w-full h-full top-0 "></div>
-          </div>
-        </div>
-
-        <a
-          href="#menu"
-          className="size-xl backdrop-blur-md absolute flex place-content-center right-0 bottom-0 border-beige border-r-0  border-b-0 border"
-        >
-          <FaArrowDown className="self-center fill-beige size-s" />
-        </a>
-      </section>
       <Animation>
+        <section className="h-[100vh] lg:bg-[url('/Image_bank/repeatingtext/desktop/lamar_secondary500_herodesktop.svg'),_url('/Image_bank/bg-images/heroimage_index_desktop.webp')] bg-[url('/Image_bank/repeatingtext/mobile/lamar_secondary500_heromobile.svg'),_url('/Image_bank/bg-images/heroimage_index_mobile.webp')] bg-center   lg:bg-left-bottom bg-cover pt-[90px]  relative grid">
+          <div className=" px-s py-xs lg:px-6xl h-full flex flex-col justify-between lg:h-fit  lg:justify-end lg:flex-row gap-xxs  ">
+            <div className="self-end text-right w-fit relative  ">
+              <h4 className="relative z-10">
+                Gl. Kongevej 27 <br /> 1610 København V
+              </h4>
+              <div className="bg-beige shadow-beige shadow-2xl blur-3xl  absolute w-full h-full top-0 "></div>
+            </div>
+            <hr className="collapse lg:visible rotate-90 w-ml self-center  " />
+            <div className="w-fit relative">
+              <div className="w-fit relative z-10">
+                <div className="flex justify-between gap-xs">
+                  <h4>Mandag til torsdag</h4>
+                  <h4>17-24</h4>
+                </div>
+                <div className="flex justify-between shadow-beige shadow-6xl">
+                  <h4>Fredag & lørdag</h4>
+                  <h4>17.30-24</h4>
+                </div>
+              </div>
+              <div className="bg-beige shadow-beige shadow-2xl blur-3xl  absolute w-full h-full top-0 "></div>
+            </div>
+          </div>
+
+          <a
+            href="#menu"
+            className="size-xl backdrop-blur-md absolute flex place-content-center right-0 bottom-0 border-beige border-r-0  border-b-0 border"
+          >
+            <FaArrowDown className="self-center fill-beige size-s" />
+          </a>
+        </section>
+
         <section
           data-aos="fade-up"
           duration="300"
@@ -57,28 +58,30 @@ export default function Home() {
             btn_txt={"Read more"}
             btn_href={"/menu"}
             img={FoodAndWine_Gif}
+            alt="Food and wine gif, food getting eaten and pouring winebottle"
             reversedOrderMobile={true}
             gap={true}
           ></Section_text_and_image>
         </section>
-      </Animation>
 
-      <Section_text_background_and_images></Section_text_background_and_images>
-      <section className=" mx-s lg:mx-6xl my-3xl">
-        <Section_text_and_image
-          h1={"About lamar"}
-          h2={"Big city vibe and sizzling party atmosphere"}
-          p={
-            "At Lamar, time stands still when you walk in the door. Take a seat and let us sweep you off your feet with our delicious food and attentive service. Hip hop music, great wines, cheeky drinks and cold beers."
-          }
-          btn_txt={"Read more"}
-          btn_href={"/about"}
-          img={Facade_Gif}
-          reversedOrder={true}
-          gap={true}
-        ></Section_text_and_image>
-      </section>
-      <Section_sister_restaurants></Section_sister_restaurants>
+        <Section_text_background_and_images></Section_text_background_and_images>
+        <section className=" mx-s lg:mx-6xl my-3xl">
+          <Section_text_and_image
+            h1={"About lamar"}
+            h2={"Big city vibe and sizzling party atmosphere"}
+            p={
+              "At Lamar, time stands still when you walk in the door. Take a seat and let us sweep you off your feet with our delicious food and attentive service. Hip hop music, great wines, cheeky drinks and cold beers."
+            }
+            btn_txt={"Read more"}
+            btn_href={"/about"}
+            img={Facade_Gif}
+            alt="Illustration of the restaurants facade, with the sign getting lit up"
+            reversedOrder={true}
+            gap={true}
+          ></Section_text_and_image>
+        </section>
+        <Section_sister_restaurants></Section_sister_restaurants>
+      </Animation>
     </div>
   );
 }
