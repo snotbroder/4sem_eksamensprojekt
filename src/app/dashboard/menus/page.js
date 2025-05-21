@@ -15,6 +15,7 @@ export default function menusPage() {
     setSelected("menus");
   }, []); //Sæt navmenu selected state
   // setSelected <<< used to be in useEffect bracket
+
   const [openAddMenu, setOpenAddMenu] = useState(false);
 
   function handleOpenAddMenu() {
