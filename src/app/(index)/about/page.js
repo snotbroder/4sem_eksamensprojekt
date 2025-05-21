@@ -128,11 +128,11 @@ export default function About() {
           </article>
         </ClipboardCard>
       </Section_breakup_w_component>
-      <Section_breakup_w_component_request>
+      {/* <Section_breakup_w_component_request>
         <ClipboardCard bgcolor="secondary-500">
           <AddBooking></AddBooking>
         </ClipboardCard>
-      </Section_breakup_w_component_request>
+      </Section_breakup_w_component_request> */}
       <Section_sister_restaurants></Section_sister_restaurants>
     </div>
   );

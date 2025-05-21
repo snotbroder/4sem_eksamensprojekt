@@ -1,10 +1,13 @@
 import Image from "next/image";
-import Section_breakup_w_component from "@/components/layout/Section_breakup_w_component copy";
+import Section_breakup_w_component_request from "@/components/layout/Section_breakup_w_component_request";
+import AddBooking from "@/components/utility/AddBooking";
 import accordionContentJoin from "@/copy_content/accordionJoin";
 import AccordionParent from "@/components/ui/accordion/AccordionParent";
 import RoutingButton from "@/components/ui/buttons/RoutingButton";
 import Section_text_and_image from "@/components/layout/Section_text_and_image";
 import ClipboardCard from "@/components/utility/ClipboardCard";
+import Section_sister_restaurants from "@/components/layout/Section_sister_restaurants";
+
 export default function About() {
   return (
     <section>
@@ -44,9 +47,12 @@ export default function About() {
         aspectsquare={true}
         addPaddingtoText={true}
       ></Section_text_and_image>
-      <section id="forms">
-        <Section_breakup_w_component></Section_breakup_w_component>
-      </section>
+      <Section_breakup_w_component_request>
+        <ClipboardCard bgcolor="secondary-500">
+          <AddBooking></AddBooking>
+        </ClipboardCard>
+      </Section_breakup_w_component_request>
+      <Section_sister_restaurants></Section_sister_restaurants>
     </section>
   );
 }
