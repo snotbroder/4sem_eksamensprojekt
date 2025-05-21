@@ -9,30 +9,6 @@ import Burgermenu from "./Burgermenu";
 
 export default function Footer() {
   const [showMenu, setShowMenu] = useState(false);
-  // const menuRef = useRef(null);
-  // const burgerRef = useRef(null);
-
-  // Close on outside click
-  // useEffect(() => {
-  //   const handleClickOutside = (event) => {
-  //     if (menuRef.current && !menuRef.current.contains(event.target) && !burgerRef.current.contains(event.target)) {
-  //       setShowMenu(false);
-  //     }
-  //   };
-  //   document.addEventListener("mousedown", handleClickOutside);
-  //   return () => document.removeEventListener("mousedown", handleClickOutside);
-  // }, []);
-
-  // Close menu on desktop resize
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     if (window.innerWidth >= 1024) {
-  //       setShowMenu(false);
-  //     }
-  //   };
-  //   window.addEventListener("resize", handleResize);
-  //   return () => window.removeEventListener("resize", handleResize);
-  // }, []);
 
   // Denne snippet gør at når burgermenuen renderes, vil man ikke kunne scroll det bagvedliggende content.
   useEffect(() => {
@@ -88,51 +64,8 @@ export default function Footer() {
         </div>
       </nav>
 
-      {/* Mobile Menu */}
-      {
-        showMenu && <Burgermenu showMenu={showMenu} setShowMenu={setShowMenu} />
-
-        // <div ref={menuRef} className="burgermenu-backdrop   w-full lg:hidden grid gap-ml bg-[url('/Image_bank/illustrations/lamarbuilding-burgermenu.svg')] bg-cover bg-center z-[1000] border-y border-darkbrown ">
-        //   <ul className="flex flex-col text-center pt-sm gap-xxs ">
-        //     <li className="mx-auto">
-        //       <RoutingButton variant="cta" href="book">
-        //         Book
-        //       </RoutingButton>
-        //     </li>
-        //     <li>
-        //       <Link href="/menu" className="block navlink">
-        //         Menu
-        //       </Link>
-        //     </li>
-        //     <li>
-        //       <Link href="/about" className="block navlink">
-        //         About
-        //       </Link>
-        //     </li>
-        //     <li>
-        //       <Link href="/faq" className="block navlink">
-        //         F.A.Q.
-        //       </Link>
-        //     </li>
-        //   </ul>
-        //   <div className="text-center grid gap-xxs pb-sm">
-        //     <p>
-        //       Gl. Kongevej 27 <br /> 1610 København V
-        //     </p>
-        //     <hr className="w-m mx-auto" />
-        //     <div className="w-fit mx-auto">
-        //       <div className="flex justify-between gap-xs">
-        //         <p>Mandag til torsdag</p>
-        //         <p>17-24</p>
-        //       </div>
-        //       <div className="flex justify-between">
-        //         <p>Fredag & lørdag</p>
-        //         <p>17.30-24</p>
-        //       </div>
-        //     </div>
-        //   </div>
-        // </div>
-      }
+      {/* Mobile Menu, kommunikér state til Burgermenu komponent */}
+      {showMenu && <Burgermenu showMenu={showMenu} setShowMenu={setShowMenu} />}
     </div>
   );
 }
