@@ -91,25 +91,19 @@ function bookingVisualiser() {
                 <p>
                   <strong>Configuring</strong>
                 </p>
-                <h2>{selectedMenu ? selectedMenu.menuTitle : "Error: No menu selected"}</h2>
+                <h2>{selectedBooking ? `booking for ${selectedBooking.date}` : "Error: No booking selected"}</h2>
               </header>
               <form onSubmit={sendData}>
                 <div className="grid md:grid-cols-2 gap-xxs">
                   <article>
                     <div className="form-field">
                       <label htmlFor="fName" className="form-label">
-                        Menu title*
+                        First name*
                       </label>
-                      <input type="text" name="fName" id="fName" className="form-input" value={editedBooking.fName} onChange={(e) => setEditedMenu({ ...editedMenu, menuTitle: e.target.value })}></input>
-                    </div>
-                    <div className="form-field">
-                      <label htmlFor="course1" className="form-label">
-                        Course 1*
-                      </label>
-                      <input type="text" name="course1" id="course1" className="form-input" value={editedMenu.course1} onChange={(e) => setEditedMenu({ ...editedMenu, course1: e.target.value })}></input>
+                      <input type="text" name="fName" id="fName" className="form-input" value={editedBooking.fName} onChange={(e) => setEditedMenu({ ...editedBooking, fName: e.target.value })}></input>
                     </div>
 
-                    <div className="flex flex-col form-field">
+                    {/* <div className="flex flex-col form-field">
                       <label htmlFor="bgColor" className="form-label">
                         Background color*
                       </label>
@@ -121,50 +115,14 @@ function bookingVisualiser() {
                         <option>secondary-400</option>
                         <option>secondary-500</option>
                       </select>
-                    </div>
+                    </div> */}
                   </article>
                   <article>
                     <div className="form-field">
-                      <label htmlFor="course6" className="form-label">
-                        Course 6
+                      <label htmlFor="lName" className="form-label">
+                        Last name
                       </label>
-                      <input type="text" name="course6" id="course6" className="form-input" value={editedMenu.course6} onChange={(e) => setEditedMenu({ ...editedMenu, course6: e.target.value })}></input>
-                    </div>
-                    <div className="form-field">
-                      <label htmlFor="course7" className="form-label">
-                        Course 7
-                      </label>
-                      <input type="text" name="course7" id="course7" className="form-input" value={editedMenu.course7} onChange={(e) => setEditedMenu({ ...editedMenu, course7: e.target.value })}></input>
-                    </div>
-                    <div className="form-field">
-                      <label htmlFor="course8" className="form-label">
-                        Course 8
-                      </label>
-                      <input type="text" name="course8" id="course8" className="form-input" value={editedMenu.course8} onChange={(e) => setEditedMenu({ ...editedMenu, course8: e.target.value })}></input>
-                    </div>
-                    <div className="form-field">
-                      <label htmlFor="course9" className="form-label">
-                        Course 9
-                      </label>
-                      <input type="text" name="course9" id="course9" className="form-input" value={editedMenu.course9} onChange={(e) => setEditedMenu({ ...editedMenu, course9: e.target.value })}></input>
-                    </div>
-                    <div className="form-field">
-                      <label htmlFor="course10" className="form-label">
-                        Course 10
-                      </label>
-                      <input type="text" name="course10" id="course10" className="form-input" value={editedMenu.course10} onChange={(e) => setEditedMenu({ ...editedMenu, course10: e.target.value })}></input>
-                    </div>
-                    <div className="form-field">
-                      <label htmlFor="menuNote" className="form-label">
-                        Menu note
-                      </label>
-                      <input type="text" name="menuNote" id="menuNote" className="form-input" value={editedMenu.menuNote} onChange={(e) => setEditedMenu({ ...editedMenu, menuNote: e.target.value })}></input>
-                    </div>
-                    <div className="form-field">
-                      <label htmlFor="price" className="form-label">
-                        Price
-                      </label>
-                      <input type="text" name="price" id="price" className="form-input" value={editedMenu.price} onChange={(e) => setEditedMenu({ ...editedMenu, price: e.target.value })}></input>
+                      <input type="text" name="lName" id="lName" className="form-input" value={editedBooking.lName} onChange={(e) => setEditedMenu({ ...editedBooking, lName: e.target.value })}></input>
                     </div>
                   </article>
                 </div>
@@ -184,7 +142,8 @@ function bookingVisualiser() {
                 <p>
                   <strong>Configuring</strong>
                 </p>
-                <h2>{selectedBooking ? selectedBooking.fName : "Error: No menu selected"}</h2>
+                <h2>{selectedBooking ? `booking for ${selectedBooking.date}` : "Error: No booking selected"}</h2>
+                <p> {selectedBooking ? `Booker: ${selectedBooking.fName} ${selectedBooking.lName}` : "Error: No booking selected"}</p>
               </header>
               <p>Choose an option.</p>
               <footer className="flex flex-col gap-xxs">

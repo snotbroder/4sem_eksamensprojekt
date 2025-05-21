@@ -22,7 +22,7 @@ function BookingCard({ data, onEditClick }) {
 
         {openBooking ? (
           <button
-            className="ml-auto slideIn"
+            className="ml-auto slideIn hover:cursor-pointer"
             type="button"
             onClick={(e) => {
               e.stopPropagation(); // Prioriterer click på denne knap, og ikke dens parent booking card
