@@ -102,20 +102,6 @@ function bookingVisualiser() {
                       </label>
                       <input type="text" name="fName" id="fName" className="form-input" value={editedBooking.fName} onChange={(e) => setEditedMenu({ ...editedBooking, fName: e.target.value })}></input>
                     </div>
-
-                    {/* <div className="flex flex-col form-field">
-                      <label htmlFor="bgColor" className="form-label">
-                        Background color*
-                      </label>
-                      <select className="capitalize form-select" name="bgColor" id="bgColor" value={editedMenu.bgColor} onChange={(e) => setEditedMenu({ ...editedMenu, bgColor: e.target.value })} required>
-                        <option></option>
-                        <option>primary-200</option>
-                        <option>primary-400</option>
-                        <option>secondary-200</option>
-                        <option>secondary-400</option>
-                        <option>secondary-500</option>
-                      </select>
-                    </div> */}
                   </article>
                   <article>
                     <div className="form-field">

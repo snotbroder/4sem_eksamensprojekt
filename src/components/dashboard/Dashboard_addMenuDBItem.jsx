@@ -74,27 +74,10 @@ function Dashboard_addMenuDBItem() {
 
   return (
     <section className="bg-gray-100 p-m md:p-xl mt-s rounded-md">
-      <div className="grid md:grid-cols-2 gap-s md:gap-lg">
-        <div>
-          <h2>create a new menu</h2>
-          <p className="sm mb-xxs">*Required</p>
-        </div>
-        <div>
-          <Button variant="success" type="submit" disabled={!menu[0].menuTitle || !menu[0].course1 || !menu[0].price || !menu[0].bgColor}>
-            save new menu
-          </Button>
-
-          <div className="flex gap-xxs mt-xs">
-            <Button type="button" variant="configure" disabled={courseCount == 10} onClick={addCourseField}>
-              Add Course
-            </Button>
-            <Button type="button" variant="danger" disabled={courseCount <= 1} onClick={removeCourseField}>
-              Remove Last Course
-            </Button>
-          </div>
-        </div>
+      <div className="max-w-[1000px] m-auto">
+        <h2>create a new menu</h2>
       </div>
-
+      <hr className="text-gray-300 my-xs max-w-[1000px] mx-auto" />
       {/* Jeg bruger onSubmit, da det er bedre for next.js. Desuden, hvis jeg ikke laver en arrowfunction,
        er det sværre at implementere manglende udfyldte indputfeldte osv.*/}
       <form onSubmit={sendData}>
@@ -121,6 +104,7 @@ function Dashboard_addMenuDBItem() {
               </select>
             </div>
           </article>
+
           <article>
             <div className="form-field">
               <label className="form-label" htmlFor="menuNote">
@@ -136,6 +120,21 @@ function Dashboard_addMenuDBItem() {
             </div>
           </article>
         </section>
+        <hr className="text-gray-300 my-xs max-w-[1000px] mx-auto" />
+        <div className="grid md:grid-cols-3 gap-xxs md:gap-lg max-w-[1000px] m-auto">
+          <div></div>
+          <div className=" p-xxs rounded-md col-span-2 flex flex-col">
+            <div className="flex gap-xxs mt-xs">
+              <Button type="button" variant="configure" disabled={courseCount == 10} onClick={addCourseField}>
+                Add Course
+              </Button>
+              <Button type="button" variant="danger" disabled={courseCount <= 1} onClick={removeCourseField}>
+                Remove Last Course
+              </Button>
+            </div>
+          </div>
+        </div>
+
         <article className="flex md:flex-row flex-wrap max-w-[1000px] gap-x-sm  m-auto">
           {[...Array(courseCount)].map((_, index) => (
             <div key={index} className="form-field ">
@@ -154,6 +153,17 @@ function Dashboard_addMenuDBItem() {
             </div>
           ))}
         </article>
+        <hr className="text-gray-300 my-xs max-w-[1000px] mx-auto" />
+        <div className="grid md:grid-cols-3 gap-xxs md:gap-lg max-w-[1000px] m-auto">
+          <div>
+            <p className="sm mb-xxs">*Required</p>
+          </div>
+          <div className=" p-xxs rounded-md col-span-2 flex flex-col">
+            <Button variant="success" type="submit" disabled={!menu[0].menuTitle || !menu[0].course1 || !menu[0].price || !menu[0].bgColor}>
+              save new menu
+            </Button>
+          </div>
+        </div>
       </form>
       <ToastContainer position="top-right" autoClose={5000} pauseOnHover />
     </section>
