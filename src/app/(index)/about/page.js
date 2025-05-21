@@ -112,7 +112,7 @@ export default function About() {
         ></Section_text_and_image>
       </section>
       <Section_breakup_w_component>
-        <ClipboardCard>
+        <ClipboardCard bgcolor="secondary-500">
           <article className="grid gap-xs">
             <div>
               <h2 className="border-y-darkbrown border-y">Join our team</h2>
@@ -129,7 +129,7 @@ export default function About() {
         </ClipboardCard>
       </Section_breakup_w_component>
       <Section_breakup_w_component_request>
-        <ClipboardCard>
+        <ClipboardCard bgcolor="secondary-500">
           <AddBooking></AddBooking>
         </ClipboardCard>
       </Section_breakup_w_component_request>
