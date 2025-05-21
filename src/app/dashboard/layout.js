@@ -11,9 +11,9 @@ export const metadata = {
 
 export default function DashboardLayout({ children }) {
   return (
-    <html lang="en">
-      <body>
-        <ClerkProvider>
+    <ClerkProvider>
+      <html lang="en">
+        <body>
           <Dashboard_header />
           <SignedOut>
             <h1>U r logged out</h1>
@@ -26,9 +26,9 @@ export default function DashboardLayout({ children }) {
               <main className="flex-grow overflow-auto m-sm md:ml-8xl mt-3xl md:mt-8xl min-h-screen">{children}</main>
             </div>
           </SignedIn>
-        </ClerkProvider>
-        <Footer />
-      </body>
-    </html>
+          <Footer />
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
