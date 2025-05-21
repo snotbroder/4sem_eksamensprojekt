@@ -3,7 +3,7 @@ function MenuCard({ menuData }) {
     (key) => key.startsWith("course") && menuData[key]
   ); //Filter gemmem menuData og fin objekter med "course"
   return (
-    <article className="bg-beige p-xs md:p-m w-100 md:w-[650px] md:h-[490px] flex flex-col gap-xs overflow-hidden bg-[url('/Image_bank/illustrations/frame-vector-vertical.svg')] md:bg-[url('/Image_bank/illustrations/frame-vector.svg')] bg-no-repeat bg-cover">
+    <article className="bg-beige p-xs md:p-m w-100 md:w-[650px] md:h-[500px]  flex flex-col gap-xs overflow-hidden bg-[url('/Image_bank/illustrations/frame-vector-vertical.svg')] aspect-[393/626] md:aspect-[465/617] md:bg-[url('/Image_bank/illustrations/frame-vector.svg')]  bg-no-repeat bg-cover ">
       <header className="flex flex-col gap-xs m-xs">
         <div
           className={`h-50 md:h-30 bg-${menuData.bgColor} bg-[url('/Image_bank/illustrations/foodandwine2_darkbrown.svg')] bg-left md:bg-cover border-2 border-darkbrown`}
@@ -13,7 +13,7 @@ function MenuCard({ menuData }) {
           <p>{menuData.menuNote}</p>
         </span>
       </header>
-      <main className="border-b-2 mx-xs border-darkbrown flex justify-between place-items-baseline">
+      <main className="border-y mx-xs border-darkbrown flex justify-between place-items-baseline">
         <h2>{menuData.menuTitle}</h2>
         <h4 className="italic">{menuData.price},-</h4>
       </main>
