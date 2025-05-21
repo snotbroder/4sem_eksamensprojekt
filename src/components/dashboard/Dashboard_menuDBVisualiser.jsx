@@ -93,6 +93,7 @@ function TestVisualizer() {
               </header>
               <form onSubmit={sendData}>
                 <div className="grid md:grid-cols-2 gap-xxs">
+                  {/* Upper column left */}
                   <article>
                     <div className="form-field">
                       <label htmlFor="menuTitle" className="form-label">
@@ -100,6 +101,41 @@ function TestVisualizer() {
                       </label>
                       <input type="text" name="menuTitle" id="menuTitle" className="form-input" value={editedMenu.menuTitle} onChange={(e) => setEditedMenu({ ...editedMenu, menuTitle: e.target.value })}></input>
                     </div>
+                    <div className="flex flex-col form-field">
+                      <label htmlFor="bgColor" className="form-label">
+                        Background color*
+                      </label>
+                      <select className="capitalize form-select" name="bgColor" id="bgColor" value={editedMenu.bgColor} onChange={(e) => setEditedMenu({ ...editedMenu, bgColor: e.target.value })} required>
+                        <option></option>
+                        <option>primary-200</option>
+                        <option>primary-400</option>
+                        <option>secondary-200</option>
+                        <option>secondary-400</option>
+                        <option>secondary-500</option>
+                      </select>
+                    </div>
+                  </article>
+                  {/* Upper column right */}
+                  <article>
+                    <div className="form-field">
+                      <label htmlFor="menuNote" className="form-label">
+                        Menu note
+                      </label>
+                      <input type="text" name="menuNote" id="menuNote" className="form-input" value={editedMenu.menuNote} onChange={(e) => setEditedMenu({ ...editedMenu, menuNote: e.target.value })}></input>
+                    </div>
+                    <div className="form-field">
+                      <label htmlFor="price" className="form-label">
+                        Price
+                      </label>
+                      <input type="text" name="price" id="price" className="form-input" value={editedMenu.price} onChange={(e) => setEditedMenu({ ...editedMenu, price: e.target.value })}></input>
+                    </div>
+                  </article>
+                </div>
+
+                <hr className="text-gray-300 my-xs" />
+                <div className="grid md:grid-cols-2 gap-xxs">
+                  {/* Lower column left */}
+                  <article>
                     <div className="form-field">
                       <label htmlFor="course1" className="form-label">
                         Course 1*
@@ -130,20 +166,9 @@ function TestVisualizer() {
                       </label>
                       <input type="text" name="course5" id="course5" className="form-input" value={editedMenu.course5} onChange={(e) => setEditedMenu({ ...editedMenu, course5: e.target.value })}></input>
                     </div>
-                    <div className="flex flex-col form-field">
-                      <label htmlFor="bgColor" className="form-label">
-                        Background color*
-                      </label>
-                      <select className="capitalize form-select" name="bgColor" id="bgColor" value={editedMenu.bgColor} onChange={(e) => setEditedMenu({ ...editedMenu, bgColor: e.target.value })} required>
-                        <option></option>
-                        <option>primary-200</option>
-                        <option>primary-400</option>
-                        <option>secondary-200</option>
-                        <option>secondary-400</option>
-                        <option>secondary-500</option>
-                      </select>
-                    </div>
                   </article>
+
+                  {/* Lower column right */}
                   <article>
                     <div className="form-field">
                       <label htmlFor="course6" className="form-label">
@@ -174,18 +199,6 @@ function TestVisualizer() {
                         Course 10
                       </label>
                       <input type="text" name="course10" id="course10" className="form-input" value={editedMenu.course10} onChange={(e) => setEditedMenu({ ...editedMenu, course10: e.target.value })}></input>
-                    </div>
-                    <div className="form-field">
-                      <label htmlFor="menuNote" className="form-label">
-                        Menu note
-                      </label>
-                      <input type="text" name="menuNote" id="menuNote" className="form-input" value={editedMenu.menuNote} onChange={(e) => setEditedMenu({ ...editedMenu, menuNote: e.target.value })}></input>
-                    </div>
-                    <div className="form-field">
-                      <label htmlFor="price" className="form-label">
-                        Price
-                      </label>
-                      <input type="text" name="price" id="price" className="form-input" value={editedMenu.price} onChange={(e) => setEditedMenu({ ...editedMenu, price: e.target.value })}></input>
                     </div>
                   </article>
                 </div>
