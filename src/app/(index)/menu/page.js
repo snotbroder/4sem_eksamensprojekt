@@ -1,10 +1,11 @@
 "use client";
+import Image from "next/image";
 import MenuCard from "@/components/utility/MenuCard";
 import Button from "../../../components/ui/buttons/Button";
 import { useEffect, useState, useRef } from "react";
 import { getAllItems } from "@/app/api";
 import ClipboardCard from "@/components/utility/ClipboardCard";
-
+import Wineshelf_Gif from "/public/Image_bank/gifs/illustration-wineshelf.gif";
 export default function Menu() {
   const [menus, setMenus] = useState([]);
   useEffect(() => {
@@ -33,9 +34,9 @@ export default function Menu() {
       {/* min-h-screen */}
       <article className=" ">
         {/* Parent container */}
-        <div className="grid gap-sm lg:grid-cols-2 xl:grid-cols-5 lg:items-start">
+        <div className="grid gap-sm lg:grid-cols-2 xl:grid-cols-5 lg:items-start ">
           {/* Menu buttons and info */}
-          <section className="mx-sm lg:mx-6xl grid gap-xxs place-items-center sm-wh  mt-[18vh] md:self-start col-span-full lg:col-span-1 xl:col-span-2">
+          <section className="mx-sm lg:mx-6xl grid gap-xxs  sm-wh  mt-[18vh] md:self-start col-span-full lg:col-span-1 xl:col-span-2">
             <div className=" justify-self-start ">
               <h1 className="border-b border-darkbrown">Menu</h1>
               {/* <h2 className="border-y-2 border-darkbrown">Sharing- & winemenu, a la carte or theatermenu</h2> */}
@@ -69,7 +70,7 @@ export default function Menu() {
           </section>
 
           {/* Menu cards container */}
-          <div className="col-span-full lg:col-span-1 xl:col-span-3 overflow-hidden bg-[url('/Image_bank/wall_of_photos.jpg')] bg-cover">
+          <div className="col-span-full lg:col-span-1 xl:col-span-3 overflow-hidden bg-[url('/Image_bank/bg-images/wall_of_photos.jpg')] bg-cover pb-2xl">
             <section className="pl-xl pr-xl md:pr-3xl py-[60px] lg:pt-[120px] ">
               <ul className="snap-x snap-mandatory overflow-x-auto flex gap-xl scroll-smooth scrollbar-none ">
                 {menus.length > 0 ? (
@@ -93,278 +94,286 @@ export default function Menu() {
         </div>
 
         {/* a la carte billedramme w-full */}
-        <article className="bg-beige p-s py-m  md:p-m    flex flex-col justify-between overflow-hidden bg-[url('/Image_bank/illustrations/frame-vector-vertical.svg')] aspect-[393/626]   bg-no-repeat bg-cover ">
-          <header className="mx-xs  pt-xs ">
-            <h2 className="border-y border-darkbrown">A la carte</h2>
-          </header>
-          <main className="mx-xs ">
-            <article className="flex justify-between">
-              <p>Grilled focaccia & aoli</p>
 
-              <p className="price">65DKK</p>
-            </article>
-            <article className="flex justify-between">
-              <p>Salted scallop with lime, daikon & coriander</p>
+        <section className="grid md:grid-cols-2 gap-xs px-sm lg:px-6xl py-3xl bg-[url('/Image_bank/aboutus/spoons.png')] bg-cover ">
+          <ClipboardCard bgcolor="secondary-200">
+            <article className="  flex flex-col justify-between h-full ">
+              <div className="grid gap-sm">
+                <header className="   pt-xs ">
+                  <h2 className="border-y border-darkbrown">A la carte</h2>
+                </header>
+                <main className=" ">
+                  <article className="flex justify-between">
+                    <p>Grilled focaccia & aoli</p>
 
-              <p className="price">125DKK</p>
-            </article>
-            <article className="flex justify-between">
-              <p>Stracciatella, grilled leek & fresh mint</p>
+                    <p className="price">65DKK</p>
+                  </article>
+                  <article className="flex justify-between">
+                    <p>Salted scallop with lime, daikon & coriander</p>
 
-              <p className="price">115DKK</p>
-            </article>
-            <article className="flex justify-between">
-              <p>Potato croquette, parsley cream & herb salad</p>
+                    <p className="price">125DKK</p>
+                  </article>
+                  <article className="flex justify-between">
+                    <p>Stracciatella, grilled leek & fresh mint</p>
 
-              <p className="price">130DKK</p>
-            </article>
-            <article className="flex justify-between">
-              <p>Fried pollock, kimchi, oyster sauce & spring onion</p>
+                    <p className="price">115DKK</p>
+                  </article>
+                  <article className="flex justify-between">
+                    <p>Potato croquette, parsley cream & herb salad</p>
 
-              <p className="price">155DKK</p>
-            </article>
-            <article className="flex justify-between">
-              <p>Pork belly, satay, pak choi & teriyaki</p>
+                    <p className="price">130DKK</p>
+                  </article>
+                  <article className="flex justify-between">
+                    <p>Fried pollock, kimchi, oyster sauce & spring onion</p>
 
-              <p className="price">135DKK</p>
-            </article>
-            <article className="flex justify-between">
-              <p>Deep-fried Camembert with blackcurrant</p>
+                    <p className="price">155DKK</p>
+                  </article>
+                  <article className="flex justify-between">
+                    <p>Pork belly, satay, pak choi & teriyaki</p>
 
-              <p className="price">85DKK</p>
-            </article>
-            <article className="flex justify-between">
-              <p>Plum ice cream, almond & double cream</p>
+                    <p className="price">135DKK</p>
+                  </article>
+                  <article className="flex justify-between">
+                    <p>Deep-fried Camembert with blackcurrant</p>
 
-              <p className="price">85DKK</p>
-            </article>
-            <article className="flex justify-between">
-              <p>Banana ice cream, chocolate, crème anglaise & hazelnut</p>
+                    <p className="price">85DKK</p>
+                  </article>
+                  <article className="flex justify-between">
+                    <p>Plum ice cream, almond & double cream</p>
 
-              <p className="price">85DKK</p>
-            </article>
-          </main>
-        </article>
-        {/* drinks and snacks billedramme w-1/2 */}
-        <article className="bg-beige p-xs  md:p-m  w-1/2   flex flex-col gap-xs overflow-hidden bg-[url('/Image_bank/illustrations/frame-vector-vertical.svg')] aspect-[393/626]   bg-no-repeat bg-cover ">
-          <header className="mx-xs grid pt-xs ">
-            <h2 className="border-y border-darkbrown ">Drinks & snacks</h2>
-          </header>
-          <main className="mx-xs">
-            <article className="flex justify-between">
-              <div>
-                <p>Gin/tonic</p>
-                <p className="price -mt-xs">Gin, classic tonic & lime</p>
+                    <p className="price">85DKK</p>
+                  </article>
+                  <article className="flex justify-between">
+                    <p>
+                      Banana ice cream, chocolate, crème anglaise & hazelnut
+                    </p>
+
+                    <p className="price">85DKK</p>
+                  </article>
+                </main>
               </div>
-              <p className="price">85DKK</p>
+
+              <footer>
+                <Image
+                  src="/Image_bank/illustrations/foodandwine1_darkbrown.svg"
+                  width={100}
+                  height={100}
+                  alt="illustration of food and a person pouring wine"
+                  className="w-full"
+                ></Image>
+              </footer>
             </article>
-            <article className="flex justify-between">
-              <div>
-                <p>Paloma</p>
-                <p className="price -mt-xs">Gin, classic tonic & lime</p>
-              </div>
-              <p className="price">85DKK</p>
+          </ClipboardCard>
+          <ClipboardCard bgcolor="primary-200">
+            <article className=" grid gap-sm">
+              <header className=" grid pt-xs ">
+                <h2 className="border-y border-darkbrown ">Drinks & snacks</h2>
+              </header>
+              <main className=" grid gap-sm">
+                <article>
+                  <div className="flex justify-between">
+                    <div>
+                      <p>Gin/tonic</p>
+                      <p className="price -mt-xs">Gin, classic tonic & lime</p>
+                    </div>
+                    <p className="price">85DKK</p>
+                  </div>
+                  <div className="flex justify-between">
+                    <div>
+                      <p>Paloma</p>
+                      <p className="price -mt-xs">Tequila, pink grape & lime</p>
+                    </div>
+                    <p className="price">85DKK</p>
+                  </div>
+                  <div className="flex justify-between">
+                    <div>
+                      <p>Dark & stormy</p>
+                      <p className="price -mt-xs">
+                        Dark rum, ginger ale & lime
+                      </p>
+                    </div>
+                    <p className="price">85DKK</p>
+                  </div>
+                  <div className="flex justify-between">
+                    <div>
+                      <p>Aperol spritz</p>
+                      <p className="price -mt-xs">Aperol, cava & orange</p>
+                    </div>
+                    <p className="price">85DKK</p>
+                  </div>
+                  <div className="flex justify-between">
+                    <div>
+                      <p>Espresso martini</p>
+                      <p className="price -mt-xs">
+                        Vodka, espresso & coffeeliquor
+                      </p>
+                    </div>
+                    <p className="price">100DKK</p>
+                  </div>
+                  <div className="flex justify-between">
+                    <div>
+                      <p>Whiskey sour</p>
+                      <p className="price -mt-xs">
+                        Bourbon, citron, angostura bitters, eggwhites & sugar
+                      </p>
+                    </div>
+                    <p className="price">100DKK</p>
+                  </div>
+                  <div className="flex justify-between">
+                    <div>
+                      <p>Margarita</p>
+                      <p className="price -mt-xs">
+                        Tequila, triple sec, liquor & lemon
+                      </p>
+                    </div>
+                    <p className="price">100DKK</p>
+                  </div>
+                  <div className="flex justify-between">
+                    <div>
+                      <p>Negroni</p>
+                      <p className="price -mt-xs">
+                        Gin, campari, dolin vermouth & orange
+                      </p>
+                    </div>
+                    <p className="price">85DKK</p>
+                  </div>
+                  <div className="flex justify-between">
+                    <div>
+                      <p>Old fashioned</p>
+                      <p className="price -mt-xs">
+                        Bourbon, maraschino-liquor, angostura bitters & orange
+                      </p>
+                    </div>
+                    <p className="price">85DKK</p>
+                  </div>
+                  <div className="flex justify-between">
+                    <div>
+                      <p>Royal grey</p>
+                      <p className="price -mt-xs">
+                        Ginish, earl grey sirup & lemon (alcoholfree)
+                      </p>
+                    </div>
+                    <p className="price">85DKK</p>
+                  </div>
+                  <div className="flex justify-between">
+                    <div>
+                      <p>Coffee & avec</p>
+                      <p className="price -mt-xs">
+                        Gælder americano eller espresso
+                      </p>
+                    </div>
+                    <p className="price">80DKK</p>
+                  </div>
+                  <div className="flex justify-between">
+                    <p>Sparkling/still water pr. person</p>
+
+                    <p className="price">25DKK</p>
+                  </div>
+                </article>
+                <article className="grid-cols-2 grid gap-lg  ">
+                  <div className="self-end">
+                    <div className="flex justify-between">
+                      <p>Olives</p>
+
+                      <p className="price">65DKK</p>
+                    </div>
+                    <div className="flex justify-between">
+                      <p>Roased marcona almonds</p>
+
+                      <p className="price">60DKK</p>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="flex justify-between">
+                      <p>Cognac</p>
+
+                      <p className="price">65DKK</p>
+                    </div>
+                    <div className="flex justify-between">
+                      <p>Whiskey</p>
+
+                      <p className="price">65DKK</p>
+                    </div>
+                    <div className="flex justify-between">
+                      <p>Rum</p>
+
+                      <p className="price">65DKK</p>
+                    </div>
+                    <div className="flex justify-between">
+                      <p>Brandy</p>
+
+                      <p className="price">65DKK</p>
+                    </div>
+                  </div>
+                </article>
+              </main>
             </article>
-            <article className="flex justify-between">
-              <div>
-                <p>Dark & stormy</p>
-                <p className="price -mt-xs">Gin, classic tonic & lime</p>
-              </div>
-              <p className="price">85DKK</p>
+          </ClipboardCard>
+        </section>
+        <section className="grid md:grid-cols-2 gap-xs px-sm lg:px-6xl py-3xl">
+          <ClipboardCard bgcolor="secondary-300">
+            <article className="  flex flex-col justify-between ">
+              <header className="  pt-xs ">
+                <h2 className="border-y border-darkbrown">Winemenu</h2>
+              </header>
+              <main className=" ">
+                <article className="flex justify-between">
+                  <p>Grilled focaccia & aoli</p>
+
+                  <p className="price">65DKK</p>
+                </article>
+                <article className="flex justify-between">
+                  <p>Salted scallop with lime, daikon & coriander</p>
+
+                  <p className="price">125DKK</p>
+                </article>
+                <article className="flex justify-between">
+                  <p>Stracciatella, grilled leek & fresh mint</p>
+
+                  <p className="price">115DKK</p>
+                </article>
+                <article className="flex justify-between">
+                  <p>Potato croquette, parsley cream & herb salad</p>
+
+                  <p className="price">130DKK</p>
+                </article>
+                <article className="flex justify-between">
+                  <p>Fried pollock, kimchi, oyster sauce & spring onion</p>
+
+                  <p className="price">155DKK</p>
+                </article>
+                <article className="flex justify-between">
+                  <p>Pork belly, satay, pak choi & teriyaki</p>
+
+                  <p className="price">135DKK</p>
+                </article>
+                <article className="flex justify-between">
+                  <p>Deep-fried Camembert with blackcurrant</p>
+
+                  <p className="price">85DKK</p>
+                </article>
+                <article className="flex justify-between">
+                  <p>Plum ice cream, almond & double cream</p>
+
+                  <p className="price">85DKK</p>
+                </article>
+                <article className="flex justify-between">
+                  <p>Banana ice cream, chocolate, crème anglaise & hazelnut</p>
+
+                  <p className="price">85DKK</p>
+                </article>
+              </main>
             </article>
-            <article className="flex justify-between">
-              <div>
-                <p>Aperol spritz</p>
-                <p className="price -mt-xs">Gin, classic tonic & lime</p>
-              </div>
-              <p className="price">85DKK</p>
-            </article>
-            <article className="flex justify-between">
-              <div>
-                <p>Espresso martini</p>
-                <p className="price -mt-xs">Gin, classic tonic & lime</p>
-              </div>
-              <p className="price">85DKK</p>
-            </article>
-            <article className="flex justify-between">
-              <div>
-                <p>Whiskey sour</p>
-                <p className="price -mt-xs">Gin, classic tonic & lime</p>
-              </div>
-              <p className="price">85DKK</p>
-            </article>
-            <article className="flex justify-between">
-              <div>
-                <p>Margarita</p>
-                <p className="price -mt-xs">Gin, classic tonic & lime</p>
-              </div>
-              <p className="price">85DKK</p>
-            </article>
-            <article className="flex justify-between">
-              <div>
-                <p>Negroni</p>
-                <p className="price -mt-xs">Gin, classic tonic & lime</p>
-              </div>
-              <p className="price">85DKK</p>
-            </article>
-            <article className="flex justify-between">
-              <div>
-                <p>Old fashioned</p>
-                <p className="price -mt-xs">Gin, classic tonic & lime</p>
-              </div>
-              <p className="price">85DKK</p>
-            </article>
-          </main>
-          <footer>
-            <ul className="mx-xs md:h-[130px] flex flex-col flex-wrap gap-xxs">
-              <li></li>
-            </ul>
-          </footer>
-        </article>
+          </ClipboardCard>
+          <Image
+            src={Wineshelf_Gif}
+            width={600}
+            height={600}
+            alt="shelf with spinning winebottles and a posterframe "
+            className="self-center"
+          ></Image>
+        </section>
         {/* prøver med clipboard, for at gøre den mere responsiv ift højde */}
-        <ClipboardCard>
-          <article className=" grid gap-sm">
-            <header className="mx-xs grid pt-xs ">
-              <h2 className="border-y border-darkbrown ">Drinks & snacks</h2>
-            </header>
-            <main className="mx-xs grid gap-sm">
-              <article>
-                <div className="flex justify-between">
-                  <div>
-                    <p>Gin/tonic</p>
-                    <p className="price -mt-xs">Gin, classic tonic & lime</p>
-                  </div>
-                  <p className="price">85DKK</p>
-                </div>
-                <div className="flex justify-between">
-                  <div>
-                    <p>Paloma</p>
-                    <p className="price -mt-xs">Tequila, pink grape & lime</p>
-                  </div>
-                  <p className="price">85DKK</p>
-                </div>
-                <div className="flex justify-between">
-                  <div>
-                    <p>Dark & stormy</p>
-                    <p className="price -mt-xs">Dark rum, ginger ale & lime</p>
-                  </div>
-                  <p className="price">85DKK</p>
-                </div>
-                <div className="flex justify-between">
-                  <div>
-                    <p>Aperol spritz</p>
-                    <p className="price -mt-xs">Aperol, cava & orange</p>
-                  </div>
-                  <p className="price">85DKK</p>
-                </div>
-                <div className="flex justify-between">
-                  <div>
-                    <p>Espresso martini</p>
-                    <p className="price -mt-xs">
-                      Vodka, espresso & coffeeliquor
-                    </p>
-                  </div>
-                  <p className="price">100DKK</p>
-                </div>
-                <div className="flex justify-between">
-                  <div>
-                    <p>Whiskey sour</p>
-                    <p className="price -mt-xs">
-                      Bourbon, citron, angostura bitters, eggwhites & sugar
-                    </p>
-                  </div>
-                  <p className="price">100DKK</p>
-                </div>
-                <div className="flex justify-between">
-                  <div>
-                    <p>Margarita</p>
-                    <p className="price -mt-xs">
-                      Tequila, triple sec, liquor & lemon
-                    </p>
-                  </div>
-                  <p className="price">100DKK</p>
-                </div>
-                <div className="flex justify-between">
-                  <div>
-                    <p>Negroni</p>
-                    <p className="price -mt-xs">
-                      Gin, campari, dolin vermouth & orange
-                    </p>
-                  </div>
-                  <p className="price">85DKK</p>
-                </div>
-                <div className="flex justify-between">
-                  <div>
-                    <p>Old fashioned</p>
-                    <p className="price -mt-xs">
-                      Bourbon, maraschino-liquor, angostura bitters & orange
-                    </p>
-                  </div>
-                  <p className="price">85DKK</p>
-                </div>
-                <div className="flex justify-between">
-                  <div>
-                    <p>Royal grey</p>
-                    <p className="price -mt-xs">
-                      Ginish, earl grey sirup & lemon (alcoholfree)
-                    </p>
-                  </div>
-                  <p className="price">85DKK</p>
-                </div>
-                <div className="flex justify-between">
-                  <div>
-                    <p>Coffee & avec</p>
-                    <p className="price -mt-xs">
-                      Gælder americano eller espresso
-                    </p>
-                  </div>
-                  <p className="price">80DKK</p>
-                </div>
-                <div className="flex justify-between">
-                  <p>Sparkling/still water pr. person</p>
-
-                  <p className="price">25DKK</p>
-                </div>
-              </article>
-              <article className="grid-cols-2 grid gap-lg  ">
-                <div className="self-end">
-                  <div className="flex justify-between">
-                    <p>Olives</p>
-
-                    <p className="price">65DKK</p>
-                  </div>
-                  <div className="flex justify-between">
-                    <p>Roased marcona almonds</p>
-
-                    <p className="price">60DKK</p>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex justify-between">
-                    <p>Cognac</p>
-
-                    <p className="price">65DKK</p>
-                  </div>
-                  <div className="flex justify-between">
-                    <p>Whiskey</p>
-
-                    <p className="price">65DKK</p>
-                  </div>
-                  <div className="flex justify-between">
-                    <p>Rum</p>
-
-                    <p className="price">65DKK</p>
-                  </div>
-                  <div className="flex justify-between">
-                    <p>Brandy</p>
-
-                    <p className="price">65DKK</p>
-                  </div>
-                </div>
-              </article>
-            </main>
-          </article>
-        </ClipboardCard>
       </article>
     </>
   );

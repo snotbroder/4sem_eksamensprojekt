@@ -1,8 +1,8 @@
 import Image from "next/image";
-function ClipboardCard({ children, noPadding, className }) {
+function ClipboardCard({ children, noPadding, bgcolor }) {
   return (
     <section
-      className={`border-darkbrown border-8 outline-beige outline relative  bg-secondary-500 
+      className={`border-darkbrown border-8 outline-beige outline relative  bg-${bgcolor} 
         ${noPadding ? "p-0 py-0 bg-none" : "p-sm py-xl "} `}
     >
       <Image

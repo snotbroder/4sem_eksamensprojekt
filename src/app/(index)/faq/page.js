@@ -9,7 +9,7 @@ export default function Faq() {
         <h1>F.A.Q.</h1>
         <AccordionParent contentSource={accordionContentFAQ}></AccordionParent>
       </div>
-      <div className="md:col-span-2  bg-[url('/Image_bank/lamar_repeatingtext_secondary500.svg'),_url('/Image_bank/aboutus/food2.png')]  bg-center bg-auto bg-fixed "></div>
+      <div className="md:col-span-2  bg-[url('/Image_bank/lamar_repeatingtext_secondary500.svg'),_url('/Image_bank/aboutus/food2.png')]  bg-center bg-cover  "></div>
     </div>
   );
 }
