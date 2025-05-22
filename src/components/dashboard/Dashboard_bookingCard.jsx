@@ -17,23 +17,18 @@ function BookingCard({ data, onEditClick }) {
           <p>
             <strong>Message:</strong>
           </p>
-          {openBooking ? "" : <p>{data.message.length > 20 ? `${data.message.slice(0, 20)}...` : data.message}</p>}
+          {openBooking ? "" : <p>{data.message.length > 40 ? `${data.message.slice(0, 40)}...` : data.message}</p>}
         </div>
-
-        {openBooking ? (
-          <button
-            className="ml-auto slideIn hover:cursor-pointer"
-            type="button"
-            onClick={(e) => {
-              e.stopPropagation(); // Prioriterer click på denne knap, og ikke dens parent booking card
-              onEditClick?.(data.uuid); // Send data uuid gennem prop
-            }}
-          >
-            <IconComponent className="hover:text-configure hover:border-2 border-configure rounded-sm" size="2rem" icon="edit" />
-          </button>
-        ) : (
-          <IconComponent className="opacity-0" icon="edit" size="2rem" />
-        )}
+        <button
+          className="ml-auto hover:cursor-pointer"
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation(); // Prioriterer click på denne knap, og ikke dens parent booking card
+            onEditClick?.(data.uuid); // Send data uuid gennem prop
+          }}
+        >
+          <IconComponent className="hover:text-configure hover:border-2 border-configure rounded-sm" size="2rem" icon="edit" />
+        </button>
       </main>
       {openBooking && (
         <footer className="slideDown grid grid-cols-4">
