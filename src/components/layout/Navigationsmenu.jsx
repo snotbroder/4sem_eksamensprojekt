@@ -18,7 +18,7 @@ export default function Footer() {
       document.body.classList.remove("overflow-hidden");
     }
 
-    return () => document.body.classList.remove("overflow-hidden"); // cleanup
+    return () => document.body.classList.remove("overflow-hidden");
   }, [showMenu]);
 
   return (
