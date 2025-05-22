@@ -78,8 +78,11 @@ export default function Menu() {
 
             {/* Menu cards container */}
             <div className="col-span-full lg:col-span-1 xl:col-span-3 overflow-hidden bg-[url('/Image_bank/bg-images/wall_of_photos.jpg')] bg-cover pb-2xl">
-              <section className="px-xxs md:px-xs lg:px-lg py-[60px] lg:pt-[120px] ">
-                <ul data-aos="fade-left" className="snap-x snap-mandatory overflow-x-auto flex gap-xl scroll-smooth scrollbar-none ">
+              <section className="pl-xs sm:pl-sm lg:pl-xl py-[60px] lg:pt-[120px] ">
+                <ul
+                  data-aos="fade-left"
+                  className="snap-x snap-mandatory overflow-x-auto flex gap-xl scroll-smooth scrollbar-none "
+                >
                   {menus.length > 0 ? (
                     menus.map((menu) => (
                       <li ref={(el) => (cardRefs.current[menu.uuid] = el)} className="snap-start flex-shrink-0 min-w-[90%] sm:min-w-[70%] md:min-w-[50%] xl:min-w-[33%] flex flex-col gap-xxs" key={menu.uuid} onClick={() => clickHandler(menu.uuid)}>
@@ -348,7 +351,18 @@ export default function Menu() {
                 </main>
               </article>
             </ClipboardCard>
+<<<<<<< HEAD
             <Image data-aos="fade-left" src={Wineshelf_Gif} width={600} height={600} alt="shelf with spinning winebottles and a posterframe " className="self-center"></Image>
+=======
+            <Image
+              data-aos="fade-up"
+              src={Wineshelf_Gif}
+              width={600}
+              height={600}
+              alt="shelf with spinning winebottles and a posterframe "
+              className="self-center"
+            ></Image>
+>>>>>>> prøver-at-fikse-overflow-på-mobil
           </section>
         </Animation>
       </article>
