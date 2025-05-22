@@ -15,7 +15,7 @@ import Animation from "@/components/aos/Animation";
 
 export default function About() {
   return (
-    <section>
+    <section className="overflow-x-hidden">
       <Animation>
         <section className="grid lg:grid-cols-2 ">
           <article
@@ -60,7 +60,7 @@ export default function About() {
           <Section_breakup_w_component_request>
             <ClipboardCard bgcolor="secondary-500">
               <AddBooking></AddBooking>
-            </ClipboardCard>{" "}
+            </ClipboardCard>
           </Section_breakup_w_component_request>
         </section>
 
