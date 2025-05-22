@@ -28,7 +28,7 @@ export default function menusPage() {
       <section className="flex justify-between ">
         {openAddMenu ? <p className="max-w-[400px] ">When creating a new menu, you are able to add up to 10 courses. Please take note of the required fields for creating a new menu.</p> : <p className="max-w-[400px] ">Click on an existing menu to configure or delete the selected menu. Or create a new one using the button.</p>}
 
-        <Button variant="secondary" onClick={handleOpenAddMenu}>
+        <Button variant="primary" onClick={handleOpenAddMenu}>
           {openAddMenu ? <IconComponent icon="arrowback" /> : <IconComponent icon="add" />}
           {openAddMenu ? "Back" : "Add new menu"}
         </Button>
