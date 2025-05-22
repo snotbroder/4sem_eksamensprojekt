@@ -7,7 +7,7 @@ function BookingCard({ data, onEditClick }) {
   const createdDate = data.created_at.split("T")[0];
   return (
     <article onClick={() => setOpenBooking((prevState) => !prevState)} className={`hover:bg-gray-200 px-xs py-[4px] group rounded-md border-2 border-transparent  ${openBooking && "hover:border-configure not-hover:border-transparent "} slideIn`}>
-      <main className="grid grid-cols-4 items-center">
+      <main className="grid grid-cols-4 items-center gap-xxs">
         <Dashboard_tag content={data.date} />
         <span className="">
           Booking of <strong>{data.peopleCount}</strong> people
