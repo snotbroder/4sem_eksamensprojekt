@@ -15,7 +15,7 @@ function MenuCard({ menuData }) {
       </header>
       <main className="border-y mx-xs border-darkbrown flex justify-between place-items-baseline">
         <h2>{menuData.menuTitle}</h2>
-        <h4 className="italic">{menuData.price},-</h4>
+        <h2 className="italic">{menuData.price}DKK</h2>
       </main>
       <footer>
         <ul className="mx-xs md:h-[130px] flex flex-col flex-wrap gap-xxs">
