@@ -1,6 +1,6 @@
 "use client";
 import { ToastContainer, toast } from "react-toastify";
-import { getAllItems } from "@/app/api";
+import { getAllItems, editItem, deleteItem } from "@/app/api";
 import Dashboard_bookingCard from "@/components/dashboard/Dashboard_bookingCard.jsx";
 import { useState, useEffect } from "react";
 import Button from "../ui/buttons/Button";
@@ -100,7 +100,19 @@ function bookingVisualiser() {
                       <label htmlFor="fName" className="form-label">
                         First name*
                       </label>
-                      <input type="text" name="fName" id="fName" className="form-input" value={editedBooking.fName} onChange={(e) => setEditedMenu({ ...editedBooking, fName: e.target.value })}></input>
+                      <input type="text" name="fName" id="fName" className="form-input" value={editedBooking.fName} onChange={(e) => setEditedBooking({ ...editedBooking, fName: e.target.value })}></input>
+                    </div>
+                    <div className="form-field">
+                      <label htmlFor="email" className="form-label">
+                        Email
+                      </label>
+                      <input type="text" name="email" id="email" className="form-input" value={editedBooking.email} onChange={(e) => setEditedBooking({ ...editedBooking, email: e.target.value })}></input>
+                    </div>
+                    <div className="form-field">
+                      <label htmlFor="date" className="form-label">
+                        Booked date
+                      </label>
+                      <input type="date" name="date" id="date" className="form-input" value={editedBooking.date} onChange={(e) => setEditedBooking({ ...editedBooking, date: e.target.value })}></input>
                     </div>
                   </article>
                   <article>
@@ -108,9 +120,27 @@ function bookingVisualiser() {
                       <label htmlFor="lName" className="form-label">
                         Last name
                       </label>
-                      <input type="text" name="lName" id="lName" className="form-input" value={editedBooking.lName} onChange={(e) => setEditedMenu({ ...editedBooking, lName: e.target.value })}></input>
+                      <input type="text" name="lName" id="lName" className="form-input" value={editedBooking.lName} onChange={(e) => setEditedBooking({ ...editedBooking, lName: e.target.value })}></input>
+                    </div>
+                    <div className="form-field">
+                      <label htmlFor="phone" className="form-label">
+                        Phone
+                      </label>
+                      <input type="text" name="phone" id="phone" className="form-input" value={editedBooking.phone} onChange={(e) => setEditedBooking({ ...editedBooking, phone: e.target.value })}></input>
+                    </div>
+                    <div className="form-field">
+                      <label htmlFor="peopleCount" className="form-label">
+                        Party of
+                      </label>
+                      <input type="number" name="peopleCount" id="peopleCount" className="form-input" value={editedBooking.peopleCount} onChange={(e) => setEditedBooking({ ...editedBooking, peopleCount: e.target.value })}></input>
                     </div>
                   </article>
+                </div>
+                <div className="form-field">
+                  <label htmlFor="message" className="form-label">
+                    Message
+                  </label>
+                  <input type="textarea" name="message" id="message" className="form-input" value={editedBooking.message} onChange={(e) => setEditedBooking({ ...editedBooking, message: e.target.value })}></input>
                 </div>
                 <p>*Required</p>
                 <Button variant="success" type="submit">
