@@ -19,7 +19,7 @@ function Section_text_and_image({
   return (
     <Animation>
       <section
-        className={`overflow-x-hidden flex flex-col md:grid md:grid-cols-2   ${
+        className={` flex flex-col md:grid md:grid-cols-2   ${
           reversedOrder ? "md:[direction:rtl]" : ""
         } ${gap ? "gap-sm md:gap-6xl" : ""} `}
       >

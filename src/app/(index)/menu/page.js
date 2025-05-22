@@ -41,7 +41,7 @@ export default function Menu() {
 
   return (
     <>
-      <article>
+      <article className="overflow-x-hidden">
         <Animation>
           {/* Parent container */}
           <div className="grid gap-sm lg:grid-cols-2 xl:grid-cols-5 lg:items-start ">

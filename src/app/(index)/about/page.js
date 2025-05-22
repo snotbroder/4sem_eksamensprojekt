@@ -20,12 +20,12 @@ import Animation from "@/components/aos/Animation";
 
 export default function About() {
   return (
-    <div>
+    <div className="overflow-x-hidden lg:overflow-x-visible">
       <Animation>
-        <section className=" mt-[18vh]  px-s lg:px-6xl grid gap-sm lg:gap-xl  lg:grid-cols-2 lg:items-start mb-3xl lg:mb-6xl">
+        <section className="   px-s lg:px-6xl grid gap-sm lg:gap-xl  lg:grid-cols-2 lg:items-start mb-3xl lg:mb-6xl">
           <div
             data-aos="fade-up"
-            className="grid  lg:sticky lg:top-[15%] lg:self-start bg-beige z-50"
+            className="grid mt-[18vh]  lg:sticky lg:top-[17%] lg:self-start bg-beige z-50"
           >
             <h1>
               About <br></br>lamar
@@ -43,8 +43,8 @@ export default function About() {
             </p>{" "}
           </div>
 
-          <div>
-            <article className="my-3xl lg:my-0 relative h-[50vh] lg:h-[185vh] transition-all ease-in-out ">
+          <div className="mt-[18vh]">
+            <article className=" my-3xl lg:my-0 relative h-[50vh] lg:h-[185vh] transition-all ease-in-out ">
               <Image
                 data-aos="fade-up"
                 src="/Image_bank/aboutus/fire.png"
