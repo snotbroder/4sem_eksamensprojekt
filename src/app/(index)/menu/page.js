@@ -83,7 +83,7 @@ export default function Menu() {
 
             {/* Menu cards container */}
             <div className="col-span-full lg:col-span-1 xl:col-span-3 overflow-hidden bg-[url('/Image_bank/bg-images/wall_of_photos.jpg')] bg-cover pb-2xl">
-              <section className="pl-xl pr-xl md:pr-3xl py-[60px] lg:pt-[120px] ">
+              <section className="pl-xs sm:pl-sm lg:pl-xl py-[60px] lg:pt-[120px] ">
                 <ul
                   data-aos="fade-left"
                   className="snap-x snap-mandatory overflow-x-auto flex gap-xl scroll-smooth scrollbar-none "
@@ -391,7 +391,7 @@ export default function Menu() {
               </article>
             </ClipboardCard>
             <Image
-              data-aos="fade-left"
+              data-aos="fade-up"
               src={Wineshelf_Gif}
               width={600}
               height={600}
