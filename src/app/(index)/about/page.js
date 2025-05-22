@@ -25,7 +25,7 @@ export default function About() {
         <section className="   px-s lg:px-6xl grid gap-sm lg:gap-xl  lg:grid-cols-2 lg:items-start mb-3xl lg:mb-6xl">
           <div
             data-aos="fade-up"
-            className="grid mt-[18vh]  lg:sticky lg:top-[17%] lg:self-start bg-beige z-50"
+            className="grid mt-[15vh]  lg:mt-[18vh]  lg:sticky lg:top-[17%] lg:self-start bg-beige z-50"
           >
             <h1>
               About <br></br>lamar
@@ -40,11 +40,11 @@ export default function About() {
               <br></br> Our food is unpretentious and guided by taste, not rules
               or origin. Ingredients and inspiration shape the menu. We serve
               plenty of wine, shots, cheeky cocktails, and cold beers.
-            </p>{" "}
+            </p>
           </div>
 
-          <div className="mt-[18vh]">
-            <article className=" my-3xl lg:my-0 relative h-[50vh] lg:h-[185vh] transition-all ease-in-out ">
+          <div className="lg:mt-[18vh]">
+            <article className=" my-m lg:my-0 relative h-[50vh] lg:h-[185vh] transition-all ease-in-out ">
               <Image
                 data-aos="fade-up"
                 src="/Image_bank/aboutus/fire.png"
