@@ -14,6 +14,7 @@ export default function menusPage() {
   return (
     <>
       <Dashboard_pageName text="newsletter" />
+      <p>This page is purely decorational</p>
     </>
   );
 }
