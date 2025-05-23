@@ -13,8 +13,8 @@ function SisterCard({
   heading3_stroke,
 }) {
   return (
-    <Link href={href}>
-      <article className={`grid  ${selfend ? "self-end" : ""}`}>
+    <Link href={href} className={`${selfend ? "self-end" : ""}`}>
+      <article className="grid">
         <article
           className={`relative group bg-${bgcolor} min-h-[500px] max-w-[350px] h-full w-full p-xs overflow-hidden flex flex-col cursor-pointer`}
         >
@@ -60,7 +60,7 @@ function SisterCard({
               <p>{description}</p>
             </div>
             <Link
-              className="place-self-end underline decoration-1 underline-offset-4"
+              className="text-darkbrown place-self-end underline decoration-1 underline-offset-4"
               href={href}
             >
               Read more
