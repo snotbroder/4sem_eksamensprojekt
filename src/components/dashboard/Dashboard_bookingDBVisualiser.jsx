@@ -38,7 +38,7 @@ function bookingVisualiser() {
     }
     dialog.close(); // Luk dialog
 
-    toast.success("Successfully deleted menu");
+    toast.success("Successfully deleted booking");
   }
 
   const [editMode, SetOpenEditmode] = useState(false);
@@ -59,12 +59,13 @@ function bookingVisualiser() {
       return;
     }
 
-    editItem(selectedBooking.uuid, "booking-database", updatedData);
+    editItem(selectedBooking.uuid, "bookings-database", updatedData);
     // Update local menus state
     setBookings((prevBookings) => prevBookings.map((booking) => (booking.uuid === selectedBooking.uuid ? { ...booking, ...updatedData } : booking))); // tjek for samme uuid, ogsammenlign den gamle og opdaterede data, hvis der er ny opdateret data så ændr denne i localstate
-    toast.success("Successfully updated menu");
+    toast.success("Successfully updated booking");
     dialog.close();
     SetOpenEditmode(false);
+    console.log("Updated Data: ", updatedData);
   }
 
   return (
@@ -132,13 +133,13 @@ function bookingVisualiser() {
                       <label htmlFor="peopleCount" className="form-label">
                         Party of
                       </label>
-                      <input type="number" name="peopleCount" id="peopleCount" className="form-input" value={editedBooking.peopleCount} onChange={(e) => setEditedBooking({ ...editedBooking, peopleCount: e.target.value })}></input>
+                      <input type="number" name="peopleCount" min={9} max={50} id="peopleCount" className="form-input" value={editedBooking.peopleCount} onChange={(e) => setEditedBooking({ ...editedBooking, peopleCount: e.target.value })}></input>
                     </div>
                   </article>
                 </div>
                 <div className="form-field">
                   <label htmlFor="message" className="form-label">
-                    Message
+                    Message*
                   </label>
                   <input type="textarea" name="message" id="message" className="form-input" value={editedBooking.message} onChange={(e) => setEditedBooking({ ...editedBooking, message: e.target.value })}></input>
                 </div>

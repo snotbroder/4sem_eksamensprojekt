@@ -109,13 +109,13 @@ function AddBooking() {
               <label htmlFor="peopleCount" className="form-label">
                 People on booking*
               </label>
-              <input type="number" name="peopleCount" id="peopleCount" className="form-input" value={booking[0].peopleCount} onChange={handleChange} min="9" max="60" required></input>
+              <input type="number" name="peopleCount" id="peopleCount" className="form-input" value={booking[0].peopleCount} onChange={handleChange} min="9" max="50" required></input>
             </div>
           </article>
           {/* Message */}
           <div className="form-field col-span-2">
             <label htmlFor="message" className="form-label">
-              Message
+              Message*
             </label>
             <textarea type="text" name="message" id="message" placeholder="Inform us about eg. the occasion or other requests we should know" className="form-input min-h-20 resize-none" value={booking[0].message} onChange={handleChange} required></textarea>
           </div>
