@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const RoutingButton = ({ variant = "primary", children, href = "/" }) => {
+const RoutingButton = ({ variant = "primary", children, href = "/", target = "" }) => {
   // //definer den styling (Tailwind classes, der gør sig gældende for alle knapper)
   const buttonStyling = " px-[30px] max-h-[34px] py-xxs flex items-center justify-center transition-all duration-100 uppercase hover:rounded-xs curso-pointer";
   // //definer den styling (Tailwind classes), der gør sig gældende for de forskellige varianter
@@ -15,7 +15,7 @@ const RoutingButton = ({ variant = "primary", children, href = "/" }) => {
   };
 
   return (
-    <Link className={`${buttonStyling} ${variantClasses[variant]}`} href={href}>
+    <Link className={`${buttonStyling} ${variantClasses[variant]}`} target={target} href={href}>
       {children}
     </Link>
   );

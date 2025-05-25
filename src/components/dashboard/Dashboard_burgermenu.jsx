@@ -1,13 +1,23 @@
 import Link from "next/link";
 import IconComponent from "../ui/IconComponent";
 import { UserButton } from "@clerk/nextjs";
+import RoutingButton from "../ui/buttons/RoutingButton";
 export default function Burgermenu({ showMenu, setShowMenu }) {
   // Ændr state gennem propdrilling
   function handleClose() {
     setShowMenu(!showMenu);
   }
   return (
-    <div className="w-full h-screen relative top-[50px] overflow-hidden border-t-1 py-sm px-s border-darkbrown bg-white">
+    <nav className="w-full h-screen relative top-[50px] overflow-hidden border-t-1 py-sm px-s border-darkbrown bg-white">
+      <header className="slideIn flex gap-xs place-content-end">
+        <RoutingButton target="_blank" variant="forms" href="/">
+          See website
+        </RoutingButton>
+        <div className="border-darkbrown border-1 py-[2px] px-[16px]">
+          <UserButton showName />
+        </div>
+      </header>
+
       <ul className="flex flex-col gap-s">
         <li className="text-2xl italic font-bold uppercase burgerSlideIn1 opacity-0 border-b-1 border-darkbrown pb-xs">
           <Link className="flex gap-xs" onClick={handleClose} href="/dashboard/">
@@ -30,18 +40,11 @@ export default function Burgermenu({ showMenu, setShowMenu }) {
           </Link>
         </li>
       </ul>
-      <div className="text-2xl italic font-bold uppercase slideIn my-s place-self-end">
-        <UserButton showName />
-      </div>
       <footer className="text-right pt-xs slideIn">
         <div className="flex flex-col gap-xs">
-          <Link onClick={handleClose} href="/">
-            <h4>see website</h4>
-          </Link>
-          <hr className="text-darkbrown w-1/3 ml-auto" />
           <h4>Contact: webmaster@voorde.dk</h4>
         </div>
       </footer>
-    </div>
+    </nav>
   );
 }

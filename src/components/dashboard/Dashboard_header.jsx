@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import Dashboard_burgermenu from "@/components/dashboard/Dashboard_burgermenu";
+import RoutingButton from "../ui/buttons/RoutingButton";
 
 function Dashboard_header() {
   const [showMenu, setShowMenu] = useState(false);
@@ -26,11 +27,16 @@ function Dashboard_header() {
         <Link href="/dashboard" className="flex md:gap-xxs">
           <Image priority src="/Image_bank/logo/logo-red.svg" width={160} height={55} alt="Lamar logo"></Image> <span className="text-[20px] md:leading-[96px] mt-auto uppercase">Dashboard</span>
         </Link>
-        <ul className="hidden md:flex">
-          <li>
-            <Link href="/">See website</Link>
+        <ul className="hidden md:flex gap-xxs my-auto">
+          <li className="mt-auto">
+            <RoutingButton target="_blank" variant="forms" href="/">
+              See website
+            </RoutingButton>
+            {/* <Link target="_blank" href="/">
+              x
+            </Link> */}
           </li>
-          <li>
+          <li className="border-darkbrown border-1 py-[2px] px-[16px]">
             <UserButton showName />
           </li>
         </ul>
