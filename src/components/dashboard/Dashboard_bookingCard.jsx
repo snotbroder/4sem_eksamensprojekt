@@ -37,7 +37,13 @@ function BookingCard({ data, onEditClick }) {
             <p>
               Booked by {data.fName} <strong>{data.lName}</strong>
             </p>
-            <Link href={`mailto:${data.email}`}>
+            <Link
+              target="_blank"
+              onClick={(e) => {
+                e.stopPropagation(); //Prioriter click på denne; hold cardet åbent
+              }}
+              href={`mailto:${data.email}`}
+            >
               Write to <strong className="underline">{data.email}</strong>
             </Link>
             <p>
