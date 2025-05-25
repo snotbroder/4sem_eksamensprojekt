@@ -6,7 +6,7 @@ const Button = ({ variant = "primary", children, onClick, type = "button", disab
     primary: "bg-secondary-500  border border-secondary-500 hover:bg-transparent ",
     secondary: "border border-darkbrown hover:bg-primary-500 hover:border-primary-500",
     cta: " border border-primary-500 bg-primary-500 text-[20px] hover:bg-transparent",
-    forms: "border border-darkbrown hover:bg-darkbrown hover:text-beige",
+    forms: "border w-full border-darkbrown hover:bg-darkbrown hover:text-beige",
     configure: "border bg-configure border-configure hover:bg-transparent hover:border-darkbrown w-full",
     danger: "border bg-danger border-danger hover:bg-transparent hover:border-darkbrown w-full",
     success: "border bg-success border-success hover:bg-transparent hover:border-darkbrown w-full",
