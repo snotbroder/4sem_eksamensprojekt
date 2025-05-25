@@ -63,7 +63,7 @@ function SisterCard({
               className="text-darkbrown place-self-end underline decoration-1 underline-offset-4"
               href={href}
             >
-              Read more
+              Go to their website
             </Link>
           </div>
         </article>
