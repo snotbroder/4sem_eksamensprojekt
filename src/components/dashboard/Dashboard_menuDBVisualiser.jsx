@@ -43,6 +43,7 @@ function TestVisualizer() {
 
   const [editMode, SetOpenEditmode] = useState(false);
   const [editedMenu, setEditedMenu] = useState({});
+  const [confirmDeletionMode, setConfirmDeletionMode] = useState(false);
   function handleOpenEditmode() {
     setEditedMenu(selectedMenu); //kopier den valgte menus data i editedMenu
     SetOpenEditmode((prevState) => !prevState); //Skrift state, toggle
@@ -87,7 +88,7 @@ function TestVisualizer() {
             <div className="flex flex-col gap-2 slideIn">
               <header>
                 <p>
-                  <strong>Configuring</strong>
+                  <strong>Configuring menu</strong>
                 </p>
                 <h2>{selectedMenu ? selectedMenu.menuTitle : "Error: No menu selected"}</h2>
               </header>
@@ -212,11 +213,28 @@ function TestVisualizer() {
                 cancel edit
               </Button>
             </div>
+          ) : confirmDeletionMode ? (
+            <>
+              <h2>Deleting menu</h2>
+              <p>
+                Are you sure you want to delete <strong>{selectedMenu.menuTitle}</strong>?
+              </p>
+              <p>This action is irrevesible</p>
+
+              <footer className="flex flex-col gap-xxs">
+                <Button variant="danger" onClick={handleDelete}>
+                  confirm delete
+                </Button>
+                <Button variant="primary" onClick={() => setConfirmDeletionMode(false)}>
+                  cancel
+                </Button>
+              </footer>
+            </>
           ) : (
             <div className="flex flex-col gap-s">
               <header>
                 <p>
-                  <strong>Configuring</strong>
+                  <strong>Configuring menu</strong>
                 </p>
                 <h2>{selectedMenu ? selectedMenu.menuTitle : "Error: No menu selected"}</h2>
               </header>
@@ -225,7 +243,7 @@ function TestVisualizer() {
                 <Button variant="configure" onClick={handleOpenEditmode}>
                   configure content
                 </Button>
-                <Button variant="danger" onClick={handleDelete}>
+                <Button variant="danger" onClick={() => setConfirmDeletionMode(true)}>
                   delete
                 </Button>
                 <Button variant="primary" onClick={() => dialog.close()}>

@@ -1,8 +1,7 @@
 import IconComponent from "../ui/IconComponent";
 import Dashboard_tag from "./Dashboard_tag";
 function Dashboard_menucard({ menuData }) {
-  const courseKeys = Object.keys(menuData).filter((key) => key.startsWith("course") && menuData[key]); //Filter gemmem menuData og fin objekter med "course"
-  //var items = ["item1", "item2", "item3", "item4"];
+  const courseKeys = Object.keys(menuData).filter((key) => key.startsWith("course") && menuData[key]); //Filter gemmem menuData og fin objektkeys med "course"
 
   return (
     <article className="slideIn bg-gray-100 w-[300px] md:w-[360px] h-auto p-sm rounded-md shadow-lg group transition-all duration-100 hover:-mt-xxs hover:mb-xxs hover:cursor-pointer border-2 border-transparent  hover:border-configure">
