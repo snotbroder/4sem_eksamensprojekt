@@ -9,7 +9,7 @@ export default function Burgermenu({ showMenu, setShowMenu }) {
   }
   return (
     <nav className="w-full h-screen relative top-[50px] overflow-hidden border-t-1 py-sm px-s border-darkbrown bg-white">
-      <header className="slideIn flex gap-xs place-content-end">
+      <header className="slideIn flex gap-xs place-content-end mb-xs">
         <RoutingButton target="_blank" variant="forms" href="/">
           See website
         </RoutingButton>
