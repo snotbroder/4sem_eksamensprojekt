@@ -14,6 +14,7 @@ function AddBooking() {
     date: "",
     peopleCount: 9,
     acceptsNewsletter: true,
+    status: "pending",
   };
 
   const [booking, setBooking] = useState([initialBooking]);

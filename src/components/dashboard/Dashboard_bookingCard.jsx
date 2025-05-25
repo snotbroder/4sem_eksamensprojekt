@@ -2,14 +2,18 @@ import { useState } from "react";
 import IconComponent from "../ui/IconComponent";
 import Dashboard_tag from "./Dashboard_tag";
 import Link from "next/link";
+import Dashboard_statusTag from "./Dashboard_statusTag";
 
 function BookingCard({ data, onEditClick }) {
   const [openBooking, setOpenBooking] = useState(false);
   const createdDate = data.created_at.split("T")[0]; //Split ved T i string
   return (
-    <article tabIndex={0} onClick={() => setOpenBooking((prevState) => !prevState)} className={`hover:bg-gray-200 px-xs py-[4px] group rounded-md border-2 border-transparent  ${openBooking && "hover:border-configure not-hover:border-transparent "} slideIn`}>
-      <main className="grid grid-cols-4 items-center gap-xxs">
-        <Dashboard_tag content={data.date} />
+    <article tabIndex={0} onClick={() => setOpenBooking((prevState) => !prevState)} className={`hover:bg-gray-200 px-xs py-[4px]  group rounded-md border-2 border-transparent  ${openBooking && "hover:border-configure not-hover:border-transparent"} slideIn`}>
+      <main className="flex flex-wrap md:grid md:grid-cols-4 items-center gap-xxs">
+        <div className="flex flex-col">
+          {/* <Dashboard_statusTag status={data.status} /> */}
+          <Dashboard_tag content={data.date} />
+        </div>
         <span>
           Booking of <strong>{data.peopleCount}</strong> people
         </span>

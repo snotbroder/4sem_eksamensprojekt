@@ -72,7 +72,7 @@ function bookingVisualiser() {
   return (
     <>
       <ToastContainer position="top-right" autoClose={5000} pauseOnHover />
-      <ul className="flex flex-col divide-y divide-gray-300">
+      <ul className="flex flex-col divide-y divide-gray-300 ">
         {/* Looper hen over den fetchede data */}
         {bookings.length > 0 ? (
           bookings.map((booking, index) => (

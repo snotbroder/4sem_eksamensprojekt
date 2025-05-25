@@ -32,7 +32,7 @@ export default function menusPage() {
           {openAddBooking ? "Back" : "Add new booking"}
         </Button>
       </section>
-      <section className="bg-gray-100 rounded-sm shadow-md p-sm">
+      <section className="bg-gray-100 rounded-sm shadow-md p-sm max-w-[1000px] mx-auto">
         {openAddBooking ? (
           <div className="slideIn">
             <AddBooking />
