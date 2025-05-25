@@ -63,7 +63,8 @@ function AddBooking() {
 
   return (
     <section>
-      <h2>Book our venue </h2>
+      <h2>Request a table</h2>
+      <p className="md:max-w-[50%]">We are a small and busy restaurant, if your party is 9 or more, or you'd like to book our restaurant for the day please fill out the forms!</p>
       <form onSubmit={sendData}>
         <section className="grid grid-cols-2 gap-xxs">
           <article>
@@ -127,7 +128,7 @@ function AddBooking() {
             <input type="checkbox" name="acceptsNewsletter" id="acceptsNewsletter" className="form-input place-self-start" value={booking[0].acceptsNewsletter} onChange={handleChange}></input>
           </div>
         </section>
-        <div className="flex justify-between">
+        <div className="flex justify-between gap-xl">
           <p className="sm mb-xxs">*Required</p>
 
           <Button variant="forms" type="submit" disabled={!booking[0].fName || !booking[0].lName || !booking[0].email || !booking[0].message || !booking[0].date || !booking[0].peopleCount}>
