@@ -63,7 +63,7 @@ function AddBooking() {
 
   return (
     <section>
-      <h2>Request a table</h2>
+      <h2>Request a table for 9+ people</h2>
       <p className="md:max-w-[50%]">We are a small and busy restaurant, if your party is 9 or more, or you'd like to book our restaurant for the day please fill out the forms!</p>
       <form onSubmit={sendData}>
         <section className="grid grid-cols-2 gap-xxs">
@@ -121,11 +121,11 @@ function AddBooking() {
             <textarea type="text" name="message" id="message" placeholder="Inform us about eg. the occasion or other requests we should know" className="form-input min-h-20 resize-none" value={booking[0].message} onChange={handleChange} required></textarea>
           </div>
           {/* Accepts newsletter */}
-          <div className="form-field flex">
+          <div className="form-field flex gap-s">
             <label htmlFor="acceptsNewsletter" className="form-label">
               Want to recieve our newsletter?
             </label>
-            <input type="checkbox" name="acceptsNewsletter" id="acceptsNewsletter" className="form-input place-self-start" value={booking[0].acceptsNewsletter} onChange={handleChange}></input>
+            <input type="checkbox" name="acceptsNewsletter" id="acceptsNewsletter" className="form-input max-w-[16px] max-h-[16px] mb-auto mt-[4px] cursor-pointer" value={booking[0].acceptsNewsletter} onChange={handleChange}></input>
           </div>
         </section>
         <div className="flex justify-between gap-xl">
