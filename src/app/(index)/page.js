@@ -23,11 +23,11 @@ export default function Home() {
             <div className="w-fit relative">
               <div className="w-fit relative z-10">
                 <div className="flex justify-between gap-xs">
-                  <h4>Mandag til torsdag</h4>
+                  <h4>Monday to Thursday</h4>
                   <h4>17-24</h4>
                 </div>
                 <div className="flex justify-between shadow-beige shadow-6xl">
-                  <h4>Fredag & lørdag</h4>
+                  <h4>Friday & Saturday</h4>
                   <h4>17.30-24</h4>
                 </div>
               </div>
