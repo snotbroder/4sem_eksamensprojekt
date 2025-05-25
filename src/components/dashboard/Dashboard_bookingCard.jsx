@@ -1,19 +1,20 @@
 import { useState } from "react";
 import IconComponent from "../ui/IconComponent";
 import Dashboard_tag from "./Dashboard_tag";
+import Link from "next/link";
 
 function BookingCard({ data, onEditClick }) {
   const [openBooking, setOpenBooking] = useState(false);
-  const createdDate = data.created_at.split("T")[0];
+  const createdDate = data.created_at.split("T")[0]; //Split ved T i string
   return (
     <article onClick={() => setOpenBooking((prevState) => !prevState)} className={`hover:bg-gray-200 px-xs py-[4px] group rounded-md border-2 border-transparent  ${openBooking && "hover:border-configure not-hover:border-transparent "} slideIn`}>
       <main className="grid grid-cols-4 items-center gap-xxs">
         <Dashboard_tag content={data.date} />
-        <span className="">
+        <span>
           Booking of <strong>{data.peopleCount}</strong> people
         </span>
 
-        <div className="">
+        <div>
           <p>
             <strong>Message:</strong>
           </p>
@@ -31,14 +32,14 @@ function BookingCard({ data, onEditClick }) {
         </button>
       </main>
       {openBooking && (
-        <footer className="slideDown grid grid-cols-4">
+        <footer className="slideDown grid grid-cols-4 gap-xxs">
           <div className="flex flex-col">
             <p>
               Booked by {data.fName} <strong>{data.lName}</strong>
             </p>
-            <p>
-              Write to <strong>{data.email}</strong>
-            </p>
+            <Link href={`mailto:${data.email}`}>
+              Write to <strong className="underline">{data.email}</strong>
+            </Link>
             <p>
               Call at <strong>{data.phone}</strong>
             </p>
@@ -48,8 +49,8 @@ function BookingCard({ data, onEditClick }) {
           </div>
           <div className="max-w-[600px] col-start-3 col-span-3 flex flex-col justify-between">
             <p>{data.message}</p>
-            <span className="text-gray-300 flex flex-col">
-              <span> Created at: {createdDate},</span>
+            <span className="text-gray-400 flex flex-col">
+              <span> Created on: {createdDate},</span>
               <span>UUID: {data.uuid}</span>
             </span>
           </div>
