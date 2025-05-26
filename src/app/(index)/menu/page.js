@@ -54,8 +54,9 @@ export default function Menu() {
                 <h1 className="border-b border-darkbrown">Menu</h1>
                 {/* <h2 className="border-y-2 border-darkbrown">Sharing- & winemenu, a la carte or theatermenu</h2> */}
                 <p>
-                  The menus has to be ordered for the whole table, and
-                  sharedfamily-style. Your food will be served at a fresh pace.
+                  The menus has to be ordered for the whole table, and shared
+                  family-style. Our menus are developed depending on seasonal
+                  produce and will therefore not stay the same per season.
                 </p>
               </div>
               <div className="grid gap-xxs">
@@ -86,7 +87,7 @@ export default function Menu() {
             </section>
 
             {/* Menu cards container */}
-            <div className="col-span-full lg:col-span-1 xl:col-span-3 overflow-hidden bg-[url('/Image_bank/bg-images/wall_of_photos.jpg')] bg-cover pb-2xl">
+            <div className="col-span-full lg:col-span-1 xl:col-span-3 overflow-hidden bg-[url('/Image_bank/bg-images/wall_of_photos.jpg')] bg-cover pb-2xl relative top-0">
               <section className="pl-xs sm:pl-sm lg:pl-xl py-[60px] lg:pt-[120px] ">
                 <ul
                   data-aos="fade-left"
