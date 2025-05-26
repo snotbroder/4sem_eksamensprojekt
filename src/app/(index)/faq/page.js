@@ -5,6 +5,7 @@ import Head from "next/head";
 export const faqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+
   mainEntity: [
     {
       "@type": "Question",
