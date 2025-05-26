@@ -65,7 +65,7 @@ function AddBooking() {
   return (
     <section>
       <h2>Request a table for 9+ people</h2>
-      <p className="md:max-w-[50%]">We are a small and busy restaurant, if your party is 9 or more, or you'd like to book our restaurant for the day please fill out the forms!</p>
+      <p>We are a small and busy restaurant. If your party consists of 9 or more, or you'd like to book our restaurant for the day, please fill out the forms!</p>
       <form onSubmit={sendData}>
         <section className="grid grid-cols-2 gap-xxs">
           <article>
