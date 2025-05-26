@@ -31,17 +31,28 @@ export default function Menu() {
 
   // Scroll system
   const cardRefs = useRef({}); //Lav et tomt object
+  const [selectedMenu, setSelectedMenu] = useState(null); //Null fordi så styles den første knap med null som selected/cta varianten
 
+  //Hele dette system virker ikke optimalt i mobile
   function scrollToCard(uuid) {
+    // Modtag uuid på trykket card
     const card = cardRefs.current[uuid];
+    const top = document.getElementById("top");
+    setSelectedMenu(uuid);
+
     if (card) {
       card.scrollIntoView({ behavior: "smooth", inline: "start" });
     }
+
+    setTimeout(() => {
+      //Lige meget hvad så sæt vinduet til top
+      top.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 28); // Jeg finder 28ms til at være passende, før den begynder at scrolle ned. Stadig lidt jittery....
   }
 
   return (
     <>
-      <article className="overflow-x-hidden">
+      <article id="top" className="overflow-x-hidden">
         <Animation>
           {/* Parent container */}
           <div className="grid gap-sm lg:grid-cols-2 xl:grid-cols-5 lg:items-start ">
@@ -49,14 +60,25 @@ export default function Menu() {
             <section data-aos="fade-right" className="mx-sm lg:mx-6xl grid gap-xxs mt-[18vh] md:self-start col-span-full lg:col-span-1 xl:col-span-2">
               <div className=" justify-self-start ">
                 <h1 className="border-b border-darkbrown">Menu</h1>
-                {/* <h2 className="border-y-2 border-darkbrown">Sharing- & winemenu, a la carte or theatermenu</h2> */}
                 <p>The menus has to be ordered for the whole table, and sharedfamily-style. Your food will be served at a fresh pace.</p>
               </div>
               <div className="grid gap-xxs">
                 {menus.length > 0 ? (
-                  menus.map((menu) => (
+                  menus.map((menu, index) => (
                     <li className="flex flex-col gap-xxs" key={menu.uuid}>
-                      <Button onClick={() => scrollToCard(menu.uuid)} variant="secondary">
+                      <Button
+                        onClick={() => {
+                          scrollToCard(menu.uuid);
+                          setSelectedMenu(menu.uuid);
+                        }}
+                        variant={`${
+                          selectedMenu === null && index === 0 //Tilføj kun til første barn der har selectedMenu som null
+                            ? "cta"
+                            : selectedMenu === menu.uuid
+                            ? "cta" // tilføj til selected menu
+                            : "secondary"
+                        }`}
+                      >
                         {menu.menuTitle}
                       </Button>
                     </li>
@@ -79,10 +101,10 @@ export default function Menu() {
             {/* Menu cards container */}
             <div className="col-span-full lg:col-span-1 xl:col-span-3 overflow-hidden bg-[url('/Image_bank/bg-images/wall_of_photos.jpg')] bg-cover pb-2xl">
               <section className="pl-xs sm:pl-sm lg:pl-xl py-[60px] lg:pt-[120px] ">
-                <ul data-aos="fade-left" className="snap-x snap-mandatory overflow-x-auto flex gap-xl scroll-smooth scrollbar-none">
+                <ul data-aos="fade-left" className="snap-x snap-mandatory overflow-x-auto flex gap-xl scroll-smooth">
                   {menus.length > 0 ? (
                     menus.map((menu) => (
-                      <li ref={(el) => (cardRefs.current[menu.uuid] = el)} className="snap-start flex-shrink-0 min-w-[90%] sm:min-w-[70%] md:min-w-[50%] xl:min-w-[33%] flex flex-col gap-xxs last:mr-sm last:lg:mr-6xl" key={menu.uuid} onClick={() => clickHandler(menu.uuid)}>
+                      <li ref={(el) => (cardRefs.current[menu.uuid] = el)} className="snap-start flex-shrink-0 min-w-[90%] sm:min-w-[70%] md:min-w-[50%] xl:min-w-[33%] flex flex-col gap-xxs last:mr-sm last:lg:mr-6xl" key={menu.uuid}>
                         {/* <Dashboard_menucard menuData={menu} /> */}
                         <MenuCard menuData={menu}></MenuCard>
                       </li>
