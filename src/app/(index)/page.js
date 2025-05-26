@@ -37,6 +37,7 @@ export default function Home() {
 
           <a
             href="#menu"
+            alt="arrow to next section"
             className="size-xl backdrop-blur-md absolute flex place-content-center right-0 bottom-0 border-beige border-r-0  border-b-0 border"
           >
             <FaArrowDown className="self-center fill-beige size-s" />
@@ -47,7 +48,7 @@ export default function Home() {
           data-aos="fade-up"
           duration="300"
           id="menu"
-          className=" mx-s lg:mx-6xl my-3xl"
+          className=" mx-s lg:mx-6xl py-3xl"
         >
           <Section_text_and_image
             h1={"Menu"}
