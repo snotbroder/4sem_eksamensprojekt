@@ -16,7 +16,7 @@ export default function Footer({}) {
             </a>
           </div>
           <div>
-            <h4>Adresse</h4>
+            <h4>Address</h4>
             <span>
               Gl. Kongevej 27 <br></br> 1610 København V
             </span>
@@ -24,21 +24,21 @@ export default function Footer({}) {
         </div>
         <div className="grid lg:flex gap-xs lg:gap-m">
           <div>
-            <h4>Åbningstider</h4>
+            <h4>Opening hours</h4>
             <div className="w-fit ">
               <div className="flex justify-between gap-xs">
-                <span>Mandag til torsdag</span>
+                <span>Monday to Thursday</span>
                 <span>17-24</span>
               </div>
               <div className="flex justify-between">
-                <span>Fredag & lørdag</span>
+                <span>Friday & Saturday</span>
                 <span>17.30-24</span>
               </div>
             </div>
           </div>
           <div>
-            <h4>Kontakt</h4>
-            <a href="mailto:hej@restaurantlamar.com">hej@restaurantlamar</a>
+            <h4>Contact</h4>
+            <a href="mailto:hej@restaurantlamar.com">hej@restaurantlamar.com</a>
             <br></br> <a href="tel:+4526362727">+45 26 36 27 27</a>
           </div>
         </div>

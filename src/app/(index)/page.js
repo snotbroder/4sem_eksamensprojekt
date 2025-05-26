@@ -23,11 +23,11 @@ export default function Home() {
             <div className="w-fit relative">
               <div className="w-fit relative z-10">
                 <div className="flex justify-between gap-xs">
-                  <h4>Mandag til torsdag</h4>
+                  <h4>Monday to Thursday</h4>
                   <h4>17-24</h4>
                 </div>
                 <div className="flex justify-between shadow-beige shadow-6xl">
-                  <h4>Fredag & lørdag</h4>
+                  <h4>Friday & Saturday</h4>
                   <h4>17.30-24</h4>
                 </div>
               </div>
@@ -55,7 +55,7 @@ export default function Home() {
             p={
               "At Lamar the kitchen puts together the menu and it is served at a fresh pace. We care that the food tastes good, that’s our dishes change depending on the season. The menus has to be ordered for the whole table, and shared family-style."
             }
-            btn_txt={"Read more"}
+            btn_txt={"See menu"}
             btn_href={"/menu"}
             img={FoodAndWine_Gif}
             alt="Food and wine gif, food getting eaten and pouring winebottle"
@@ -72,7 +72,7 @@ export default function Home() {
             p={
               "At Lamar, time stands still when you walk in the door. Take a seat and let us sweep you off your feet with our delicious food and attentive service. Hip hop music, great wines, cheeky drinks and cold beers."
             }
-            btn_txt={"Read more"}
+            btn_txt={"Read more about us"}
             btn_href={"/about"}
             img={Facade_Gif}
             alt="Illustration of the restaurants facade, with the sign getting lit up"
