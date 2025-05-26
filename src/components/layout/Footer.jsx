@@ -8,10 +8,16 @@ export default function Footer({}) {
       <article className="ml-s lg:ml-6xl py-s  grid gap-xs ">
         <div>
           <div className="flex gap-xxs">
-            <a href="https://www.instagram.com/restaurant_lamar/">
+            <a
+              href="https://www.instagram.com/restaurant_lamar/"
+              alt="link til instagram"
+            >
               <CiInstagram className="w-s h-s md:w-sm md:h-sm fill-darkbrown hover:fill-beige" />
             </a>
-            <a href="https://www.findsmiley.dk/1220927">
+            <a
+              href="https://www.findsmiley.dk/1220927"
+              alt="Link til smileyrapport"
+            >
               <PiSmileyLight className="w-s h-s   md:w-sm md:h-sm fill-darkbrown hover:fill-beige" />
             </a>
           </div>
