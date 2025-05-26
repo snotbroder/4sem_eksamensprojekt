@@ -6,6 +6,7 @@ import Winebottle_Gif from "/public/Image_bank/gifs/illustration-winebottle.gif"
 // Sections
 import Section_text_and_image from "@/components/layout/Section_text_and_image";
 import Section_breakup_w_component from "@/components/layout/Section_breakup_w_component_join";
+import Section_breakup_w_component_contact from "@/components/layout/Section_breakup_w_component_contact";
 import Section_text_and_facade from "@/components/layout/Section_text_and_facade";
 import Section_sister_restaurants from "@/components/layout/Section_sister_restaurants";
 
@@ -17,6 +18,7 @@ import ClipboardCard from "@/components/utility/ClipboardCard";
 
 // Animation
 import Animation from "@/components/aos/Animation";
+import accordionContentContact from "@/copy_content/accordionContact";
 
 export default function About() {
   return (
@@ -142,7 +144,38 @@ export default function About() {
         <section data-aos="fade-in" className="hidden lg:block">
           <Section_text_and_facade></Section_text_and_facade>
         </section>
+        <section className="mx-s lg:mx-6xl my-3xl">
+          <Section_text_and_image
+            h2="Safer space"
+            p="How wonderful that you are interested in reading here. We make sure that we all – equally – have a party when you visit.
+              We dream of working in a safe space. And we create this space together.
+              That's why we speak up if we feel that our boundaries are being violated, and we hope that you will too.
+              Let's have a party together, because we are here because we like it.
+              We hope that you can too."
+            img={Wineshelf_Gif}
+            alt="wine sheld"
+            reversedOrder={true}
+            noButton={true}
+            gap={true}
+          ></Section_text_and_image>
+        </section>
+        <Section_breakup_w_component_contact>
+          <ClipboardCard bgcolor="secondary-500">
+            <article className="grid gap-xs">
+              <div>
+                <h2 className="border-y-darkbrown border-y">Find us</h2>
+                <p>
+                  You are welcome to visit our place or contact us if you have
+                  any questions.
+                </p>
+              </div>
 
+              <AccordionParent
+                contentSource={accordionContentContact}
+              ></AccordionParent>
+            </article>
+          </ClipboardCard>
+        </Section_breakup_w_component_contact>
         <section className="mx-s lg:mx-6xl my-3xl">
           <Section_text_and_image
             h2="From us to you"
