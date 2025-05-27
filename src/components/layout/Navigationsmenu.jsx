@@ -1,8 +1,7 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
-import Button from "../ui/buttons/Button";
 import RoutingButton from "../ui/buttons/RoutingButton";
 import Link from "next/link";
 import Burgermenu from "./Burgermenu";

@@ -32,9 +32,6 @@ function Dashboard_header() {
             <RoutingButton target="_blank" variant="forms" href="/">
               See website
             </RoutingButton>
-            {/* <Link target="_blank" href="/">
-              x
-            </Link> */}
           </li>
           <li className="border-darkbrown border-1 py-[2px] px-[16px]">
             <UserButton showName />

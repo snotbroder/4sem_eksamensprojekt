@@ -1,6 +1,6 @@
 import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 
-//export default clerkMiddleware();
+//Her er middleware for at clerk fungerer. Jeg har blot fulgt dokuemntationen og sat ind derfra, så jeg ved ikke 100% hvad den gør
 const isProtectedRoute = createRouteMatcher(["/dashboard(.*)"]);
 export default clerkMiddleware(async (auth, req) => {
   if (isProtectedRoute(req)) await auth.protect();

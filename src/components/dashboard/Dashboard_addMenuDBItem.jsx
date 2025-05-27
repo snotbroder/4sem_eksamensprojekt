@@ -12,7 +12,7 @@ function Dashboard_addMenuDBItem() {
     bgColor: "",
   };
 
-  // Add 10 course keys to initialMenu
+  // Lad det være muligt at tilføje 10 courses
   for (let i = 1; i <= 10; i++) {
     initialMenu[`course${i}`] = "";
   }
@@ -32,7 +32,6 @@ function Dashboard_addMenuDBItem() {
     });
 
     setMenu(updatedMenu);
-    // setMenus(updatedMenu);
   };
   const addCourseField = () => {
     if (courseCount < 10) {

@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 const RoutingButton = ({ variant = "primary", children, href = "/", target = "" }) => {
-  // //definer den styling (Tailwind classes, der gør sig gældende for alle knapper)
+  //definer den styling (Tailwind classes, der gør sig gældende for alle knapper)
   const buttonStyling = " px-[30px] max-h-[34px] py-xxs flex items-center justify-center transition-all duration-100 uppercase hover:rounded-xs curso-pointer";
-  // //definer den styling (Tailwind classes), der gør sig gældende for de forskellige varianter
+  //definer den styling (Tailwind classes), der gør sig gældende for de forskellige varianter
   const variantClasses = {
     primary: "bg-secondary-500  border border-secondary-500 hover:bg-transparent ",
     secondary: "border border-darkbrown hover:bg-primary-500 hover:border-primary-500",

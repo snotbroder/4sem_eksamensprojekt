@@ -1,3 +1,4 @@
+// Ikon bibliotek
 import { IoAddSharp } from "react-icons/io5";
 import { FiUser } from "react-icons/fi";
 import { HiOutlineMail } from "react-icons/hi";
@@ -13,6 +14,7 @@ function IconComponent({ icon, size = "1.25rem", className = "" }) {
     className: `text-darkbrown`,
     size,
   };
+  //Switch lytter til variablens string. Det er lidt ligesom et loop.
   switch (icon) {
     case "add":
       return <IoAddSharp {...commonProps} className={`text-darkbrown ${className}`} />;

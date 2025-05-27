@@ -10,10 +10,7 @@ function Section_sister_restaurants() {
         <hr></hr>
       </header>
 
-      <article
-        data-aos="fade-up"
-        className="flex flex-col  md:flex-row flex-wrap gap-sm xl:justify-between"
-      >
+      <article data-aos="fade-up" className="flex flex-col  md:flex-row flex-wrap gap-sm xl:justify-between">
         {sisterRestaurantData.map((data, i) => (
           <SisterCard key={i} {...data} />
         ))}

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 export default function Burgermenu({ showMenu, setShowMenu }) {
   // Ændr state gennem propdrilling

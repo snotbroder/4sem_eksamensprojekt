@@ -264,7 +264,7 @@ p {
     background-color: rgba(0, 0, 0, 0.206);
   }
 
-  /* Fundet på reddit, det var smart */
+  /* Fundet på reddit, det var smart. Gør at man ikke kan scrolle når dialog er åben */
   body:has(dialog[open]) {
     overflow: hidden;
   }
