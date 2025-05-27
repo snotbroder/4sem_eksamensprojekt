@@ -1,6 +1,6 @@
 var accordionContentFAQ = [
   {
-    head: "How does your menu works?",
+    head: "How does your menu work?",
     copy: "All our menus are sharing dishes and must be ordered by the entire table. We also offer a la carte, where we recommend 2-3 dishes per person.",
   },
   {
