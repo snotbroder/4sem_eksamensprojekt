@@ -9,13 +9,16 @@ function BookingCard({ data, onEditClick }) {
   const createdDate = data.created_at.split("T")[0]; //Split ved T i string
   return (
     <article tabIndex={0} onClick={() => setOpenBooking((prevState) => !prevState)} className={`hover:bg-gray-200 px-xs py-[4px]  group rounded-md border-2 border-transparent  ${openBooking && "hover:border-configure not-hover:border-transparent"} slideIn`}>
-      <main className="flex flex-wrap md:grid md:grid-cols-4 items-center gap-xxs">
+      <main className="flex flex-wrap md:grid md:grid-cols-4 items-center gap-xxs md:gap-0">
         <div className="flex flex-col">
           {/* <Dashboard_statusTag status={data.status} /> */}
+          <p>
+            {data.fName} <strong>{data.lName}</strong>
+          </p>
           <Dashboard_tag content={data.date} />
         </div>
-        <span>
-          Booking of <strong>{data.peopleCount}</strong> people
+        <span className="hidden md:grid">
+          Booking of <strong>{data.peopleCount}</strong>
         </span>
 
         <div>
@@ -37,10 +40,7 @@ function BookingCard({ data, onEditClick }) {
       </main>
       {openBooking && (
         <footer className="slideDown grid grid-cols-4 gap-xxs">
-          <div className="flex flex-col">
-            <p>
-              Booked by {data.fName} <strong>{data.lName}</strong>
-            </p>
+          <div className="flex flex-col mt-xs">
             <Link
               target="_blank"
               onClick={(e) => {
@@ -48,14 +48,17 @@ function BookingCard({ data, onEditClick }) {
               }}
               href={`mailto:${data.email}`}
             >
-              Write to <strong className="underline">{data.email}</strong>
+              Email: <strong className="underline break-words">{data.email}</strong>
             </Link>
             <p>
-              Call at <strong>{data.phone}</strong>
+              Phone: <strong>{data.phone}</strong>
             </p>
             <p>
               Accepts newsletter? <strong>{data.acceptsNewsletter ? "Yes" : "No"}</strong>
             </p>
+            <span className="inline md:hidden">
+              Booking of <strong>{data.peopleCount}</strong>
+            </span>
           </div>
           <div className="max-w-[600px] col-start-3 col-span-3 flex flex-col justify-between">
             <p>{data.message}</p>
