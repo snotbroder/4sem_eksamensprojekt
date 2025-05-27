@@ -5,19 +5,19 @@ import Dashboard_pageName from "../../components/dashboard/Dashboard_pageName";
 import { SignIn, useUser } from "@clerk/nextjs";
 
 import { storeSelectedNavigation } from "@/stores/storeSelectedNavigation";
-import RoutingButton from "@/components/ui/buttons/RoutingButton";
-import Button from "@/components/ui/buttons/Button";
 
 export default function dashboard() {
+  // Noget clerk kræver, henter userdata for current session
   const { user } = useUser();
-  const setSelected = storeSelectedNavigation((state) => state.setStoreSelectedNavigation); // always called
 
+  // Ændr globalt state pageName
+  const setSelected = storeSelectedNavigation((state) => state.setStoreSelectedNavigation);
   useEffect(() => {
     setSelected("home");
-  }, [setSelected]);
+  }, []);
 
+  // Hvis der ikke er en bruger knyttet til sessionen, så redirect til accounts.voorde.dk/sign-in
   if (!user) return <SignIn />;
-
   return (
     <>
       <Dashboard_pageName text="home" />

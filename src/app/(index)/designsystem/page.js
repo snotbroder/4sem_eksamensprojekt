@@ -1,4 +1,4 @@
-import Button from "../../../components/ui/buttons/Button";
+import Button from "@/components/ui/buttons/Button";
 export default function designsystem() {
   return (
     <div className="mx-s md:mx-6xl grid gap-ml py-xl overflow-hidden">

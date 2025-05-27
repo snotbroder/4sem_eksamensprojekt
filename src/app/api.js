@@ -1,14 +1,14 @@
 //FOR VERCEL
-// export const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-// export const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+export const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+export const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
 //FOR DEVELOPMENT
-const url = "https://cckofydhouffprwkdcpw.supabase.co/rest/v1/";
-const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNja29meWRob3VmZnByd2tkY3B3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ5NzMzMjEsImV4cCI6MjA2MDU0OTMyMX0.lHyOFxpm9qFmThwVLO2SCLRNnGTsTIaiaF4Zq6zzGYI";
+// const url = "https://cckofydhouffprwkdcpw.supabase.co/rest/v1/";
+// const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNja29meWRob3VmZnByd2tkY3B3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ5NzMzMjEsImV4cCI6MjA2MDU0OTMyMX0.lHyOFxpm9qFmThwVLO2SCLRNnGTsTIaiaF4Zq6zzGYI";
 
-export async function getTest() {
-  console.log("NEXT_PUBLIC_SUPABASE_ANON_KEY", url);
-}
+// export async function getTest() {
+//   console.log("NEXT_PUBLIC_SUPABASE_ANON_KEY", url);
+// }
 
 //Tilføj data til databasen
 export async function addItem(itemData, tableName) {
@@ -24,18 +24,12 @@ export async function addItem(itemData, tableName) {
     body: JSON.stringify(itemData),
   });
 
-  //Hvis der sker en fejl i dataen
-  // if (!response.ok) {
-  //   const errorText = await response.text();
-  //   console.error("Error adding data:", errorText);
-  // }
-
   let data = await response.json();
-  console.log("Added data:", data);
+  //console.log("Added data:", data);
   return data;
 }
 
-//Fetch alle items i databasen function
+//Fetch alle data i databasen function
 export async function getAllItems(tableName) {
   const headersList = {
     apikey: key,
@@ -50,11 +44,11 @@ export async function getAllItems(tableName) {
   });
 
   const data = await response.json();
-  console.log("Fetched items:", data);
+  //console.log("Fetched items:", data);
   return data;
 }
 
-//Slet et selected menu fra databasen
+//Slet et selected data fra databasen
 export async function deleteItem(uuid, tableName) {
   let response = await fetch(`${url}${tableName}?uuid=eq.${uuid}`, {
     method: "DELETE",
@@ -66,12 +60,12 @@ export async function deleteItem(uuid, tableName) {
     },
   });
 
-  let data = await response.json();
-  console.log("Deleted:", data);
+  let data = await response.json(); //Omformatter data til json
+  //console.log("Deleted:", data);
   return data;
 }
 
-//Redigér et selected menu fra databasen
+//Redigér en selected tabel fra databasen
 export async function editItem(uuid, tableName, updatedData) {
   let response = await fetch(`${url}${tableName}?uuid=eq.${uuid}`, {
     method: "PATCH",
@@ -85,6 +79,6 @@ export async function editItem(uuid, tableName, updatedData) {
   });
 
   let data = await response.json();
-  console.log("Changed:", data);
+  // console.log("Changed:", data);
   return data;
 }

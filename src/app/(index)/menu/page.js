@@ -45,7 +45,7 @@ export default function Menu() {
     }
 
     setTimeout(() => {
-      //Lige meget hvad så sæt vinduet til top
+      //Lige meget hvad, så sæt vinduet til top efter lidt tid
       top.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 28); // Jeg finder 28ms til at være passende, før den begynder at scrolle ned. Stadig lidt jittery....
   }
@@ -57,18 +57,10 @@ export default function Menu() {
           {/* Parent container */}
           <div className="grid gap-sm lg:grid-cols-2 xl:grid-cols-5 lg:items-start ">
             {/* Menu buttons and info */}
-            <section
-              data-aos="fade-right"
-              className="mx-sm lg:mx-6xl grid gap-xxs mt-[18vh] md:self-start col-span-full lg:col-span-1 xl:col-span-2"
-            >
+            <section data-aos="fade-right" className="mx-sm lg:mx-6xl grid gap-xxs mt-[18vh] md:self-start col-span-full lg:col-span-1 xl:col-span-2">
               <div className=" justify-self-start ">
                 <h1 className="border-b border-darkbrown">Menu</h1>
-                {/* <h2 className="border-y-2 border-darkbrown">Sharing- & winemenu, a la carte or theatermenu</h2> */}
-                <p>
-                  The menus has to be ordered for the whole table, and shared
-                  family-style. Our menus are developed depending on seasonal
-                  produce and will therefore not stay the same per season.
-                </p>
+                <p>The menus has to be ordered for the whole table, and shared family-style. Our menus are developed depending on seasonal produce and will therefore not stay the same per season.</p>
               </div>
               <div className="grid gap-xxs">
                 {menus.length > 0 ? (
@@ -109,19 +101,13 @@ export default function Menu() {
             {/* Menu cards container */}
             <div className="col-span-full lg:col-span-1 xl:col-span-3 overflow-hidden bg-[url('/Image_bank/bg-images/wall_of_photos.jpg')] bg-cover pb-2xl relative top-0">
               <section className="pl-xs sm:pl-sm lg:pl-xl py-[60px] lg:pt-[120px] ">
-                <ul
-                  data-aos="fade-left"
-                  className="snap-x snap-mandatory overflow-x-auto flex gap-xl scroll-smooth"
-                >
+                <ul data-aos="fade-left" className="snap-x snap-mandatory overflow-x-auto flex gap-xl scroll-smooth">
                   {menus.length > 0 ? (
                     menus.map((menu) => (
-                      <li
-                        ref={(el) => (cardRefs.current[menu.uuid] = el)}
-                        className="snap-start flex-shrink-0 min-w-[90%] sm:min-w-[70%] md:min-w-[50%] xl:min-w-[33%] flex flex-col gap-xxs last:mr-sm last:lg:mr-6xl"
-                        key={menu.uuid}
-                      >
-                        {/* <Dashboard_menucard menuData={menu} /> */}
-                        <MenuCard menuData={menu}></MenuCard>
+                      // Callbacket sørger for at gemme DOM reference som uuid fra menu i ref array
+                      <li ref={(e) => (cardRefs.current[menu.uuid] = e)} className="snap-start flex-shrink-0 min-w-[90%] sm:min-w-[70%] md:min-w-[50%] xl:min-w-[33%] flex flex-col gap-xxs last:mr-sm last:lg:mr-6xl" key={menu.uuid}>
+                        {" "}
+                        /<MenuCard menuData={menu}></MenuCard>
                       </li>
                     ))
                   ) : (
@@ -182,9 +168,7 @@ export default function Menu() {
                       <p className="price">85DKK</p>
                     </article>
                     <article className="flex justify-between">
-                      <p>
-                        Banana ice cream, chocolate, crème anglaise & hazelnut
-                      </p>
+                      <p>Banana ice cream, chocolate, crème anglaise & hazelnut</p>
 
                       <p className="price">85DKK</p>
                     </article>
@@ -192,49 +176,35 @@ export default function Menu() {
                 </div>
 
                 <footer>
-                  <Image
-                    src="/Image_bank/illustrations/foodandwine1_darkbrown.svg"
-                    width={100}
-                    height={100}
-                    alt="illustration of food and a person pouring wine"
-                    className="w-full"
-                  ></Image>
+                  <Image src="/Image_bank/illustrations/foodandwine1_darkbrown.svg" width={100} height={100} alt="illustration of food and a person pouring wine" className="w-full"></Image>
                 </footer>
               </article>
             </ClipboardCard>
             <ClipboardCard bgcolor="primary-200">
               <article id="drinks" className="grid gap-sm">
                 <header className=" grid pt-xs ">
-                  <h2 className="border-y border-darkbrown ">
-                    Drinks & snacks
-                  </h2>
+                  <h2 className="border-y border-darkbrown ">Drinks & snacks</h2>
                 </header>
                 <main className=" grid gap-sm">
                   <article>
                     <div className="flex justify-between">
                       <div>
                         <p>Gin/tonic</p>
-                        <p className="price -mt-xs">
-                          Gin, classic tonic & lime
-                        </p>
+                        <p className="price -mt-xs">Gin, classic tonic & lime</p>
                       </div>
                       <p className="price">85DKK</p>
                     </div>
                     <div className="flex justify-between">
                       <div>
                         <p>Paloma</p>
-                        <p className="price -mt-xs">
-                          Tequila, pink grape & lime
-                        </p>
+                        <p className="price -mt-xs">Tequila, pink grape & lime</p>
                       </div>
                       <p className="price">85DKK</p>
                     </div>
                     <div className="flex justify-between">
                       <div>
                         <p>Dark & stormy</p>
-                        <p className="price -mt-xs">
-                          Dark rum, ginger ale & lime
-                        </p>
+                        <p className="price -mt-xs">Dark rum, ginger ale & lime</p>
                       </div>
                       <p className="price">85DKK</p>
                     </div>
@@ -248,63 +218,49 @@ export default function Menu() {
                     <div className="flex justify-between">
                       <div>
                         <p>Espresso martini</p>
-                        <p className="price -mt-xs">
-                          Vodka, espresso & coffeeliquor
-                        </p>
+                        <p className="price -mt-xs">Vodka, espresso & coffeeliquor</p>
                       </div>
                       <p className="price">100DKK</p>
                     </div>
                     <div className="flex justify-between">
                       <div>
                         <p>Whiskey sour</p>
-                        <p className="price -mt-xs">
-                          Bourbon, citron, angostura bitters, eggwhites & sugar
-                        </p>
+                        <p className="price -mt-xs">Bourbon, citron, angostura bitters, eggwhites & sugar</p>
                       </div>
                       <p className="price">100DKK</p>
                     </div>
                     <div className="flex justify-between">
                       <div>
                         <p>Margarita</p>
-                        <p className="price -mt-xs">
-                          Tequila, triple sec, liquor & lemon
-                        </p>
+                        <p className="price -mt-xs">Tequila, triple sec, liquor & lemon</p>
                       </div>
                       <p className="price">100DKK</p>
                     </div>
                     <div className="flex justify-between">
                       <div>
                         <p>Negroni</p>
-                        <p className="price -mt-xs">
-                          Gin, campari, dolin vermouth & orange
-                        </p>
+                        <p className="price -mt-xs">Gin, campari, dolin vermouth & orange</p>
                       </div>
                       <p className="price">85DKK</p>
                     </div>
                     <div className="flex justify-between">
                       <div>
                         <p>Old fashioned</p>
-                        <p className="price -mt-xs">
-                          Bourbon, maraschino-liquor, angostura bitters & orange
-                        </p>
+                        <p className="price -mt-xs">Bourbon, maraschino-liquor, angostura bitters & orange</p>
                       </div>
                       <p className="price">85DKK</p>
                     </div>
                     <div className="flex justify-between">
                       <div>
                         <p>Royal grey</p>
-                        <p className="price -mt-xs">
-                          Ginish, earl grey sirup & lemon (alcoholfree)
-                        </p>
+                        <p className="price -mt-xs">Ginish, earl grey sirup & lemon (alcoholfree)</p>
                       </div>
                       <p className="price">85DKK</p>
                     </div>
                     <div className="flex justify-between">
                       <div>
                         <p>Coffee & avec</p>
-                        <p className="price -mt-xs">
-                          Gælder americano eller espresso
-                        </p>
+                        <p className="price -mt-xs">Gælder americano eller espresso</p>
                       </div>
                       <p className="price">80DKK</p>
                     </div>
@@ -366,9 +322,7 @@ export default function Menu() {
                   <article className="flex justify-between">
                     <div>
                       <p>Landwein(1 liter) </p>
-                      <p className="price -mt-xs">
-                        Grüner veltliner, Austria, NV
-                      </p>
+                      <p className="price -mt-xs">Grüner veltliner, Austria, NV</p>
                     </div>
                     <p className="price">80 / 450DKK</p>
                   </article>
@@ -417,14 +371,7 @@ export default function Menu() {
                 </main>
               </article>
             </ClipboardCard>
-            <Image
-              data-aos="fade-left"
-              src={Wineshelf_Gif}
-              width={600}
-              height={600}
-              alt="shelf with spinning winebottles and a posterframe "
-              className="self-center"
-            ></Image>
+            <Image data-aos="fade-left" src={Wineshelf_Gif} width={600} height={600} alt="shelf with spinning winebottles and a posterframe " className="self-center"></Image>
           </section>
         </Animation>
       </article>

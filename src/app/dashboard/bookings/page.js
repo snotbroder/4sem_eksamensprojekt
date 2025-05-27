@@ -9,11 +9,11 @@ import IconComponent from "@/components/ui/IconComponent";
 import AddBooking from "@/components/utility/AddBooking";
 
 export default function menusPage() {
-  const setSelected = storeSelectedNavigation((state) => state.setStoreSelectedNavigation); // always called
-
+  // Sætter pageName i globalt state
+  const setSelected = storeSelectedNavigation((state) => state.setStoreSelectedNavigation);
   useEffect(() => {
     setSelected("bookings");
-  }, [setSelected]); // safe because this hook always runs now
+  }, []);
 
   const [openAddBooking, setOpenAddBooking] = useState(false);
 

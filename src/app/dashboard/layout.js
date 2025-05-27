@@ -11,15 +11,18 @@ export const metadata = {
 
 export default function DashboardLayout({ children }) {
   return (
+    // Clerk komponent der kræver alt indhold fra root er nested
     <ClerkProvider>
       <html lang="en">
         <body>
           <Dashboard_header />
+          {/* Denne del bliver faktisk aldrig vist, da jeg har sat redirect/reroute hvis man er signed out */}
           <SignedOut>
             <h1>U r logged out</h1>
             <p>please sign in :)</p>
             <SignInButton />
           </SignedOut>
+          {/* Dette virker ligesom conditional rendering; når du er logget ind, viser den indholdet */}
           <SignedIn>
             <div className="bg-white flex min-h-screen">
               <Dashboard_navigation />

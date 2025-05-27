@@ -1,7 +1,8 @@
-import AccordionParent from "../../../components/ui/accordion/AccordionParent";
-import accordionContentFAQ from "/src/copy_content/accordionFAQ.js";
+import AccordionParent from "@/components/ui/accordion/AccordionParent";
+import accordionContentFAQ from "@/copy_content/accordionFAQ";
 import Head from "next/head";
 export default function Faq() {
+  // Schema markup forsøg
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -68,17 +69,11 @@ export default function Faq() {
   return (
     <>
       <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       </Head>
       <main>
         <div className="grid md:grid-cols-5 ">
-          <div
-            data-aos="fade-up"
-            className="px-s md:px-6xl md:col-span-3 mt-[12vh] py-m"
-          >
+          <div data-aos="fade-up" className="px-s md:px-6xl md:col-span-3 mt-[12vh] py-m">
             <h1>F.A.Q.</h1>
             <AccordionParent contentSource={accordionContentFAQ} />
           </div>

@@ -9,12 +9,11 @@ import Button from "@/components/ui/buttons/Button";
 import IconComponent from "@/components/ui/IconComponent";
 
 export default function menusPage() {
-  const setSelected = storeSelectedNavigation((state) => state.setStoreSelectedNavigation); // always called
-
+  //pageName ændring i globalt state
+  const setSelected = storeSelectedNavigation((state) => state.setStoreSelectedNavigation);
   useEffect(() => {
     setSelected("menus");
-  }, []); //Sæt navmenu selected state
-  // setSelected <<< used to be in useEffect bracket
+  }, []);
 
   const [openAddMenu, setOpenAddMenu] = useState(false);
 
