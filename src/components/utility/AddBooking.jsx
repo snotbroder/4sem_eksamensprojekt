@@ -124,7 +124,7 @@ function AddBooking() {
           {/* Accepts newsletter */}
           <div className="form-field flex gap-s">
             <label htmlFor="acceptsNewsletter" className="form-label">
-              Want to recieve our newsletter?
+              Want to receive our newsletter?
             </label>
             <input type="checkbox" name="acceptsNewsletter" id="acceptsNewsletter" className="form-input max-w-[16px] max-h-[16px] mb-auto mt-[4px] cursor-pointer" value={booking[0].acceptsNewsletter} onChange={handleChange}></input>
           </div>
